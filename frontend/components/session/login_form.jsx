@@ -10,11 +10,13 @@ class LoginForm extends React.Component {
     }
   }
 
-  handleSubmit = (e)=>{
-    console.log(this.props.history)
-    e.preventDefault();
+  handleSubmit = (type) => (e) => { 
+    if (type = "login_user"){
+       e.preventDefault();
     this.props.login(this.state)
       // .then(()=>this.props.history.push('/'))
+    }
+   
     this.setState({email:'', password:''})
   }
 
@@ -24,11 +26,11 @@ class LoginForm extends React.Component {
     return(
       <div>
       <h1 className="h1">Your My Co-opt Online Account</h1>
-        <div className="two-col-ctr">
+        <div className="two-col">
           <div className="session-form">
             
             <h3>Sign in or create an account.</h3>
-            <form className="login-form" onSubmit={this.handleSubmit}>
+            <form className="login-form" onSubmit={this.handleSubmit('login_user')}>
               <label>Email
                 <input 
                   type="text"
@@ -44,7 +46,10 @@ class LoginForm extends React.Component {
                 />
               </label>
               <Link to="/underconstruction">Forgot password?</Link>
-              <button className='grn btn'>Sign in</button>
+              <div className="two-col">
+                <input className='grn btn' type="submit" value="Sign in" />
+                {/* // <input className='grn btn' type="submit" value="Sign in"/> */}
+              </div>
             </form>
             <ul>
               {this.props.errors.session.map(error=> <li key={`error${this.props.error}`}>{error}</li>)}

@@ -9,5 +9,7 @@
 
 # User.destroy_all!
 
-u1 = User.create(email:'bob', full_name:"bobertta bobberson", password:"123456")
-u2 = User.create(email:'bill', full_name:"william billerson", password:"123456")
+u0 = User.create(email:'demo', full_name:"Demi Demonstrationson", password:"123456")
+u1 = User.create(email:'bob', full_name:"Bobertta Bobberson", password:"123456")
+u2 = User.create(email:'bill', full_name:"William Billerson", password:"123456")
+u3 = User.create(email:'tom', full_name:"Thomas Thompson", password:"123456")

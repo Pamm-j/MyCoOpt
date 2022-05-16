@@ -8,12 +8,6 @@ class SignupForm extends React.Component {
 
   handleSubmit = (e)=>{
     e.preventDefault();
-    console.log({
-      full_name: `${this.state.f_name} ${this.state.m_initial} ${this.state.l_name}`, 
-      password:this.state.password,
-      email: this.state.email
-    })
-
     this.props.signup({
       full_name: `${this.state.f_name} ${this.state.m_initial} ${this.state.l_name}`, 
       password:this.state.password,
