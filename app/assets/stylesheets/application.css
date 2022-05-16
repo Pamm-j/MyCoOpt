@@ -20,4 +20,109 @@
 body {
   background-color: #fff;
   font-family: 'Plantin';
+  max-width: 1232px;
+  font-weight: 400;
+  letter-spacing: -.16px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: rgba(12,11,8,.75);
+  border: 1px solid lawngreen;
+  background-color: #fff;
+  margin: auto;
+}
+
+.sans-serif {
+  font-family: Graphik,"Helvetica Neue",sans-serif;
+}
+
+.header {
+  background-color: #F7F7F7;
+  box-shadow: 0 4px 4px rgb(26 26 26 / 20%);
+  border-color: #000;
+  color: #fff;
+  position: relative;
+  z-index: 1000;
+  border: 1px solid magenta;
+}
+
+.inner-header {
+  margin-right: auto;
+  margin-left: auto;
+  height: 67.928px;
+  max-width: 1171.990px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 19px;
+  padding-bottom: 25px;
+  border: 1px solid lawngreen;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.inner-header-left{
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid lawngreen;
+}
+
+.inner-header-right {
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid lawngreen;
+}
+
+.logo{
+  height: 48px;
+  min-width: 76px;
+}
+
+.shop-btn {
+  color: #292929;
+  width: 60px;
+  margin-left: 15px;
+  margin-top: 9px;
+  font-family: Plantin,Georgia,serif;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  width: 73px;
+  height: 48px;
+  text-decoration: none;
+}
+
+.cart-btn, .stores-btn, .footer {
+  margin-left: 15px;
+  color: #616161;
+  padding: 0 10px 2px 0;
+  font-family: Graphik,"Helvetica Neue",sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  
+}
+
+.footer {
+  text-align: center;
+}
+
+
+.grn {
+    background-color: #225c4e;
+    box-shadow: inset 0 0 0 1px #225c4e;
+    color: #f9f8f6;
+    fill: #f9f8f6;
+}
+.btn {
+    font-family: Graphik,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    outline: 0;
+    overflow: visible;
+    padding: 0.8rem 1.6rem;
+    transition: box-shadow .2s cubic-bezier(.15,0,.15,0),background-color .2s cubic-bezier(.15,0,.15,0),color .2s cubic-bezier(.15,0,.15,0);
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
 }
