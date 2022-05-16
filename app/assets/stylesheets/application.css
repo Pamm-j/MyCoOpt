@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url(//db.onlinewebfonts.com/c/105007d99d9df64c50cc24d696d79555?family=Graphik+Web+Regular);
+ @import url(//db.onlinewebfonts.com/c/c8b39fed03f94d04076e43085def7a5e?family=Plantin);
+
+body {
+  background-color: #fff;
+  font-family: 'Plantin';
+}
