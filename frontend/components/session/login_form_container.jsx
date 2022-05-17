@@ -5,7 +5,8 @@ import { login } from '../../actions/session_actions';
 
 
 const mSTP = state => ({
-  errors: state.errors
+  errors: state.errors,
+  user: {email:'', password:''}
 })
 
 const mDTP = dispatch => ({

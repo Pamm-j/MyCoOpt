@@ -16,7 +16,7 @@ const mSTP = state => ({
     full_name: ''
   }
 })
-
+ 
 const mDTP = dispatch => ({
   signup: user => dispatch(signup(user))
 })

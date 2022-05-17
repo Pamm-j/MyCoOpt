@@ -10,7 +10,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     this.props.signup({
       full_name: `${this.state.f_name} ${this.state.m_initial} ${this.state.l_name}`, 
-      password:this.state.password,
+      password: this.state.password,
       email: this.state.email
     })
   }
@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
   render(){
     return(
       <div>
-        <h1>Create a new REI online account</h1>
+        <h1 className="h1">Create a new My Coopt online account</h1>
         <h3>* Required information</h3>
         <form onSubmit={this.handleSubmit}>
           <label>First name*
