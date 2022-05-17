@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Greeting from "../greeting/greeting_container";
+// import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const NavBar = () => {
   return (
@@ -12,6 +14,7 @@ const NavBar = () => {
         </div>
         <div className="inner-header-right">
           <Link className='stores-btn' to='/underconstruction'>Stores</Link>
+          {/* < ProtectedRoute className='greet' component={Greeting}/> */}
           <Link className='cart-btn' to='/underconstruction'>Cart</Link>
         </div>
       </div>

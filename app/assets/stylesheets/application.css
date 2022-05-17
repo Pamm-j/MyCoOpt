@@ -15,13 +15,15 @@
  */
 
  @import 'reset.css';
+ @import 'static.css';
  /* @import url(//db.onlinewebfonts.com/c/c8b39fed03f94d04076e43085def7a5e?family=Plantin); */
  @import url('https://fonts.googleapis.com/css2?family=Faustina:wght@300;400;450;500;600&display=swap');
  @import url(//db.onlinewebfonts.com/c/519674de2a9cf96cde58e391fa5d51fe?family=GraphikLCGSemibold);
  @import url(//db.onlinewebfonts.com/c/9931abfc466a32ad3c3281bf1f8c1e5b?family=Graphik+LC+Medium);
  @import url(//db.onlinewebfonts.com/c/105007d99d9df64c50cc24d696d79555?family=Graphik+Web+Regular);
  @import url(//db.onlinewebfonts.com/c/4269f3960cb4b410c0d4cbb795e6ce72?family=Graphik+LC+Light);
-body {
+
+.webpage {
   background-color: #fff;
   font-family: Foustina ,Georgia,serif;
   max-width: 1232px;
@@ -40,7 +42,7 @@ body {
 }
 
 .header {
-  background-color: #FFFFFF;
+  background-color: #f7f7f7;
   box-shadow: 0 4px 4px rgb(26 26 26 / 20%);
   border-color: #000;
   color: #fff;
@@ -59,13 +61,13 @@ body {
   padding-bottom: 16px;
   display: flex;
   justify-content: space-between;
+  color: #292929;
 
 }
 
 .inner-header-left{
   display: flex;
   justify-content: flex-start;
-  background-color: #FFFFFF;
 }
 
 .inner-header-right {
@@ -92,7 +94,7 @@ body {
   text-decoration: none;
 }
 
-.cart-btn, .stores-btn, .footer {
+.cart-btn, .stores-btn, .footer .greet {
   margin-left: 15px;
   color: #616161;
   padding: 0 10px 2px 0;
@@ -102,11 +104,17 @@ body {
   
 }
 
-.footer {
-  text-align: center;
-  padding: 36px 0;
+
+
+.grn-lnk{
+  text-decoration: underline;
+  color: #004e00;
 }
 
+.lnk {
+  color: #406eb5;
+  fill: #406eb5;
+}
 
 .grn {
   background-color: #225c4e;
