@@ -31,11 +31,10 @@
   letter-spacing: -.16px;
   font-size: 1.6rem;
   line-height: 2.2rem;
-  /* color: rgba(12,11,8,.75);  */
+  color: rgba(12,11,8,.75); 
   background-color: #fff;
   margin: auto;
 }
-
 
 .sans-serif {
   font-family: Graphik web regular,"Helvetica Neue",sans-serif;
@@ -43,7 +42,7 @@
 
 .header {
   background-color: #f7f7f7;
-  /* box-shadow: 0 4px 4px rgb(26 26 26 / 20%); */
+  box-shadow: 0 4px 4px rgba(26, 26, 26, 0.2);
   border-color: #000;
   color: #fff;
   position: relative;
