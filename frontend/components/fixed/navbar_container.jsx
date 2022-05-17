@@ -1,7 +1,7 @@
-import React from "react";
 import { connect } from "react-redux";
-import { Route, withRouter, Redirect} from 'react-router-dom'
+import React from "react";
 import NavBar from "./navbar";
+import { logout } from "../../actions/session_actions";
 
 
 const mSTP = state => ({

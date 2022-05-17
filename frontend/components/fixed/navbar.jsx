@@ -4,13 +4,13 @@ import Greeting from "../greeting/greeting_container";
 // import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const NavBar = (props) => {
-  const split_name = props.currentUser.full_name.split(' ')
+  console.log(props)
   let menu;
-  if (props.logedI) {
-    menu = <Link className='stores-btn' to='/login'>Sign In</Link>
-  } else {
+  if (props.loggedIn) {
+    const split_name = props.currentUser.full_name.split(' ')
     menu =  <span className='stores-btn'> Hi, {`${split_name[0]}`} <Link className='stores-btn' onClick={props.logout} to={'/login'}>Logout</Link></span>
-    
+  } else {
+    menu = <Link className='stores-btn' to='/login'>Sign In</Link>
   } 
   return (
     <div>
