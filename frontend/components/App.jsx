@@ -11,19 +11,16 @@ import Splash from "./fixed/spash";
 
 
 const App = () => (
-  <div>
-      <NavBarContainer/>
-    <div className="webpage">
-      <Switch>
-        <AuthRoute path="/login" component={LoginFormContainer}   />
-        <AuthRoute path="/signup" component={SignupFormContainer}  />
-        <ProtectedRoute path='/' component={Splash} exact/>
-        <Route path="/under_construction" component={UnderConstruction} />
-        <Redirect to="/under_construction" />
-      </Switch>
-      <Footer/>
-
-    </div>  
+  <div >
+    <NavBarContainer/>
+    <Switch>
+      <Route path='/' component={Splash} exact/>
+      <AuthRoute path="/login" component={LoginFormContainer}   />
+      <AuthRoute path="/signup" component={SignupFormContainer}  />
+      <Route path="/under_construction" component={UnderConstruction} />
+      <Redirect to="/under_construction" />
+    </Switch>
+    <Footer/>
   </div>
 )
 
