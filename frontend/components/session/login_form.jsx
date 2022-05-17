@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FormItem from "./form_item";
 
 class LoginForm extends React.Component {
   constructor(props){
@@ -20,6 +19,10 @@ class LoginForm extends React.Component {
   }
 
   handleChange = (type)=>(e)=> this.setState({[type]: e.target.value})
+
+  componentDidMount(){
+    this.props.clearErrors()
+  }
   
   render(){
     return(

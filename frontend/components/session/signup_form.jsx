@@ -6,6 +6,9 @@ class SignupForm extends React.Component {
     super(props)
     this.state = this.props.user
   }
+  componentDidMount(){
+    this.props.clearErrors()
+  }
 
   handleSubmit = (e)=>{
     e.preventDefault();
