@@ -13,3 +13,119 @@
  *= require_tree .
  *= require_self
  */
+
+ @import 'reset.css';
+ /* @import url(//db.onlinewebfonts.com/c/c8b39fed03f94d04076e43085def7a5e?family=Plantin); */
+ @import url('https://fonts.googleapis.com/css2?family=Faustina:wght@300;400;450;500;600&display=swap');
+ @import url(//db.onlinewebfonts.com/c/519674de2a9cf96cde58e391fa5d51fe?family=GraphikLCGSemibold);
+ @import url(//db.onlinewebfonts.com/c/9931abfc466a32ad3c3281bf1f8c1e5b?family=Graphik+LC+Medium);
+ @import url(//db.onlinewebfonts.com/c/105007d99d9df64c50cc24d696d79555?family=Graphik+Web+Regular);
+ @import url(//db.onlinewebfonts.com/c/4269f3960cb4b410c0d4cbb795e6ce72?family=Graphik+LC+Light);
+body {
+  background-color: #fff;
+  font-family: Foustina ,Georgia,serif;
+  max-width: 1232px;
+  font-weight: 500;
+  letter-spacing: -.16px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: rgba(12,11,8,.75);
+  background-color: #fff;
+  margin: auto;
+}
+
+
+.sans-serif {
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+}
+
+.header {
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 4px rgb(26 26 26 / 20%);
+  border-color: #000;
+  color: #fff;
+  position: relative;
+  z-index: 1000;
+}
+
+.inner-header {
+  margin-right: auto;
+  margin-left: auto;
+  height: 45px;
+  max-width: 1172px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 19px;
+  padding-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.inner-header-left{
+  display: flex;
+  justify-content: flex-start;
+  background-color: #FFFFFF;
+}
+
+.inner-header-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo{
+  height: 48px;
+  min-width: 76px;
+}
+
+.shop-btn {
+  color: #292929;
+  width: 60px;
+  margin-left: 15px;
+  margin-top: 11px;
+  font-family: Foustina ,Georgia,serif;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  width: 73px;
+  height: 48px;
+  text-decoration: none;
+}
+
+.cart-btn, .stores-btn, .footer {
+  margin-left: 15px;
+  color: #616161;
+  padding: 0 10px 2px 0;
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  
+}
+
+.footer {
+  text-align: center;
+  padding: 36px 0;
+}
+
+
+.grn {
+  background-color: #225c4e;
+  color: #f9f8f6;
+  fill: #f9f8f6;
+}
+.btn {
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 8px 16px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: -.08px;
+  border-width: 0;
+  border-style: none;
+  border-color: none;
+  border-image: none;
+}
