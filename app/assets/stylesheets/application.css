@@ -53,7 +53,7 @@
 .inner-header {
   margin-right: auto;
   margin-left: auto;
-  height: 45px;
+  height: 40px;
   max-width: 1172px;
   padding-left: 30px;
   padding-right: 30px;
@@ -101,10 +101,7 @@
   font-family: Graphik web regular,"Helvetica Neue",sans-serif;
   font-size: 14px;
   text-decoration: none;
-  
 }
-
-
 
 .grn-lnk{
   text-decoration: underline;

@@ -8,7 +8,7 @@ import Footer from "./fixed/footer";
 import UnderConstruction from "./fixed/under_construction";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Splash from "./fixed/spash";
-
+import CategoryShowContainer from "./listings/category_show_container";
 
 const App = () => (
   <div >
@@ -18,10 +18,11 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer}   />
       <AuthRoute path="/signup" component={SignupFormContainer}  />
       <Route path="/under_construction" component={UnderConstruction} />
+      <Route path="/category/:id" component={CategoryShowContainer} />
       <Redirect to="/under_construction" />
     </Switch>
     <Footer/>
   </div>
 )
 
-export default App; 
+export default App;

@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id          :bigint           not null, primary key
+#  name        :string           not null
+#  category_id :integer          not null
+#  description :text             not null
+#  price       :float            not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  colors      :text             default([]), is an Array
+#  sizes       :text             default(["\"One Size\""]), is an Array
+#
+
+one:
+  name: MyString
+  category_id: 1
+  description: MyText
+  price: 1.5
+  inventory: 1
+  size: MyString
+  color: MyString
+
+two:
+  name: MyString
+  category_id: 1
+  description: MyText
+  price: 1.5
+  inventory: 1
+  size: MyString
+  color: MyString

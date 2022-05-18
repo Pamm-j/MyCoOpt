@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Greeting from "../greeting/greeting_container";
+import CategoryIndexContainer from "../listings/category_index_container";
 // import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const NavBar = (props) => {
-  console.log(props)
   let menu;
   if (props.loggedIn) {
     const split_name = props.currentUser.full_name.split(' ')
@@ -27,6 +26,7 @@ const NavBar = (props) => {
           <Link className='cart-btn' to='/underconstruction'>Cart</Link>
         </div>
       </div>
+      <CategoryIndexContainer/>
     </div>
     </div>
   )

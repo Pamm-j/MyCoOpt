@@ -1,0 +1,23 @@
+// Place all the styles related to the api::Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.categories-container {
+  height: 56px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.categories-container > li {
+  padding: 16px 12px;
+  display: block;
+  
+}
+
+.category-link {
+  color: #292929;
+  text-decoration: none;
+  line-height: 24px;
+  font-size: 16px;
+  font-family: Graphik Web Regular,Helvetica Neue,sans-serif;
+}
