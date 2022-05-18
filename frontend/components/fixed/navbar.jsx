@@ -23,10 +23,10 @@ const NavBar = (props) => {
         <div className="inner-header-right">
           <Link className='stores-btn' to='/underconstruction'>Stores</Link>
           {menu}          
-          <Link className='cart-btn' to='/underconstruction'>Cart</Link>
+          <Link id="brand-github" className='cart-btn' to='/underconstruction'>Cart</Link>
         </div>
       </div>
-      <CategoryIndexContainer/>
+      <CategoryIndexContainer />
     </div>
     </div>
   )

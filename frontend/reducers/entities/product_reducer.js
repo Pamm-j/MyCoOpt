@@ -6,7 +6,6 @@ const productReducer = (oldState={}, action)=>{
 
   switch(action.type){
     case RECEIVE_CATEGORY_PRODUCTS:
-      console.log("hitting receive cattegory products")
       return action.products
     default:
       return {};

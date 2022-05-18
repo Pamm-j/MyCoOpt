@@ -13,14 +13,16 @@ import CategoryShowContainer from "./listings/category_show_container";
 const App = () => (
   <div >
     <NavBarContainer/>
-    <Switch>
-      <Route path='/' component={Splash} exact/>
-      <AuthRoute path="/login" component={LoginFormContainer}   />
-      <AuthRoute path="/signup" component={SignupFormContainer}  />
-      <Route path="/under_construction" component={UnderConstruction} />
-      <Route path="/category/:id" component={CategoryShowContainer} />
-      <Redirect to="/under_construction" />
-    </Switch>
+    <div >
+      <Switch >
+        <Route path='/' component={Splash} exact/>
+        <AuthRoute className="webpage" path="/login" component={LoginFormContainer}   />
+        <AuthRoute className="webpage"  path="/signup" component={SignupFormContainer}  />
+        <Route className="webpage"  path="/under_construction" component={UnderConstruction} />
+        <Route className="webpage"  path="/category/:id" component={CategoryShowContainer} />
+        <Redirect className="webpage"  to="/under_construction" />
+      </Switch>
+    </div>
     <Footer/>
   </div>
 )
