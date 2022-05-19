@@ -10,13 +10,14 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Splash from "./fixed/spash";
 import CategoryShowContainer from "./listings/category_show_container";
 import ProductShowContainer from "./listings/product_show_container";
+import SplashContainer from "./fixed/splash_container";
 
 const App = () => (
   <div >
     <NavBarContainer/>
     <div >
       <Switch >
-        <Route path='/' component={Splash} exact/>
+        <Route path='/' component={SplashContainer} exact/>
         <AuthRoute className="webpage" path="/login" component={LoginFormContainer}   />
         <AuthRoute className="webpage"  path="/signup" component={SignupFormContainer}  />
         <Route className="webpage"  path="/under_construction" component={UnderConstruction} />
@@ -29,4 +30,4 @@ const App = () => (
   </div>
 )
 
-export default App;
+export default App; 
