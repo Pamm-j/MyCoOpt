@@ -3,9 +3,10 @@ import React from "react";
 import { fetchCategories } from "../../actions/listings_actions";
 import CategoryIndex from "./category_index";
 
-const mSTP = (state) => ({
+const mSTP = (state) => {
+  return({
   categories: Object.values(state.entities.categories)
-})
+})}
 const mDTP = (dispatch) => ({
   fetchCategories: ()=> dispatch(fetchCategories())
 })

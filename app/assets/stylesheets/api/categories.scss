@@ -6,8 +6,8 @@
   height: 56px;
   display: flex;
   justify-content: space-around;
-  max-width: 1232px;
   margin: auto;
+  max-width: 1232px;
 }
 
 .categories-container > li {
@@ -47,5 +47,25 @@
 
 .cat-splash span {
   padding: 40px 40px 32px;
-  
+}
+
+.category-show-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  max-width: 1232px;
+
+}
+
+.show-filter {
+  width: 240px;
+  height: 500px;
+  color: rgba(12,11,8,.75);
+  padding: 32px;
+  font-size: 32px;
+  font-family: Graphik Web Regular,Helvetica Neue,sans-serif;
+  border-radius: 4px;
+  border: 1px solid #dcd6cb;
+  background-color: #f7f7f7;
 }

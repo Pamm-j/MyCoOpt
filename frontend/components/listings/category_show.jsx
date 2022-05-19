@@ -14,18 +14,20 @@ class CategoryShow extends React.Component{
   }
   componentDidMount(){
     this.props.fetchCategoryProducts( this.props.match.params.id )
-    // this.props.fetchCategories()
   }
   render(){
     if (!this.props.category){
       return null 
     } else {
       return (
-        <div >
+        <div>
           <CatSplash category={this.props.category}/>
-          <div className="cat-show-wrapper">
-            {this.props.products.map((product)=> <ProductIndexItem key={product.id+"product"} product={product}/>)}
-          </div>          
+          <div className="category-show-wrapper">
+            <div className="show-filter">I take my gear like I take my water, filtered</div>          
+            <div className="cat-item-index-wrapper">
+              {this.props.products.map((product)=> <ProductIndexItem key={product.id+"product"} product={product}/>)}
+            </div>
+          </div>
         </div>
       )
     }
