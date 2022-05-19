@@ -13,7 +13,8 @@
 #  sizes       :text             default(["\"One Size\""]), is an Array
 #
 class Product < ApplicationRecord
-  validates :name, :category_id, :description, :price, presence:true
+  validates :name, :category_id, :description, :price, :brand, presence:true
   validates :name, uniqueness:true
   belongs_to :category
+  has_many_attached :photos
 end

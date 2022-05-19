@@ -19,7 +19,7 @@ const App = () => (
         <AuthRoute className="webpage" path="/login" component={LoginFormContainer}   />
         <AuthRoute className="webpage"  path="/signup" component={SignupFormContainer}  />
         <Route className="webpage"  path="/under_construction" component={UnderConstruction} />
-        <Route className="webpage"  path="/category/:id" component={CategoryShowContainer} />
+        <Route path="/category/:id" component={CategoryShowContainer} />
         <Redirect className="webpage"  to="/under_construction" />
       </Switch>
     </div>

@@ -24,6 +24,7 @@ const NavBar = (props) => {
           <Link className='stores-btn' to='/underconstruction'>Stores</Link>
           {menu}          
           <Link id="brand-github" className='cart-btn' to='/underconstruction'>Cart</Link>
+          <img src={window.sprite} alt="" color="magenta"/>
         </div>
       </div>
       <CategoryIndexContainer />

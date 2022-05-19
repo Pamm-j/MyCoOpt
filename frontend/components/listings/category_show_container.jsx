@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
-import { fetchCategoryProducts } from "../../actions/listings_actions";
+import { fetchCategories, fetchCategoryProducts } from "../../actions/listings_actions";
 import CategoryShow from "./category_show";
 
 
@@ -9,7 +9,8 @@ const mSTP = (state, ownProps) => ({
   products: Object.values(state.entities.products)
 })
 const mDTP = (dispatch) => ({
-  fetchCategoryProducts: (categoryId)=> dispatch(fetchCategoryProducts(categoryId))
+  fetchCategoryProducts: (categoryId)=> dispatch(fetchCategoryProducts(categoryId)),
+  fetchCategories: () => dispatch(fetchCategories())
 })
 
 export default connect(mSTP, mDTP)(CategoryShow)
