@@ -17,3 +17,4 @@ class Api::ProductsController < ApplicationController
     end
   end
 end
+ 

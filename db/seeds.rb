@@ -19,7 +19,7 @@ u3 = User.create(email:'tom', full_name:"Tommy Thompson", password:"123456")
 c1 = Category.create(title:"Cycle", description:"From e-bikes to mountain bikes, and bikepacking to gravel grinding, co-opt members can save more getting geared up for any terrain.")
 c2 = Category.create(title:"Travel", description:"Every epic adventure starts with packing and planning. We’ve got everything you need to make that a joy and a breeze.")
 c3 = Category.create(title:"Camp & Hike", description:"From overlanding to day camping, the co-op can get you the right gear to get you out there in no time.")
-c1.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/cycle-splash.jpg'), filename:'cycle-splash.jpg')
+c1.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/two-bikes.jpg'), filename:'cycle-splash.jpg')
 c2.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/boat-bag.jpg'), filename:'travel-splash.jpg')
 c3.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/sleep-roraima.jpg'), filename:'hike-splash.jpg')
 

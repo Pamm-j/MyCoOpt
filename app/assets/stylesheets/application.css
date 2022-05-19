@@ -18,6 +18,7 @@
  @import 'footer.scss';
  @import 'header.scss';
  @import './api/products-show.scss';
+ @import 'splash.scss';
  /* @import url(//db.onlinewebfonts.com/c/c8b39fed03f94d04076e43085def7a5e?family=Plantin); */
  @import url('https://fonts.googleapis.com/css2?family=Faustina:wght@300;400;450;500;600&display=swap');
  @import url(//db.onlinewebfonts.com/c/519674de2a9cf96cde58e391fa5d51fe?family=GraphikLCGSemibold);
@@ -28,13 +29,13 @@
 .webpage {
   background-color: #fff;
   font-family: Foustina ,Georgia,serif;
-  max-width: 1232px;
   font-weight: 500;
   letter-spacing: -.16px;
   font-size: 16px;
   line-height: 22px;
   color: rgba(12,11,8,.75); 
   background-color: #fff;
+  max-width: 1232px;
   margin: auto;
 }
 
@@ -74,10 +75,3 @@
   border-image: none;
 }
 
-.splash {
-  max-width: 100%;
-  height: 952px;
-  background: url(https://www.rei.com/assets/homepage/lead/april-activity-event/lead-lg/live.jpg) no-repeat center center; 
-  background-size: cover;
-  background-position: center;
-}

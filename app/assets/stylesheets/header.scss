@@ -5,7 +5,7 @@
   color: #fff;
   position: relative;
   z-index: 1000;
-  height: 128px;
+  height: 168px;
 }
 
 .inner-header {
@@ -52,15 +52,59 @@
   text-decoration: none;
 }
 
-.cart-btn, .stores-btn, .footer .greet {
-  margin-left: 15px;
+.nav-btn {
+  // margin-left: 15px;
   color: #616161;
-  padding: 0 10px 2px 0;
+  // padding: 0 5px 2px 0;
   font-family: Graphik web regular,"Helvetica Neue",sans-serif;
   font-size: 14px;
   text-decoration: none;
+  align-self: center;
+
+  :nth-child(2n+1) {
+    padding-right: 16px;
+    padding-left: 4px;
+  }
 }
 
-.stores-btn, .cart-btn {
-  padding: 19px 10px 2px 0;
+.icon{
+  color: #616161;
+  margin: 6px 0px;
+  height: 20px;
+  width: 20px;
+}
+
+.personal-links {
+  background-color: #2a2a2a;
+  height: 40px;
+  text-align: left;
+  color: #999;
+
+}
+
+.personal-links-inner-wrapper {
+  max-width: 1232px;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  
+}
+
+.grey {
+  padding-left: 4px;
+  color: #999;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Graphik LC Light,"Helvetica Neue",sans-serif;
+}
+.each-link-set {
+  height: auto;
+  align-self: center;
+  padding: 4px 36px;
+}
+
+#brick {
+  height: 30px;
+  width: 30px;
 }
