@@ -1,0 +1,110 @@
+.header {
+  background-color: #f7f7f7;
+  box-shadow: 0 4px 4px rgba(26, 26, 26, 0.2);
+  border-color: #000;
+  color: #fff;
+  position: relative;
+  z-index: 1000;
+  height: 168px;
+}
+
+.inner-header {
+  margin-right: auto;
+  margin-left: auto;
+  height: 40px;
+  max-width: 1172px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 19px;
+  padding-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  color: #292929;
+  border-bottom: 1px solid #dadada;
+}
+
+.inner-header-left{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.inner-header-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo{
+  height: 48px;
+  min-width: 76px;
+}
+
+.shop-btn {
+  color: #292929;
+  width: 60px;
+  margin-left: 15px;
+  margin-top: 11px;
+  font-family: Foustina ,Georgia,serif;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  width: 73px;
+  height: 48px;
+  text-decoration: none;
+}
+
+.nav-btn {
+  // margin-left: 15px;
+  color: #616161;
+  // padding: 0 5px 2px 0;
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  align-self: center;
+
+  :nth-child(2n+1) {
+    padding-right: 16px;
+    padding-left: 4px;
+  }
+}
+
+.icon{
+  color: #616161;
+  margin: 6px 0px;
+  height: 20px;
+  width: 20px;
+}
+
+.personal-links {
+  background-color: #2a2a2a;
+  height: 40px;
+  text-align: left;
+  color: #999;
+
+}
+
+.personal-links-inner-wrapper {
+  max-width: 1232px;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  
+}
+
+.grey {
+  padding-left: 4px;
+  color: #999;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Graphik LC Light,"Helvetica Neue",sans-serif;
+}
+.each-link-set {
+  height: auto;
+  align-self: center;
+  padding: 4px 36px;
+}
+
+#brick {
+  height: 30px;
+  width: 30px;
+}

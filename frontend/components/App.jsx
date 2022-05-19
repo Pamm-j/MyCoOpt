@@ -8,20 +8,25 @@ import Footer from "./fixed/footer";
 import UnderConstruction from "./fixed/under_construction";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import Splash from "./fixed/spash";
-
+import CategoryShowContainer from "./listings/category_show_container";
+import ProductShowContainer from "./listings/product_show_container";
 
 const App = () => (
   <div >
     <NavBarContainer/>
-    <Switch>
-      <Route path='/' component={Splash} exact/>
-      <AuthRoute path="/login" component={LoginFormContainer}   />
-      <AuthRoute path="/signup" component={SignupFormContainer}  />
-      <Route path="/under_construction" component={UnderConstruction} />
-      <Redirect to="/under_construction" />
-    </Switch>
+    <div >
+      <Switch >
+        <Route path='/' component={Splash} exact/>
+        <AuthRoute className="webpage" path="/login" component={LoginFormContainer}   />
+        <AuthRoute className="webpage"  path="/signup" component={SignupFormContainer}  />
+        <Route className="webpage"  path="/under_construction" component={UnderConstruction} />
+        <Route path="/category/:id" component={CategoryShowContainer} />
+        <Route path="/product/:id" component={ProductShowContainer} />
+        <Redirect className="webpage"  to="/under_construction" />
+      </Switch>
+    </div>
     <Footer/>
   </div>
 )
 
-export default App; 
+export default App;

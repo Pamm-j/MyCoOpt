@@ -1,0 +1,71 @@
+// Place all the styles related to the api::Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.categories-container {
+  height: 56px;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  max-width: 1232px;
+}
+
+.categories-container > li {
+  padding: 16px 12px;
+  display: block;
+}
+
+.category-link {
+  color: #292929;
+  text-decoration: none;
+  line-height: 24px;
+  font-size: 16px;
+  font-family: Graphik Web Regular,Helvetica Neue,sans-serif;
+}
+
+.cat-splash {
+  max-width: 100%;
+  height: 450px; 
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  font-family: Foustina ,Georgia,serif;
+  font-size: 52px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cat-description {
+  padding: 32px;
+  font-size: 18px;
+  font-family: Graphik Web Regular,Helvetica Neue,sans-serif;
+  text-align: center;
+  color: rgba(12,11,8,.75);
+}
+
+.cat-splash span {
+  padding: 40px 40px 32px;
+}
+
+.category-show-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  max-width: 1232px;
+
+}
+
+.show-filter {
+  width: 240px;
+  height: 500px;
+  color: rgba(12,11,8,.75);
+  padding: 32px;
+  font-size: 32px;
+  font-family: Graphik Web Regular,Helvetica Neue,sans-serif;
+  border-radius: 4px;
+  border: 1px solid #dcd6cb;
+  background-color: #f7f7f7;
+}

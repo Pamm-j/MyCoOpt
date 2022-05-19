@@ -1,0 +1,47 @@
+.splash {
+  max-width: 100%;
+  height: 952px;
+  background: url(https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/cycle-splash.jpg) no-repeat center center; 
+  background-size: cover;
+  background-position: center;
+}
+
+.splash-add {
+  height: 264px;
+  width: 440px;
+  padding: 32px 24px 24px;
+  color: rgba(12,11,8,.75);
+  background-color: #fff;
+  text-align: center;
+  border-radius: 5px;
+
+  bottom: -150px;
+  // right: -9vw;
+  right: -65vw;
+  position: relative;
+  margin: 8px 0;
+  
+  h3 {
+    font-size: 12px;
+    font-family: Graphik LC Medium,Helvetica Neue,sans-serif;
+    margin: 8px 0;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-family: Foustina ,Georgia,serif;
+    font-weight: 500;
+    margin: 8px 0;
+    line-height: 36px;
+  }
+  p {
+    font-size: 16px;
+    font-family: Graphik LC Light,Helvetica Neue,sans-serif;
+    margin: 8px 0;
+    line-height: 26px;
+  }
+
+  a {
+    margin: 12px 4px;
+  }
+}

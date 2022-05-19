@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
   
   render(){
     return(
-      <div>
+      <div className="limited-container">
       <h1 className="h1">Your My Co-opt Online Account</h1>
         <div className="two-col">
           <div className="session-form">
