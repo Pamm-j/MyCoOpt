@@ -4,7 +4,7 @@ import Splash from "./spash";
 
 
 const mSTP = state => ({
-  // cycle: Object.values(state.entities.categories)[0]
+  cycle: Object.values(state.entities.categories)
 })
 
 const mDTP = dispatch => ({

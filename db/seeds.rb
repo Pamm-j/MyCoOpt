@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+CartItem.destroy_all
 Product.destroy_all
 Category.destroy_all
 User.destroy_all
@@ -63,3 +64,14 @@ pc3 = Product.create(
 
 pc3.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/dap-2.jpeg'), filename:'dap-2.jpeg')
 pc3.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/dap-1.jpeg'), filename:'dap-1.jpeg')
+
+
+ci1 = CartItem.create!(
+  quantity: 1,
+  product_id: pc1.id,
+  shopper_id: u0.id,
+  size: 'L',
+  color: 'Rosewood',
+  delivery_type: 'pickup'
+)
+

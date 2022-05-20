@@ -1,0 +1,1 @@
+json.extract! category, :id, :quantity, :product, :shopper, :size, :color, :delivery_type

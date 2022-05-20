@@ -13,4 +13,3 @@ class Api::CategoriesController < ApplicationController
     end
   end
 end
- 
