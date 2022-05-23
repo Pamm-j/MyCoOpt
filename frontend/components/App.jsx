@@ -1,5 +1,5 @@
 import React from "react"
-import {  Route, Switch, Link, Redirect} from "react-router-dom";
+import { Route, Switch, Link, Redirect} from "react-router-dom";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import NavBarContainer from "./fixed/navbar_container";
@@ -13,6 +13,7 @@ import {CartIndexContainer, CheckoutIndexContainer} from "./cart/cart_index_cont
 import OrderSuccess from "./cart/order_success";
 
 const App = () => (
+  
   <div >
     <NavBarContainer/>
     <div >

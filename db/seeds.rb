@@ -118,10 +118,14 @@ pc6 = Product.create(
   sizes: ['XS', 'S', 'M', 'L'],
   brand: 'Liv'
 )
-
-pc6.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t2-1.jpeg'), filename:'t2-1.jpeg')
-pc6.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t2-2.jpeg'), filename:'t2-2.jpeg')
-
+bikes_url = "https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/"
+def make_photo_url(url_path, filename)
+  {io: open(url_path+filename), filename:filename}
+end
+pc6.photos.attach(make_photo_url(bikes_url,"t2-1.jpeg"))
+pc6.photos.attach(make_photo_url(bikes_url,"t2-2.jpeg"))
+# pc6.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t2-2.jpeg'), filename:'t2-2.jpeg')
+# pc6.photos.attach(io: open(bikes_url + filename), filename:filename)
 
 
 
