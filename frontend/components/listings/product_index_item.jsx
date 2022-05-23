@@ -1,29 +1,49 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Colors from "../../util/colors";
+import ColorSwatch from "./color_swatch";
 
 
-const ProductIndexItem = (props) => {
-  return (
-    <div className="product-index-item-container">
-      <div className="photo-box"><img src={props.product.photoUrls[0]} alt="" /></div>
-      
-      <ul className="color-list" >
-        {props.product.colors.map((color)=>(<li className="sml-btn" key={"color" + color} >{color}</li> ))}
-      </ul>
-      <div className="product-name">
-        <Link to={`/product/${props.product.id}`}>
-          <p>{props.product.brand}</p>
-          <p>{props.product.name}</p>
+class ProductIndexItem extends React.Component {
+  constructor(props){
+    super(props)
+  }
+  
+
+  render(){
+    const product = this.props.product
+    return (
+      <div className="product-index-item-container">
+        <Link to={`/product/${product.id}`}>
+
+        <div className="photo-box"><img src={product.photoUrls[0]} alt="" /></div>
         </Link>
-
-      </div>
-      <div className="price">${props.product.price}</div>
-      <div className="rating-stars">
-        <span>★★★★★</span>
-        <span> (4,592)</span>
+        
+        <ul className="color-list" >
+          {product.colors.map((color)=>(
+          <li 
+            className="round-box color-btn" 
+            key={"color" + color}
+            style={{backgroundColor: `${Colors[color]}`}}></li> 
+          ))}
+        </ul>
+        <div className="product-name">
+          <Link to={`/product/${product.id}`}>
+            <p>{product.brand}</p>
+            <p>{product.name}</p>
+          </Link>
+  
         </div>
-    </div>
-  )
+        <div className="price">${product.price}</div>
+        <div className="rating-stars">
+          <span>★★★★★</span>
+          <span> (4,592)</span>
+          </div>
+      </div>
+    )
+  }
 }
 
+
 export default ProductIndexItem; 
+

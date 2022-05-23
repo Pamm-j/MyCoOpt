@@ -5,14 +5,19 @@
 .categories-container {
   height: 56px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin: auto;
   max-width: 1232px;
 }
 
-.categories-container > li {
-  padding: 16px 12px;
-  display: block;
+.categories-container {
+  li {
+    padding: 16px 12px;
+    display: block;
+  }
+  :first-child {
+    padding-left: 0;
+  }
 }
 
 .category-link {
@@ -20,6 +25,7 @@
   text-decoration: none;
   line-height: 24px;
   font-size: 16px;
+  margin-right: 30px;
   font-family: Graphik Web Regular,Helvetica Neue,sans-serif;
 }
 

@@ -11,6 +11,7 @@
 #  updated_at  :datetime         not null
 #  colors      :text             default([]), is an Array
 #  sizes       :text             default(["\"One Size\""]), is an Array
+#  brand       :string           default("NA")
 #
 require 'test_helper'
 

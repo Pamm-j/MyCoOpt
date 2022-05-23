@@ -1,0 +1,34 @@
+.big-title {
+  font-size: 32px;
+  margin: 32px;
+  font-family: Foustina, Georgia,serif;
+  font-weight: 450;
+  text-align: center;
+  color: rgba(12,11,8,.75);
+}
+
+.little-title {
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+  text-align: center;
+  margin: 16px 0 20px;
+  span {
+    font-family: Graphik LC Medium,"Helvetica Neue",sans-serif;
+  }
+}
+
+.order-summary-container {
+  width: 500px;
+}
+
+.order-sum-webpage {
+  background-color: #fff;
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+  font-weight: 500;
+  letter-spacing: -.16px;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(12,11,8,.75); 
+  background-color: #fff;
+  max-width: 500px;
+  margin: auto;
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_18_163022) do
+ActiveRecord::Schema.define(version: 2022_05_21_221058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 2022_05_18_163022) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "quantity", default: 0, null: false
+    t.integer "product_id", null: false
+    t.integer "shopper_id", null: false
+    t.string "size", null: false
+    t.string "color", null: false
+    t.string "delivery_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -63,6 +74,10 @@ ActiveRecord::Schema.define(version: 2022_05_18_163022) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address_1", default: ""
+    t.string "address_2", default: ""
+    t.integer "card_end", default: 1111
+    t.string "card_exp", default: "01/12"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end

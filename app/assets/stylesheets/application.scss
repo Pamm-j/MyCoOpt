@@ -14,11 +14,7 @@
  *= require_self
  */
 
- @import 'reset.scss';
- @import 'footer.scss';
- @import 'header.scss';
- @import './api/products-show.scss';
- @import 'splash.scss';
+
  /* @import url(//db.onlinewebfonts.com/c/c8b39fed03f94d04076e43085def7a5e?family=Plantin); */
  @import url('https://fonts.googleapis.com/css2?family=Faustina:wght@300;400;450;500;600&display=swap');
  @import url(//db.onlinewebfonts.com/c/519674de2a9cf96cde58e391fa5d51fe?family=GraphikLCGSemibold);
@@ -28,7 +24,7 @@
 
 .webpage {
   background-color: #fff;
-  font-family: Foustina ,Georgia,serif;
+  font-family: Foustina, Georgia,serif;
   font-weight: 500;
   letter-spacing: -.16px;
   font-size: 16px;
@@ -36,6 +32,19 @@
   color: rgba(12,11,8,.75); 
   background-color: #fff;
   max-width: 1232px;
+  margin: auto;
+}
+
+.narrow-webpage {
+  background-color: #fff;
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+  font-weight: 500;
+  letter-spacing: -.16px;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(12,11,8,.75); 
+  background-color: #fff;
+  max-width: 976px;
   margin: auto;
 }
 
@@ -69,9 +78,11 @@
   text-decoration: none;
   font-weight: 500;
   letter-spacing: -.08px;
-  border-width: 0;
-  border-style: none;
-  border-color: none;
-  border-image: none;
+  border: none!important;
 }
 
+.learnmore{
+  text-align: center;
+  font-size: 23px;
+  margin: 16px;
+}
