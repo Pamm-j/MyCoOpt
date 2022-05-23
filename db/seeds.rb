@@ -1,3 +1,4 @@
+Review.destroy_all
 CartItem.destroy_all
 Product.destroy_all
 Category.destroy_all
@@ -6,6 +7,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!("users")
 ActiveRecord::Base.connection.reset_pk_sequence!("products")
 ActiveRecord::Base.connection.reset_pk_sequence!("categories")
 ActiveRecord::Base.connection.reset_pk_sequence!("cart_items")
+ActiveRecord::Base.connection.reset_pk_sequence!("reviews")
 
 u0 = User.create(
   email:'bobby@mars.mc', 
@@ -30,10 +32,10 @@ u2 = User.create(
 )
 u3 = User.create(
   email:'president@transportunion.bt', 
-  full_name:"Camina Drummer ", 
+  full_name:"Camina Drummer", 
   password:"123456", 
-  address_1:"Taicho Station", 
-  address_2:"Apt 12, Corridor 1, Level 1"
+  address_1:"Apt 12, Corridor 1, Level 1", 
+  address_2:"Taicho Station"
 )
 
 
@@ -44,6 +46,10 @@ c1.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-
 c2.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/boat-bag.jpg'), filename:'travel-splash.jpg')
 c3.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/sleep-roraima.jpg'), filename:'hike-splash.jpg')
 
+bikes_url = "https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/"
+def make_photo_url(url_path, filename)
+  {io: open(url_path+filename), filename:filename}
+end
 # pc means Product - Cycle
 pc1 = Product.create(
   name:'Devote Advanced 2',
@@ -67,7 +73,7 @@ pc2 = Product.create(
   brand: 'Liv'
 )
 pc2.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da1-1.jpeg'), filename:'da1-1.jpeg')
-pc2.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da1-2.jpeg'), filename:'a1-2.jpeg')
+pc2.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da1-2.jpeg'), filename:'da1-2.jpeg')
 
 
 pc3 = Product.create(
@@ -118,22 +124,40 @@ pc6 = Product.create(
   sizes: ['XS', 'S', 'M', 'L'],
   brand: 'Liv'
 )
-bikes_url = "https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/"
-def make_photo_url(url_path, filename)
-  {io: open(url_path+filename), filename:filename}
-end
 pc6.photos.attach(make_photo_url(bikes_url,"t2-1.jpeg"))
 pc6.photos.attach(make_photo_url(bikes_url,"t2-2.jpeg"))
-# pc6.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t2-2.jpeg'), filename:'t2-2.jpeg')
-# pc6.photos.attach(io: open(bikes_url + filename), filename:filename)
 
+pc7= Product.create(
+  name:'Pique Advanced Pro 29 2',
+  category_id: c1.id,
+  description: "ATTACK THE COURSE WITH SPEED AND EFFICIENCY ON THE PIQUE ADVANCED PRO 29. THE STIFF, LIGHT, FULL-SUSPENSION XC BIKE IS READY TO SET PRS AND SNAG PODIUM STEPS.",
+  price:4500,
+  colors: ["DarkBlue", "FanaticTeal"],
+  sizes: ['XS', 'S', 'M'],
+  brand: 'Liv'
+)
+pc7.photos.attach(make_photo_url(bikes_url,"ppro2-1.jpg"))
 
+pc8= Product.create(
+  name:'Pique Advanced Pro 29 1',
+  category_id: c1.id,
+  description: "ATTACK THE COURSE WITH SPEED AND EFFICIENCY ON THE PIQUE ADVANCED PRO 29. THE STIFF, LIGHT, FULL-SUSPENSION XC BIKE IS READY TO SET PRS AND SNAG PODIUM STEPS.",
+  price:6350,
+  colors: ["DarkBlue", "Carbon"],
+  sizes: ['XS', 'S', 'M'],
+  brand: 'Liv'
+)
+pc8.photos.attach(make_photo_url(bikes_url,"ppro1-1.jpg"))
+pc8.photos.attach(make_photo_url(bikes_url,"ppro1-2.jpg"))
 
-
-
-
-
-
+ci1 = CartItem.create!(
+  quantity: 1,
+  product_id: pc8.id,
+  shopper_id: u0.id,
+  size: 'L',
+  color: 'DarkBlue',
+  delivery_type: 'delivery'
+)
 ci1 = CartItem.create!(
   quantity: 1,
   product_id: pc1.id,
@@ -142,12 +166,12 @@ ci1 = CartItem.create!(
   color: 'Rosewood',
   delivery_type: 'delivery'
 )
-ci1 = CartItem.create!(
-  quantity: 1,
-  product_id: pc2.id,
-  shopper_id: u0.id,
-  size: 'L',
-  color: 'Rosewood',
-  delivery_type: 'delivery'
-)
+
+r1 = Review.create(reviewer_id:u0.id, product_id:pc1.id, title:"It takes me places", body:"would buy again", rating:"5")
+r1 = Review.create(reviewer_id:u1.id, product_id:pc1.id, title:"best form of travel for the appocolapys", body:"Me and Peaches both had one", rating:"5")
+r1 = Review.create(reviewer_id:u3.id, product_id:pc1.id, title:"useless in space", body:"Was given it as a joke, haha guys. do not buy, they do not take returns. 52% satisfaction guarantee seems like a stretch", rating:"1")
+
+
+
+
 

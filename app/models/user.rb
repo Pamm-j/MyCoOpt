@@ -9,6 +9,10 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  address_1       :string           default("")
+#  address_2       :string           default("")
+#  card_end        :integer          default(1111)
+#  card_exp        :string           default("01/12")
 #
 class User < ApplicationRecord
   validates :email, :session_token, uniqueness: true
@@ -16,6 +20,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil:true}
   after_initialize :ensure_session_token!
   attr_reader :password
+  
   has_many :cart_items,
     primary_key: :id,
     foreign_key: :shopper_id,
@@ -24,7 +29,12 @@ class User < ApplicationRecord
   has_many :cart_products,
     through: :cart_items,
     source: :product
-
+  
+  has_many :reviews,
+    primary_key: :id,
+    foreign_key: :reviewer_id,
+    class_name: :Review,
+    dependent: :destroy
 
   def self.findbycredentials(email, password)
     user = User.find_by(email: email)

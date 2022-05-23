@@ -37,9 +37,6 @@ class Api::CartItemsController < ApplicationController
   end
 
   def destroy
-    # cart_item = CartItem.find_by(id: params[:id])
-    # cart_item.destroy
-    # debugger 
     cart_items = CartItem.where(shopper_id: params[:id])
     cart_items.each do |item|
       item.destroy

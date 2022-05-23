@@ -8,7 +8,6 @@ const categoriesReducer = (oldState={}, action)=>{
     case RECEIVE_CATEGORIES:
       return action.categories;
     // case RECEIVE_CATEGORY_PRODUCTS:
-    //   debugger
     //   newState[action.category.id] = action.category
     //   return newState
     default:

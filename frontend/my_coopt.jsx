@@ -2,17 +2,10 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import configureStore from './store/store';
 import Root from './components/root'
-import {login} from './actions/session_actions'
-import { deleteCartItems, fetchAllCartItems } from './actions/cart_actions';
-
-
+import { createReview, updateReview, deleteReviews, fetchAllReviews, fetchReview } from './actions/review_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
   const root = document.getElementById("root");
-  // const store = configureStore();
-  // ReactDom.render(<h1>My Co-opt isnt yet Co-opting.</h1>, root)
-  // window.login = login;
-  
   let store;
   if (window.currentUser) {
     const preloadedState = {
@@ -28,8 +21,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
   window.store = store;
   window.getState = store.getState;
-  window.dispatch = store.dispatch
-  window.fetchAllCartItems = fetchAllCartItems;
-  window.deleteCartItems = deleteCartItems;
+  window.dispatch = store.dispatch;
+  window.fetchAllReviews = fetchAllReviews;
+  window.createReview = createReview;
+  window.updateReview = updateReview;
+  window.deleteReviews = deleteReviews;
+  window.fetchReview = fetchReview;
   ReactDom.render(<Root store={store} />, root)
 })
