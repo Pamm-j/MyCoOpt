@@ -3,14 +3,9 @@ import { AiFillQuestionCircle} from 'react-icons/ai';
 
 class OrderSuccess extends React.Component{
   render(){
+    console.log(this.props.location.state)
     const orderNum = Math.floor(Math.random() * 10000000)
-    // let temp = this.props
-    let temp = {
-      first_name:"Bobby",
-      tax:27,
-      total:1000,
-      card_end:"5555",
-    }
+    let temp = this.props.location.state
     return (
     <div className="order-sum-webpage">
       <div className="order-summary-container"> 

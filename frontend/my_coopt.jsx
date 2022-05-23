@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 import configureStore from './store/store';
 import Root from './components/root'
 import {login} from './actions/session_actions'
-import { fetchAllCartItems, fetchCartItem, updateCartItem, deleteCartItem, createCartItem } from './actions/cart_actions';
+import { deleteCartItems, fetchAllCartItems } from './actions/cart_actions';
 
 
 
@@ -30,10 +30,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.getState = store.getState;
   window.dispatch = store.dispatch
   window.fetchAllCartItems = fetchAllCartItems;
-  window.fetchCartItem = fetchCartItem;
-  window.updateCartItem = updateCartItem;
-  window.fetchAllCartItems = fetchAllCartItems;
-  window.deleteCartItem = deleteCartItem;
-  window.createCartItem = createCartItem;
+  window.deleteCartItems = deleteCartItems;
   ReactDom.render(<Root store={store} />, root)
 })

@@ -4,7 +4,8 @@ import { AiFillQuestionCircle} from 'react-icons/ai';
 import { FaInfoCircle, FaCcPaypal} from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
 import { SiVisa } from 'react-icons/si';
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
+// import {Link} from ''
 
 
 class CheckoutIndex extends React.Component{
@@ -25,11 +26,21 @@ class CheckoutIndex extends React.Component{
   //   }
   // }
 
-  handleSubmit(){
-    this.props.cartItems.map((item)=>this.props.deleteCartItem(item.id))
-    // .then(()=>this.props.history.push('/order_confirmation'))
+  handleSubmit=(tax, total)=>()=>{
+    const split_name = this.props.shopper.full_name.split(' ')
+    this.props.deleteCartItems(this.props.shopperId)
+    // .then(()=>this.props.history.push({
+    //   pathname:'/order_success',
+    //   state: {
+    //     first_name: split_name[0],
+    //     tax: tax,
+    //     total: total,
+    //     card_end: this.props.shopper.card_end
+    //   }
+    // }))
   }
   render(){
+    const split_name = this.props.shopper.full_name.split(' ')
     const items = this.props.cartItems
     const shopper = this.props.shopper
     const shipped_items = items.filter((item) =>( item.delivery_type === "delivery")).length;
@@ -127,7 +138,14 @@ class CheckoutIndex extends React.Component{
                 </div>
               </div>
               <div className="guarantee-checkout">52% satisfaction guaranteed <FaInfoCircle/> </div>
-              <button onClick={this.handleSubmit} className="btn brn">Submit order</button>
+              <Link className="btn brn" onClick={this.handleSubmit(tax, total)} to={{ pathname: "/order_success", state: {
+                          first_name: split_name[0],
+                          tax: tax,
+                          total: total,
+                          card_end: this.props.shopper.card_end
+                        }
+              }}>Submit Order</Link>
+              {/* <button onClick={this.handleSubmit(tax, total)} className="btn brn">Submit order</button> */}
             </div>
           </div>
         </div>

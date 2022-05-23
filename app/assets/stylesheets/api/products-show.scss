@@ -94,9 +94,9 @@
   margin: 10px 0;
 }
 
-// .active {
-//   border: 1px solid black;
-// }
+.active {
+  border: 1px solid black!important;
+}
 
 .show-details {
   border-top: 1px solid rgba(229,224,216,255);
@@ -122,4 +122,22 @@
 
 .bottom-of-page {
   margin: 24px;
+}
+
+.arrow{
+  font-size: 32px;
+  margin: 40px;
+  cursor: pointer;
+  color: #dcd6cb;
+}
+
+
+.arrow-container {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-arrow-container{
+  display: flex;
+  flex-direction: column;
 }

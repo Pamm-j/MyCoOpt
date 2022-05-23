@@ -2,6 +2,7 @@ import React from "react";
 import Colors from "../../util/colors";
 import {BsPlusCircle, BsDashCircle} from 'react-icons/bs'
 import { GiSwordsEmblem } from 'react-icons/gi';
+import { FiArrowRightCircle, FiArrowLeftCircle } from 'react-icons/fi';
 import { Link } from "react-router-dom";
 
 
@@ -22,6 +23,14 @@ class ProductShow extends React.Component{
   componentDidMount(){
     this.props.fetchProduct( this.props.match.params.id )
   }
+  toggleImage(){
+    let num = this.state.image_view
+    console.log(num)
+    num = num + 1
+    num = num % this.props.product.photoUrls.length
+    console.log(num)
+    this.setState({image_view:num})
+  }
 
   increment = (num)=> () => {
     let newQuantity = JSON.parse(this.state.quantity) + num
@@ -33,12 +42,13 @@ class ProductShow extends React.Component{
 
   handleSubmit = (e)=>{
     e.preventDefault();
-    // this.setState({product_id: this.props.product.id})
-    
-    if (!Object.values(this.state).includes("")) {
-      this.props.createCartItem(this.state)
-      // .then(()=>this.props.history.push('/'))
-    }
+    this.setState({product_id: this.props.product.id}, (()=> {
+
+      if (!Object.values(this.state).includes("")) {
+        this.props.createCartItem(this.state)
+        .then(()=>this.props.history.push(`/category/${this.props.product.category_id}`))
+      }}
+    ))
   }
 
   render(){
@@ -48,10 +58,20 @@ class ProductShow extends React.Component{
       } else return (
         <div className="product-show-page">
           <div className="show-top-boxes">
-            <div className="show-photo"><img src={product.photoUrls[0]} /></div>
+            <div className="photo-arrow-container">
+
+              <div className="show-photo"><img 
+              src={product.photoUrls[this.state.image_view]} 
+              />
+              </div>
+              <div className="arrow-container">
+                <FiArrowLeftCircle className="arrow" onClick={()=>this.toggleImage()}/>
+                <FiArrowRightCircle className="arrow" onClick={()=>this.toggleImage()}/>
+              </div>
+            </div>
             <div className="purchase-details">
               <h3 className="lnk">{product.brand}</h3>
-              <h1> {product.name}</h1>
+              <h1> {product.name}</h1> 
                 <div className="flex-line rating-stars">
                   <div>
                     <span>★★★★★ |</span>
@@ -74,8 +94,8 @@ class ProductShow extends React.Component{
 
               <ul className="show-list" >
                   {product.sizes.map((size)=>(<button 
-                  // className={isactive ? "round-box  color-btn sizes active" : "round-box  color-btn sizes"}
-                  className="round-box  color-btn sizes"
+                  className={(this.state.size === size) ? "round-box  color-btn sizes active" : "round-box  color-btn sizes"}
+                  // className="round-box  color-btn sizes"
                   onClick={this.handleClick("size", size)}
                   key={"size" + size}>{size}</button> ))}
               </ul>

@@ -83,6 +83,52 @@ pc3 = Product.create(
 pc3.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/dap-2.jpeg'), filename:'dap-2.jpeg')
 pc3.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/dap-1.jpeg'), filename:'dap-1.jpeg')
 
+pc4 = Product.create(
+  name:'Tempt 0',
+  category_id: c1.id,
+  description: "With a lightweight ALUXX-Grade aluminum frame designed specifically for women, Tempt can guide you along dirt terrain with speed, efficiency and control. A front suspension fork and powerful disc brakes offer added confidence and control. This hardtail has a low standover height to give you confidence maneuvering around dirt trails and is offered in 27.5 or 29-inch wheels for optimum fit and efficiency. Perfect for a functional around-town ride, to try as your first off-road racing bike, or for venturing out onto the trails for the first time, allow Tempt to lead you to new adventures.",
+  price:1380.00,
+  colors: ["OceanStorm"],
+  sizes: ['XS', 'S', 'M', 'L'],
+  brand: 'Liv'
+)
+
+pc4.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t0-1.jpeg'), filename:'t0-1.jpeg')
+pc4.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t0-2.jpeg'), filename:'t0-2.jpeg')
+
+pc5 = Product.create(
+  name:'Tempt 1',
+  category_id: c1.id,
+  description: "With a lightweight ALUXX-Grade aluminum frame designed specifically for women, Tempt can guide you along dirt terrain with speed, efficiency and control. A front suspension fork and powerful disc brakes offer added confidence and control. This hardtail has a low standover height to give you confidence maneuvering around dirt trails and is offered in 27.5 or 29-inch wheels for optimum fit and efficiency. Perfect for a functional around-town ride, to try as your first off-road racing bike, or for venturing out onto the trails for the first time, allow Tempt to lead you to new adventures.",
+  price:980,
+  colors: ["Rosewood"],
+  sizes: ['XS', 'S', 'M', 'L', "XL"],
+  brand: 'Liv'
+)
+
+pc5.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t1-1.jpeg'), filename:'t1-1.jpeg')
+pc5.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t1-2.jpeg'), filename:'t1-2.jpeg')
+
+pc6 = Product.create(
+  name:'Tempt 2',
+  category_id: c1.id,
+  description: "With a lightweight ALUXX-Grade aluminum frame designed specifically for women, Tempt can guide you along dirt terrain with speed, efficiency and control. A front suspension fork and powerful disc brakes offer added confidence and control. This hardtail has a low standover height to give you confidence maneuvering around dirt trails and is offered in 27.5 or 29-inch wheels for optimum fit and efficiency. Perfect for a functional around-town ride, to try as your first off-road racing bike, or for venturing out onto the trails for the first time, allow Tempt to lead you to new adventures.",
+  price:735,
+  colors: ["Eclipse", "DesertSage"],
+  sizes: ['XS', 'S', 'M', 'L'],
+  brand: 'Liv'
+)
+
+pc6.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t2-1.jpeg'), filename:'t2-1.jpeg')
+pc6.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t2-2.jpeg'), filename:'t2-2.jpeg')
+
+
+
+
+
+
+
+
 
 ci1 = CartItem.create!(
   quantity: 1,

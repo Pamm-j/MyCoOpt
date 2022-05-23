@@ -40,7 +40,7 @@ class CartIndex extends React.Component{
               {items.map((item)=> (<CartIndexItem 
                     key={this.getKey()} 
                     item={item}
-                    deleteCartItem={this.props.deleteCartItem}
+                    deleteCartItems={this.props.deleteCartItems}
                     updateCartItem={this.props.updateCartItem}
                     fetchAllCartItems={this.props.fetchAllCartItems}
                     shopperId={this.props.shopperId}

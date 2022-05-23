@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2022_05_21_221058) do
     t.datetime "updated_at", null: false
     t.text "colors", default: [], array: true
     t.text "sizes", default: ["One Size"], array: true
-    t.string "brand", default: "NA", null: false
+    t.string "brand", default: "NA"
     t.index ["name"], name: "index_products_on_name", unique: true
   end
 

@@ -21,6 +21,7 @@ class CartIndexItem extends React.Component {
     let newQuantity = JSON.parse(this.props.item.quantity) + num
     if (newQuantity < 1) newQuantity = 0
     this.props.updateCartItem({id:this.props.item.cart_item_id, quantity:newQuantity})
+      // .then(this.props.fetchAllCartItems(this.props.shopperId))
   } 
   // handleChange = (type)=>(e)=> {
   //   let newQuantity = JSON.parse(this.props.item.quantity) + num
@@ -51,8 +52,6 @@ class CartIndexItem extends React.Component {
 
   render(){
     let item = this.props.item
-    console.log(this.props.item)
-
     return(
       <div className="cart-index-item">
         <div className="cart-index-photo"><img src={item.photoUrls[0]} /></div>
