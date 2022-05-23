@@ -13,7 +13,6 @@ import {CartIndexContainer, CheckoutIndexContainer} from "./cart/cart_index_cont
 import OrderSuccess from "./cart/order_success";
 
 const App = () => (
-  
   <div >
     <NavBarContainer/>
     <div >
