@@ -58,7 +58,7 @@
     font-family: GraphikLCGSemibold,"Helvetica Neue",sans-serif;
     color: rgba(12, 11, 8, 0.75);
   }
-  :nth-child(2) {
+  :nth-child(2) { 
     font-style: normal;
     font-size: 14px;
     line-height: 18px;
@@ -111,4 +111,13 @@
   display: flex;
   max-width: 1232px;
   margin: auto;
+}
+
+.color-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #dcd6cb;
+  margin: 4px;
+  background-color: #fff;
+  padding: 0;
 }

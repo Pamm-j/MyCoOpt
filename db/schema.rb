@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_20_003418) do
+ActiveRecord::Schema.define(version: 2022_05_21_221058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2022_05_20_003418) do
     t.datetime "updated_at", null: false
     t.text "colors", default: [], array: true
     t.text "sizes", default: ["One Size"], array: true
-    t.string "brand", default: "NA"
+    t.string "brand", default: "NA", null: false
     t.index ["name"], name: "index_products_on_name", unique: true
   end
 
@@ -74,6 +74,10 @@ ActiveRecord::Schema.define(version: 2022_05_20_003418) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address_1", default: ""
+    t.string "address_2", default: ""
+    t.integer "card_end", default: 1111
+    t.string "card_exp", default: "01/12"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end

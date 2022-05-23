@@ -10,7 +10,7 @@ class Api::CartItemsController < ApplicationController
   end
 
   def index
-    @cart_items = CartItem.all
+    @cart_items = CartItem.where(shopper_id: params[:shopper_id])
     render :index
   end
   
@@ -24,9 +24,12 @@ class Api::CartItemsController < ApplicationController
   end
   
   def update
-    @cart_item = CartItem.find_by(id: params[:id])
+    @cart_item = CartItem.find_by(id: params[:cartItem][:id])
     if @cart_item
-      @cart_item.update(:quantity => params[:quantity])
+      @cart_item.update(:quantity => params[:cartItem][:quantity])
+      @cart_item.update(:color => params[:cartItem][:color])
+      @cart_item.update(:size => params[:cartItem][:size])
+      @cart_item.update(:delivery_type => params[:cartItem][:delivery_type])
       render :show
     else
       render json: ['cart_item not updated'], status: 404
@@ -36,12 +39,11 @@ class Api::CartItemsController < ApplicationController
   def destroy
     cart_item = CartItem.find_by(id: params[:id])
     cart_item.destroy
-    render :show
   end
 
   private
-  def cart_item_params(params)
-    params.require(:cart_item).permit(:quantity, :product_id, :shopper_id, :size, :color, :delivery_type)
+  def cart_item_params
+    params.require(:cartItem).permit(:quantity, :product_id, :shopper_id, :size, :color, :delivery_type)
   end
 end
  

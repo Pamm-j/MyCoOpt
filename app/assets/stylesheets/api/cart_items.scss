@@ -1,3 +1,140 @@
 // Place all the styles related to the api::CartItems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.cart-outer-container  {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0 0;
+}
+
+.cart-title {
+  h1 {
+    font-size: 26px;
+    font-family: Foustina ,Georgia,serif;
+    font-weight: 400;
+    margin: 0 0 16px;
+    padding: 24px 0 0;
+
+    span {
+      font-size: 16px;
+      color: rgba(66,59,47,.75);
+      font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+      letter-spacing: -0.16px;
+      line-height: 22px;
+      margin-left: 8px;
+    }
+  }
+}
+
+.cart-inner-container  {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+}
+
+.cart-left {
+  display: flex;
+  flex-direction: column;
+  width: 771px;
+  h1 {
+    font-size: 26px;
+    font-family: Foustina ,Georgia,serif;
+    font-weight: 400;
+    margin: 0 0 16px;
+    padding: 24px 0 0;
+  }
+}
+
+.recently-viewed {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  div {
+    width: 300px;
+    height: 300px;
+  }
+}
+.cart-item-grid {
+  width: 100%;
+}
+
+.cart-right {
+  display: flex;
+  flex-direction: column;
+  width: 365px;
+}
+
+.message {
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  span {
+    font-family: GraphikLCGSemibold,Helvetica Neue,sans-serif;
+  }
+  p {
+    width: 80%;
+  }
+}
+
+.advert {
+  width: 100%;
+  height: 200px;
+  border: 1px solid purple;
+}
+
+.order-summary-grid {
+  padding: 16px 0;
+  border: 0.1rem solid #fafafa;
+  border-radius: 0 0 4px 4px;
+}
+
+.sword {
+  font-size: 204px;
+  height: 24px;
+  width: 24px;
+  padding: 8px;
+}
+
+.round-box {
+  border: 1px solid rgba(229,224,216,255);
+  border-radius: 4px;
+  box-shadow: 0px 2px rgba(246,245,242,255);
+}
+
+
+.center {
+  text-align: center;
+}
+
+
+.cart-right-subheading {
+  font-family: Graphik web regular,Helvetica Neue,sans-serif;
+  height: 26px;
+  padding: 8px 16px;
+  background: #f9f8f6;
+  border-radius: 4px 4px 0 0;
+  font-size: 16px;
+}
+
+.cart-right-summary {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  padding-left: 16px;
+  line-height: 25px;
+  h2 {
+    font-family: GraphikLCGSemibold,Helvetica Neue,sans-serif;
+  }
+  h3 {
+    font-family: Graphik web regular,Helvetica Neue,sans-serif;
+  }
+}
+
+.order-summary-grid {
+  padding-top: 16px;
+}
+

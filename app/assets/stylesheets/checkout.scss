@@ -1,0 +1,124 @@
+
+.checkout-index {
+  color: #0C0B08BF;
+  padding: 24px 16px 16px;
+  text-align: center;
+  p {
+    font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+    padding: 0 0 30px;
+    font-size: 16px;
+  }
+}
+
+.centered-title {
+  font-family: Foustina ,Georgia,serif;
+  font-weight: 500;
+  font-size: 40px;
+  padding:  0 0 32px;
+  text-align: center;
+  margin: 30px 0 0;
+}
+
+.summary-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+}
+.in-line-space-between {
+  display: flex;
+  justify-content: space-between;
+  width: 510px;
+}
+
+.checkout-left {
+  width: 510px;
+  height: autop;
+  // border: 1px solid purple;
+  position:relative;
+  font-size: 16px;
+  letter-spacing: .1px;
+  line-height: 20px;
+  h2 {
+  font-family: GraphikLCGSemibold,"Helvetica Neue",sans-serif;
+  line-height: 22px;
+  margin: 12px 0;
+  border-top: 1px solid rgba(229,224,216,255);
+  padding-top: 16px;
+  width: 300px;
+  }
+  a {
+    line-height: 22px;
+    margin: 12px 0;
+    border-top: 1px solid rgba(229,224,216,255);
+    padding-top: 16px;
+    text-decoration: none;
+    font-size: 14px;
+    width: 80%;
+    text-align: right;
+  }
+  h3 {
+    line-height: 20px;
+  }
+  p {
+    font-size: 14px;
+  }
+  // overflow-y:scroll;
+}
+  
+.checkout-right {
+  // position:relative;
+  border: 1px solid magenta;
+  width: 365px;
+  height: 400px;
+}
+
+.lonely {
+  margin: 12px 0;
+}
+.close {
+  margin: 0;
+}
+
+.security-code {
+  width: 250px;
+}
+
+.payment-details-box {
+  padding-top: 16px;
+}
+
+.visa {
+  width: 40px;
+  font-size: 30px;
+  color: 	#1A1F71;
+  margin: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(229,224,216,255);
+  div {
+    line-height: 20px;
+  }
+}
+.graphik-bold {
+  font-family: GraphikLCGSemibold,"Helvetica Neue",sans-serif;
+}
+.graphik-medium {
+  font-family: Graphik LC Medium,"Helvetica Neue",sans-serif;
+}
+.size-14 {
+  font-size: 14px;
+}
+
+.margin-16 {
+  margin: 16px;
+}
+.padding-16 {
+  padding: 16px;
+}
+#button-box {
+  margin-top: 16px;
+}
+
+.margin-left {
+  margin-left: 4px;
+}

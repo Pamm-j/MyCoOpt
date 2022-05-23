@@ -9,7 +9,7 @@ class CategoryIndex extends React.Component{
     return (
       <ul className="categories-container">
         {this.props.categories.map((category)=> <li key={category.id+"category"}>
-          <Link className="category-link" to={`/category/${category.id}`} >{category.title}
+          <Link className="category-link" to={`/category/${category.id}`}>{category.title}
           </Link>
           </li>
           )}

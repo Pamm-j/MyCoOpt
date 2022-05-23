@@ -20,7 +20,7 @@ class CartItem < ApplicationRecord
     foreign_key: :shopper_id,
     class_name: :User
 
-  belongs_to :products,
+  belongs_to :product,
     primary_key: :id,
     foreign_key: :product_id,
     class_name: :Product
