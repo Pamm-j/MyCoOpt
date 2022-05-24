@@ -12,7 +12,7 @@ const receiveReview = (review) => ({
   type: RECEIVE_REVIEW,
   review
 })
-const removeReviews = (reviewId) => ({
+const removeReview = (reviewId) => ({
   type: REMOVE_REVIEW,
   reviewId
 })
@@ -29,5 +29,5 @@ export const createReview = (review) => dispatch => ReviewsAPIUtil.createReview(
 export const updateReview = (review) => dispatch => ReviewsAPIUtil.updateReview(review)
   .then((review)=>(dispatch(receiveReview(review))))
 
-export const deleteReviews = (reviewId) => dispatch => ReviewsAPIUtil.deleteReviews(reviewId)
-  .then(()=>(dispatch(removeReviews(reviewId))))
+export const deleteReview = (reviewId) => dispatch => ReviewsAPIUtil.deleteReview(reviewId)
+  .then(()=>(dispatch(removeReview(reviewId))))

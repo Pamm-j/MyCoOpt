@@ -1,5 +1,5 @@
 const Colors = {
-  Rosewood:"#393238",
+  Rosewood:"#43302E",
   DarkGreen:"#013220",
   OceanBlue:"#93E9BE",
   DarkEclipse:"#000000",
@@ -11,6 +11,7 @@ const Colors = {
   FanaticTeal: "#008080",
   DarkBlue: "#00008B",
   Carbon: "#625D5D",
+  Mint: "#C2E5D3",
   none: "",
 
 }

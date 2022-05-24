@@ -3,7 +3,6 @@ import { AiFillQuestionCircle} from 'react-icons/ai';
 
 class OrderSuccess extends React.Component{
   render(){
-    console.log(this.props.location.state)
     const orderNum = Math.floor(Math.random() * 10000000)
     let temp = this.props.location.state
     return (

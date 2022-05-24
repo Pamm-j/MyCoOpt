@@ -56,7 +56,7 @@ pc1 = Product.create(
   category_id: c1.id,
   description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some “prepared-for-anything” peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
   price:2700.00,
-  colors: ["Rosewood", "DarkEclipse"],
+  colors: ["Rosewood", "Mint"],
   sizes: ['XS', 'S', 'M', 'L'],
   brand: 'Liv'
 )
@@ -99,8 +99,8 @@ pc4 = Product.create(
   brand: 'Liv'
 )
 
-pc4.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t0-1.jpeg'), filename:'t0-1.jpeg')
-pc4.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t0-2.jpeg'), filename:'t0-2.jpeg')
+pc4.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t0-1.jpeg'), filename:'t0-2.jpeg')
+pc4.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t0-2.jpeg'), filename:'t0-1.jpeg')
 
 pc5 = Product.create(
   name:'Tempt 1',
@@ -170,6 +170,7 @@ ci1 = CartItem.create!(
 r1 = Review.create(reviewer_id:u0.id, product_id:pc1.id, title:"It takes me places", body:"would buy again", rating:"5")
 r1 = Review.create(reviewer_id:u1.id, product_id:pc1.id, title:"best form of travel for the appocolapys", body:"Me and Peaches both had one", rating:"5")
 r1 = Review.create(reviewer_id:u3.id, product_id:pc1.id, title:"useless in space", body:"Was given it as a joke, haha guys. do not buy, they do not take returns. 52% satisfaction guarantee seems like a stretch", rating:"1")
+r={reviewer_id:3, product_id:1, title:"useless in space", body:"doesnt make soy grow.", rating:"1"}
 
 
 

@@ -1,0 +1,23 @@
+.review-item-container {
+  color: #292929;
+  display: flex;
+  width: 100%;
+  border-top: 1px solid rgba(229,224,216,255);
+  margin-top: 24px;
+  margin-bottom: 36px;
+  .left-column {
+    font-size: 16px;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    width: 280px;
+    padding: 8px 0;
+    .reviewer-name {
+      padding: 8px 0;
+      font-weight: 600;
+    }
+  }
+  .right-column {
+    font-size: 16px;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    width: 280px;
+  }
+}

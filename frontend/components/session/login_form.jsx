@@ -9,12 +9,14 @@ class LoginForm extends React.Component {
 
   handleSubmit = (type) => (e) => { 
     e.preventDefault();
+    let newPath;
+    (this.props.location.state) ? newPath = this.props.location.state.oldPath : newPath = '/'
     if (type === "login_user"){ 
       this.props.login(this.state)
-        .then(()=>this.props.history.push('/'))
+        .then(()=>this.props.history.push(newPath))
     } else if (type==="demo") {
       this.props.login({email:'bobby@mars.mc', password:'123456'})
-        .then(()=>this.props.history.push('/'))
+        .then(()=>this.props.history.push(newPath))
     }
   }
 

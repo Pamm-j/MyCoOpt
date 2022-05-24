@@ -4,6 +4,8 @@ import {BsPlusCircle, BsDashCircle} from 'react-icons/bs'
 import { GiSwordsEmblem } from 'react-icons/gi';
 import { FiArrowRightCircle, FiArrowLeftCircle } from 'react-icons/fi';
 import { Link } from "react-router-dom";
+import Constants from "../../util/constants";
+import ReviewItem from "./review_item";
 
 
 class ProductShow extends React.Component{
@@ -15,20 +17,21 @@ class ProductShow extends React.Component{
   componentDidUpdate(prevProps){
     if( prevProps.product && this.props.product.id !== prevProps.product.id ){
       this.props.fetchProduct( this.props.match.params.id )
+      this.props.fetchAllReviews( this.props.match.params.id )
     } 
     if (!prevProps) {
       this.props.fetchProduct( this.props.match.params.id )
+      this.props.fetchAllReviews( this.props.match.params.id )
     }
   }
   componentDidMount(){
     this.props.fetchProduct( this.props.match.params.id )
+    this.props.fetchAllReviews( this.props.match.params.id )
   }
   toggleImage(){
     let num = this.state.image_view
-    console.log(num)
     num = num + 1
     num = num % this.props.product.photoUrls.length
-    console.log(num)
     this.setState({image_view:num})
   }
 
@@ -52,6 +55,7 @@ class ProductShow extends React.Component{
   }
 
   render(){
+    console.log(this.props)
     const product = this.props.product
     if (!product){
       return null 
@@ -77,14 +81,14 @@ class ProductShow extends React.Component{
                     <span>★★★★★ |</span>
                     <span> (4,592)</span>
                   </div>
-                  <span> Item #{product.id+56879}</span>
+                  <span> Item #{product.id*Constants.item_key}</span>
                 </div>
               <div id="price">${parseFloat(product.price).toFixed(2)}</div>
               <input type="text" className="invisible-input" value={`Color: ${this.state.color}`} readOnly placeholder="Select a Color"/>
               <ul className="show-list" >
                 {product.colors.map((color)=>(
                 <button
-                  className="round-box  color-btn" 
+                  className={(this.state.color === color) ? "round-box  color-btn sizes active" : "round-box  color-btn sizes"}
                   key={"color" + color}
                   onClick={this.handleClick("color", color)}
                   style={{backgroundColor: `${Colors[color]}`}}></button> 
@@ -135,13 +139,30 @@ class ProductShow extends React.Component{
                   <label id={product.id+"delivery"}>Ship to Address</label>
                 </div>
               </div>
-                <div className="login-msg"> <GiSwordsEmblem/> To purchase this item, <Link className="lnk" to="/login">sign in</Link> or <Link className="lnk" to="/login">get Co-opted</Link>.
+                <div className="login-msg"> <GiSwordsEmblem/> To purchase this item, <Link 
+                  className="lnk" 
+                  to={{ pathname: "/login", state: {oldPath:`/product/${product.id}`}}}
+                >sign in</Link> or <Link 
+                  className="lnk" 
+                  to={{ pathname: "/signup", state: {oldPath:`/product/${product.id}`}}}
+                  >get Co-opted</Link>.
                 </div>
                 <button className='grn btn bottom-of-page' onClick={this.handleSubmit}>Add to Cart ${parseFloat(product.price*this.state.quantity).toFixed(2)}</button>
             </div>
           </div>
           <div className="show-details">{product.description}</div>
-          <div className="Reviews"></div>
+          <div className="reviews-container">
+            <div className="title-button-container">
+              <div className="fancy-small-title">Reviews</div>
+              <button className="grn btn">Write a review</button>
+            </div>
+            <div className="summary-box"></div>
+            {this.props.reviews.map((review)=> <ReviewItem 
+                      review={review} 
+                      createReview={this.props.createReview}
+                      updateReview={this.props.updateReview}
+                      />)}
+          </div>
 
 
         </div>
