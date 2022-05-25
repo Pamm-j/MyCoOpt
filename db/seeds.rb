@@ -56,7 +56,7 @@ end
 pc1 = Product.create(
   name:'Devote Advanced 2',
   category_id: c1.id,
-  description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some "prepared-for-anything" peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
+  description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some prepared-for-anything peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
   price:2700.00,
   colors: ["Rosewood", "Mint"],
   sizes: ['XS', 'S', 'M', 'L'],
@@ -68,7 +68,7 @@ pc1.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bi
 pc2 = Product.create(
   name:'Devote Advanced 1',
   category_id: c1.id,
-  description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some "prepared-for-anything" peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
+  description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some prepared-for-anything peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
   price:3550.00,
   colors: ["DarkGreen", "OceanBlue"],
   sizes: ['XS', 'S', 'M', 'L'],
@@ -81,7 +81,7 @@ pc2.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bi
 pc3 = Product.create(
   name:'Devote Advanced Pro',
   category_id: c1.id,
-  description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some "prepared-for-anything" peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
+  description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some prepared-for-anything peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
   price:6400.00,
   colors: ["Eggplant", "Mushroom"],
   sizes: ['XS', 'S', 'M', 'L'],
@@ -152,21 +152,19 @@ pc8= Product.create(
 pc8.photos.attach(make_photo_url(bikes_url,"ppro1-1.jpg"))
 pc8.photos.attach(make_photo_url(bikes_url,"ppro1-2.jpg"))
 
-
- 
 pc9= Product.create(
   brand: 'Giro',
-   Name: 'Giro Fixture MIPS Bike Helmet ',
-   category_id: c3.id,
-   description: "The dirt is calling. Giro Fixture MIPS bike helmet brings confident mountain bike style and breezy ventilation together in a compact design made for nearly any ride, from fire roads to singletrack.",
-   Price: 70,
-   colors: ["MatteBlack", "MatteGrey", "MatteTrimBlue", "MatteWarmBlack", "MatteTrimRed" ],
-   sizes: ['onesize'],
-   Weight: 0.6, 
-   best_uses: ['bicycling']
+  name: 'Giro Fixture MIPS Bike Helmet ',
+  category_id: c1.id,
+  description: "The dirt is calling. Giro Fixture MIPS bike helmet brings confident mountain bike style and breezy ventilation together in a compact design made for nearly any ride, from fire roads to singletrack.",
+  price: 70,
+  colors: ["MatteBlack", "MatteGrey", "MatteTrimBlue", "MatteWarmBlack", "MatteTrimRed" ],
+  sizes: ['onesize'],
+  weight: 0.6, 
+  best_uses: ['bicycling']
  )
- IMG URL1:https://www.rei.com/media/d80c5e42-4c0d-4fb1-99ed-50a3c7e86172?size=784x588 
- IMG URL 2: https://www.rei.com/media/7af570a9-fbc4-407f-89fd-fa9813c536ed?size=784x588 
+#  IMG URL1:https://www.rei.com/media/d80c5e42-4c0d-4fb1-99ed-50a3c7e86172?size=784x588 
+#  IMG URL 2: https://www.rei.com/media/7af570a9-fbc4-407f-89fd-fa9813c536ed?size=784x588 
 
 ci1 = CartItem.create!(
   quantity: 1,
@@ -176,6 +174,7 @@ ci1 = CartItem.create!(
   color: 'DarkBlue',
   delivery_type: 'delivery'
 )
+
 ci1 = CartItem.create!(
   quantity: 1,
   product_id: pc1.id,
