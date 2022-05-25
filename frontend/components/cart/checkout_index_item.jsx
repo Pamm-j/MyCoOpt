@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {BsPlusCircle, BsDashCircle} from 'react-icons/bs'
+import Constants from "../../util/constants";
 
 class CheckoutIndexItem extends React.Component {
   aWeekAway(){
@@ -42,7 +43,7 @@ class CheckoutIndexItem extends React.Component {
               <div>#{item.name}</div>
               <div>Color: {item.color}</div>
               <div>Size: {item.size}</div>
-              <div>Item: {item.id*56879}</div>
+              <div>Item: {item.id*Constants.item_key}</div>
             </div>
           </div>
           <div className="outer-pair">

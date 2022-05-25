@@ -9,6 +9,10 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  address_1       :string           default("")
+#  address_2       :string           default("")
+#  card_end        :integer          default(1111)
+#  card_exp        :string           default("01/12")
 #
 require 'test_helper'
 

@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id          :bigint           not null, primary key
+#  reviewer_id :integer          not null
+#  product_id  :integer          not null
+#  title       :string           not null
+#  body        :text
+#  rating      :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  id: 1
+  reviewer_id: 1
+  product_id: 1
+  title: MyString
+  body: MyText
+  rating: 1
+
+two:
+  id: 1
+  reviewer_id: 1
+  product_id: 1
+  title: MyString
+  body: MyText
+  rating: 1

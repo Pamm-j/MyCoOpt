@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {BsPlusCircle, BsDashCircle} from 'react-icons/bs'
+import Constants from "../../util/constants";
 
 class CartIndexItem extends React.Component {
   constructor(props){
@@ -61,7 +62,7 @@ class CartIndexItem extends React.Component {
           <Link to={`/product/${item.id}`}>{item.name}</Link>
           <p>Color: {item.color}</p>
           <p>Size: {item.size}</p>
-          <p>Item: {item.id*56879}</p>
+          <p>Item: {item.id*Constants.item_key}</p>
           <button onClick={()=>this.props.deleteCartItem(item.cart_item_id)}>Remove</button>
         </div>
   

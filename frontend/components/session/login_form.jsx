@@ -9,12 +9,14 @@ class LoginForm extends React.Component {
 
   handleSubmit = (type) => (e) => { 
     e.preventDefault();
+    let newPath;
+    (this.props.location.state) ? newPath = this.props.location.state.oldPath : newPath = '/'
     if (type === "login_user"){ 
       this.props.login(this.state)
-        .then(()=>this.props.history.push('/'))
+        .then(()=>this.props.history.push(newPath))
     } else if (type==="demo") {
       this.props.login({email:'bobby@mars.mc', password:'123456'})
-        .then(()=>this.props.history.push('/'))
+        .then(()=>this.props.history.push(newPath))
     }
   }
 
@@ -50,7 +52,9 @@ class LoginForm extends React.Component {
                 />
               </label>
               <Link className="blue-link-small" to="/password-form">Forgot password?</Link>
-              <p className="terms-warning">By signing into your account, you agree to My Co-opt's <Link className="lnk" to="/termsandprivacy">Terms of Use</Link> and acknowledge you have read its <Link className="lnk" to="/termsandprivacy">Privacy Policy</Link>.</p>
+              <p className="terms-warning">By signing into your account, you agree to My Co-opt's <Link 
+                className="lnk" to="/termsandprivacy">Terms of Use</Link> and acknowledge you have read its <Link 
+                className="lnk" to="/termsandprivacy">Privacy Policy</Link>.</p>
               <div >
                 <input className='grn btn left' type="submit" value="Sign in" onClick={this.handleSubmit('login_user')}  />
                 <input className='grn btn' type="submit" value="Sign in demo" onClick={this.handleSubmit('demo')}  />

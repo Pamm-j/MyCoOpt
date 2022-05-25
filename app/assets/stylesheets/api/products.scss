@@ -58,15 +58,14 @@
     font-family: GraphikLCGSemibold,"Helvetica Neue",sans-serif;
     color: rgba(12, 11, 8, 0.75);
   }
-  :nth-child(2) { 
-    font-style: normal;
-    font-size: 14px;
-    line-height: 18px;
-    font-family: Graphik web regular,"Helvetica Neue",sans-serif;
-    color: rgba(12, 11, 8, 0.75);
-  }
 }
-
+.index-product-name {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+  color: rgba(12, 11, 8, 0.75);
+}
 .price {
   height: 18px;
   margin: 0 0 8px;
@@ -92,20 +91,6 @@
   margin: 4px;
 }
 
-@supports (-webkit-text-stroke: 1px black) {
-  .rating-stars :first-child {
-    -webkit-text-stroke: 1px #242c1e;
-    -webkit-text-fill-color: orange;
-  }
-}
-
-.rating-stars :nth-child(2) {
-  font-style: normal;
-  font-size: 12px;
-  line-height: 18px;
-  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
-  margin: 0 0 8px;
-}
 
 .product-show-containter {
   display: flex;
