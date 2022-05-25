@@ -1,3 +1,5 @@
+require 'open-uri'
+
 Review.destroy_all
 CartItem.destroy_all
 Product.destroy_all
@@ -43,16 +45,16 @@ c1 = Category.create(title:"Cycle", description:"From e-bikes to mountain bikes,
 c2 = Category.create(title:"Travel", description:"Every epic adventure starts with packing and planning. We've got everything you need to make that a joy and a breeze.")
 c3 = Category.create(title:"Hike", description:"From overlanding to day camping, the co-op can get you the right gear to get you out there in no time.")
 c4 = Category.create(title:"Camp", description:"From overlanding to day camping, the co-op can get you the right gear to get you out there in no time.")
-c1.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/two-bikes.jpg'), filename:'cycle-splash.jpg')
-c2.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/boat-bag.jpg'), filename:'travel-splash.jpg')
-c3.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/sleep-roraima.jpg'), filename:'hike-splash.jpg')
-c4.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/sleep-roraima.jpg'), filename:'hike-splash.jpg')
+c1.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/two-bikes.jpg'), filename:'two-bikes.jpg')
+c2.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/boat-bag.jpg'), filename:'boat-bag.jpg')
+c3.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/sleep-roraima.jpg'), filename:'sleep-roraima.jpg')
+c4.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/sleep-roraima.jpg'), filename:'sleep-roraima.jpg')
 
 bikes_url = "https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/"
 def make_photo_url(url_path, filename)
   {io: open(url_path+filename), filename:filename}
 end
-# pc means Product - Cycle
+
 pc1 = Product.create(
   name:'Devote Advanced 2',
   category_id: c1.id,
@@ -64,6 +66,21 @@ pc1 = Product.create(
 )
 pc1.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da2-1.jpeg'), filename:'da2-1.jpeg')
 pc1.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da2-2.webp'), filename:'da2-2.webp')
+# pcc0 =Product.create( {
+#     brand: 'Co-op Cycles',
+#     name: 'DRT 1.1 Bike',
+#     category_id: 1,
+#     description: 'Made for off-road adventures, the Co-op Cycles DRT 1.1 bike features a versatile 3 x 7 drivetrain and the solid stopping power of hydraulic disc brakes, giving new riders the right amount of control.',
+#     price: 599,
+#     colors: [ 'Ether', 'PirateBlack' ],
+#     sizes: [ 'XXS', 'XXL' ],
+#     weight: '',
+#     color_families: [ 'Blue', 'Black' ]
+#   } )
+#   # require 'open-uri'
+#   pcc0.photos.attach(io: open('https://www.rei.com/media/c8ce0c41-6b51-425c-8e36-2d9ddbeec7e2.jpg'), filename:'c8ce0c41-6b51-425c-8e36-2d9ddbeec7e2.jpg')
+#   pcc0.photos.attach(io: open('https://www.rei.com/media/024534a6-8025-412f-8d61-02a7623eba98.jpg'), filename:'024534a6-8025-412f-8d61-02a7623eba98.jpg')
+
 
 pc2 = Product.create(
   name:'Devote Advanced 1',
@@ -152,78 +169,98 @@ pc8= Product.create(
 pc8.photos.attach(make_photo_url(bikes_url,"ppro1-1.jpg"))
 pc8.photos.attach(make_photo_url(bikes_url,"ppro1-2.jpg"))
 
-pc9= Product.create(
-  brand: 'Giro',
-  name: 'Giro Fixture MIPS Bike Helmet ',
-  category_id: c1.id,
-  description: "The dirt is calling. Giro Fixture MIPS bike helmet brings confident mountain bike style and breezy ventilation together in a compact design made for nearly any ride, from fire roads to singletrack.",
-  price: 70,
-  colors: ["MatteBlack", "MatteGrey", "MatteTrimBlue", "MatteWarmBlack", "MatteTrimRed" ],
-  sizes: ['onesize'],
-  weight: 0.6, 
-  best_uses: ['bicycling']
- )
-#  IMG URL1:https://www.rei.com/media/d80c5e42-4c0d-4fb1-99ed-50a3c7e86172?size=784x588 
-#  IMG URL 2: https://www.rei.com/media/7af570a9-fbc4-407f-89fd-fa9813c536ed?size=784x588 
+# pc9= Product.create(
+#   brand: 'Giro',
+#   name: 'Giro Fixture MIPS Bike Helmet ',
+#   category_id: c1.id,
+#   description: "The dirt is calling. Giro Fixture MIPS bike helmet brings confident mountain bike style and breezy ventilation together in a compact design made for nearly any ride, from fire roads to singletrack.",
+#   price: 70,
+#   colors: ["MatteBlack", "MatteGrey", "MatteTrimBlue", "MatteWarmBlack", "MatteTrimRed" ],
+#   sizes: ['onesize'],
+#   weight: 0.6, 
+#   color_families: ['Black', 'Grey', 'Blue', 'Red']
+#  )
+# #  IMG URL1:https://www.rei.com/media/d80c5e42-4c0d-4fb1-99ed-50a3c7e86172?size=784x588 
+# #  IMG URL 2: https://www.rei.com/media/7af570a9-fbc4-407f-89fd-fa9813c536ed?size=784x588 
 
-ci1 = CartItem.create!(
-  quantity: 1,
-  product_id: pc8.id,
-  shopper_id: u0.id,
-  size: 'L',
-  color: 'DarkBlue',
-  delivery_type: 'delivery'
-)
+# ci1 = CartItem.create!(
+#   quantity: 1,
+#   product_id: pc8.id,
+#   shopper_id: u0.id,cl
+#   size: 'L',
+#   color: 'DarkBlue',
+#   delivery_type: 'delivery'
+# )
 
-ci1 = CartItem.create!(
-  quantity: 1,
-  product_id: pc1.id,
-  shopper_id: u0.id,
-  size: 'L',
-  color: 'Rosewood',
-  delivery_type: 'delivery'
-)
+# ci1 = CartItem.create!(
+#   quantity: 1,
+#   product_id: pc1.id,
+#   shopper_id: u0.id,
+#   size: 'L',
+#   color: 'Rosewood',
+#   delivery_type: 'delivery'
+# )
 
-r1 = Review.create(
-  reviewer_id:u0.id, 
-  product_id:pc1.id, 
-  title:"It takes me places", 
-  body:"would buy again", 
-  rating:"5"
-)
-r1 = Review.create(reviewer_id:u1.id, product_id:pc1.id, title:"best form of travel for the appocolapys", body:"Me and Peaches both had one", rating:"5")
-r1 = Review.create(reviewer_id:u3.id, product_id:pc1.id, title:"useless in space", body:"Was given it as a joke, haha guys. do not buy, they do not take returns. 52% satisfaction guarantee seems like a stretch", rating:"1")
-r={reviewer_id:3, product_id:1, title:"useless in space", body:"doesnt make soy grow.", rating:"1"}
+# r1 = Review.create(
+#   reviewer_id:u0.id, 
+#   product_id:pc1.id, 
+#   title:"It takes me places", 
+#   body:"would buy again", 
+#   rating:"5"
+# )
+# r1 = Review.create(reviewer_id:u1.id, product_id:pc1.id, title:"best form of travel for the appocolapys", body:"Me and Peaches both had one", rating:"5")
+# r1 = Review.create(reviewer_id:u3.id, product_id:pc1.id, title:"useless in space", body:"Was given it as a joke, haha guys. do not buy, they do not take returns. 52% satisfaction guarantee seems like a stretch", rating:"1")
+# r={reviewer_id:3, product_id:1, title:"useless in space", body:"doesnt make soy grow.", rating:"1"}
+
+# pcc0 =Product.create( {
+#   brand: 'Co-op Cycles',
+#   name: 'DRT 1.1 Bike',
+#   category_id: 1,
+#   description: 'Made for off-road adventures, the Co-op Cycles DRT 1.1 bike features a versatile 3 x 7 drivetrain and the solid stopping power of hydraulic disc brakes, giving new riders the right amount of control.',
+#   price: 599,
+#   colors: [ 'Ether', 'PirateBlack' ],
+#   sizes: [ 'XXS', 'XXL' ],
+#   weight: '',
+#   color_families: [ 'Blue', 'Black' ]
+# } )
+# require 'open-uri'
+# pcc0.photos.attach(io: open('https://www.rei.com/media/c8ce0c41-6b51-425c-8e36-2d9ddbeec7e2.jpg'), filename:'c8ce0c41-6b51-425c-8e36-2d9ddbeec7e2.jpg')
+# pcc0.photos.attach(io: open('https://www.rei.com/media/024534a6-8025-412f-8d61-02a7623eba98.jpg'), filename:'024534a6-8025-412f-8d61-02a7623eba98.jpg')
+
+
+# file1 = open('https://www.rei.com/media/c8ce0c41-6b51-425c-8e36-2d9ddbeec7e2.jpg')
+
+# demo_user.avatar.attach(io: file, filename: 'some_file.jpg')
 
 
 
-
+# pc4.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t0-1.jpeg'), filename:'t0-2.jpeg')
 
 # "Backpacking", "Casual", "Mountaineering", "Car Camping", "Day Hikes"
 
-ph1= Product.create(
-  brand: 'Vasque',
-   name:'Vasque Breeze LT NTX Mid Hiking Boots - Women',
-   category_id: c3.id,
-   description: "Light on your feet and on the planet, the women's Vasque Breeze LT NTX Mid hiking boots feature recycled mesh and recycled waterproof membranes that keep you moving in comfort on any terrain.",
-   price:180,
-   colors: ["BungeeCord"],
-   sizes: ['6', '7', '8','9', '10', '11'],
-   weight:1.5, 
-   best_uses: ['Backpacking',"Mountaineering" ]
- )
+# ph1= Product.create(
+#   brand: 'Vasque',
+#    name:'Vasque Breeze LT NTX Mid Hiking Boots - Women',
+#    category_id: c3.id,
+#    description: "Light on your feet and on the planet, the women's Vasque Breeze LT NTX Mid hiking boots feature recycled mesh and recycled waterproof membranes that keep you moving in comfort on any terrain.",
+#    price:180,
+#    colors: ["BungeeCord"],
+#    sizes: ['6', '7', '8','9', '10', '11'],
+#    weight:1.5, 
+#    best_uses: ['Backpacking',"Mountaineering" ]
+#  )
  
- ph2= Product.create(
-  brand: 'Gregory',
-   name: "Gregory Kalmia 60 Pack - Women's",
-   category_id: c3.id,
-   description: "Go the distance on the trail while staying comfortable and organized. The women's Gregory Kalmia 60 pack elevates your backpacking experience with the customized fit and support to keep on trekking.",
-   price:299.95,
-   colors: ["BordeauxRed","EquinoxGrey"],
-   sizes: ['xs/s', 's/m'],
-   weight:4.5, 
-   best_uses: ['Backpacking',"Mountaineering" ]
- )
+#  ph2= Product.create(
+#   brand: 'Gregory',
+#    name: "Gregory Kalmia 60 Pack - Women's",
+#    category_id: c3.id,
+#    description: "Go the distance on the trail while staying comfortable and organized. The women's Gregory Kalmia 60 pack elevates your backpacking experience with the customized fit and support to keep on trekking.",
+#    price:299.95,
+#    colors: ["BordeauxRed","EquinoxGrey"],
+#    sizes: ['xs/s', 's/m'],
+#    weight:4.5, 
+#    best_uses: ['Backpacking',"Mountaineering" ]
+#  )
  
  
 

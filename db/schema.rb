@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_24_181539) do
+ActiveRecord::Schema.define(version: 2022_05_25_204105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2022_05_24_181539) do
     t.text "sizes", default: ["One Size"], array: true
     t.string "brand", default: "NA", null: false
     t.float "weight"
-    t.text "best_uses", default: [], array: true
+    t.text "color_families", default: [], array: true
     t.index ["name"], name: "index_products_on_name", unique: true
   end
 

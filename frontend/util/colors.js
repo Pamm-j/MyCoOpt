@@ -13,7 +13,7 @@ const Colors = {
   Carbon: "#625D5D",
   Mint: "#C2E5D3",
   none: "",
-
+  Ether: '#949AA7', PirateBlack: '#585452' 
 }
 
 export default Colors;
