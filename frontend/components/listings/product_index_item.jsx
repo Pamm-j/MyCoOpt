@@ -30,7 +30,7 @@ class ProductIndexItem extends React.Component {
         <div className="product-name">
           <Link to={`/product/${product.id}`}>
             <p>{product.brand}</p>
-            <p>{product.name}</p>
+            <div className="index-product-name">{product.name}</div>
           </Link>
   
         </div>

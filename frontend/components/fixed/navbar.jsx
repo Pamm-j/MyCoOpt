@@ -27,8 +27,8 @@ const NavBar = (props) => {
             <a href="https://www.linkedin.com/in/pamela-jane/" className="grey" > LinkedIn</a> 
           </div>
           <div className="each-link-set">
-            <a href="https://github.com/Pamm-j" className="grey icon" ><IoLogoGithub /></a>
-            <a href="https://github.com/Pamm-j" className="grey" > Github</a>
+            <a href="https://github.com/Pamm-j/MyCoOpt" className="grey icon" ><IoLogoGithub /></a>
+            <a href="https://github.com/Pamm-j/MyCoOpt" className="grey" > Github</a>
           </div>
           <div className="each-link-set">
             <a href="https://pamm-j.github.io/circuits/" className="grey icon" id='brick' ><GiSBrick /></a>

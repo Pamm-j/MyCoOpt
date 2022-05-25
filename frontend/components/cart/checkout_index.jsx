@@ -145,7 +145,6 @@ class CheckoutIndex extends React.Component{
                           card_end: this.props.shopper.card_end
                         }
               }}>Submit Order</Link>
-              {/* <button onClick={this.handleSubmit(tax, total)} className="btn brn">Submit order</button> */}
             </div>
           </div>
         </div>

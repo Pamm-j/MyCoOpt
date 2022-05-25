@@ -14,10 +14,50 @@
       padding: 8px 0;
       font-weight: 600;
     }
+    .address {
+      padding: 8px 0;
+    }
+    .small {
+      font-size: 14px;
+      padding: 4px 0;
+    }
   }
   .right-column {
     font-size: 16px;
     font-family: Roboto, 'Helvetica Neue', sans-serif;
-    width: 280px;
+    width: 100%;
+    padding: 8px;
+    .title {
+      margin: 0 0 20px;
+      font-weight: 600;
+    }
+    .body {
+      margin: 0 0 16px;
+      line-height: 20px;
+    }
   }
+}
+
+.star-yellow {
+  -webkit-text-stroke: 1px #bd7b2d;
+  -webkit-text-fill-color: #ffd280;
+  margin: 2px;
+}
+.star-grey {
+  -webkit-text-stroke: 1px #949494;
+  -webkit-text-fill-color: rgba(229,224,216,255);
+  color: 949494;
+  margin: 2px;
+}
+
+.star-span {
+  color: #292929!important;
+  font-size: 12PX;
+  margin: 8px 0;
+}
+
+.red-lnk{
+  text-decoration: underline;
+  color: red;
+  cursor: pointer;
 }

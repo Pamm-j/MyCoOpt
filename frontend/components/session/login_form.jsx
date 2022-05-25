@@ -52,7 +52,9 @@ class LoginForm extends React.Component {
                 />
               </label>
               <Link className="blue-link-small" to="/password-form">Forgot password?</Link>
-              <p className="terms-warning">By signing into your account, you agree to My Co-opt's <Link className="lnk" to="/termsandprivacy">Terms of Use</Link> and acknowledge you have read its <Link className="lnk" to="/termsandprivacy">Privacy Policy</Link>.</p>
+              <p className="terms-warning">By signing into your account, you agree to My Co-opt's <Link 
+                className="lnk" to="/termsandprivacy">Terms of Use</Link> and acknowledge you have read its <Link 
+                className="lnk" to="/termsandprivacy">Privacy Policy</Link>.</p>
               <div >
                 <input className='grn btn left' type="submit" value="Sign in" onClick={this.handleSubmit('login_user')}  />
                 <input className='grn btn' type="submit" value="Sign in demo" onClick={this.handleSubmit('demo')}  />

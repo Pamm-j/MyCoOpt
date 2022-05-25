@@ -11,6 +11,7 @@ import ProductShowContainer from "./listings/product_show_container";
 import SplashContainer from "./fixed/splash_container";
 import {CartIndexContainer, CheckoutIndexContainer} from "./cart/cart_index_container";
 import OrderSuccess from "./cart/order_success";
+import TermsPrivacy from "./fixed/terms_privacy";
 
 const App = () => (
   
@@ -28,9 +29,8 @@ const App = () => (
         <Route path="/category/:id" component={CategoryShowContainer} />
         <Route path="/product/:id" component={ProductShowContainer} />
         <Route path="/feedback" component={()=>(<div className="feedback" ><img src="https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/feed_back.jpg" /></div>)} ></Route>
-        <Route path="/learnmore" component={()=>(<div className="webpage learnmore"> You have already learned everything <h1>
-          We are not taking new members at the moment, thank god you are already in.
-          </h1></div>)} ></Route>
+        <Route path="/learnmore" component={()=>(<div className="webpage learnmore"> You have already learned everything. Congratulations.</div>)} ></Route>
+        <Route path="/termsandprivacy" component={TermsPrivacy} ></Route>
         <Redirect className="webpage"  to="/under_construction" />
       </Switch>
     </div>
