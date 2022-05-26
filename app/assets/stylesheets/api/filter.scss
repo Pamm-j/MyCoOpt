@@ -1,0 +1,53 @@
+
+.show-filter {
+  width: 200px;
+  height: auto;
+  padding: 32px;
+  border-radius: 4px;
+  border: 1px solid #dcd6cb;
+  background-color: #f7f7f7;
+  position: sticky;
+  top: 0;
+  font-family: Graphik Web Regular,Helvetica Neue,sans-serif;
+  color: rgba(12,11,8,.75);
+}
+
+.filter-title {
+  font-size: 28px;
+  font-family: Foustina, Georgia,serif;
+  padding: 8px;
+  border-bottom: 1px solid rgba(229,224,216,255);
+}
+.filter-subtitle {
+  .sub-title {
+    padding-bottom: 4px;
+  }
+  font-size: 20px;
+  font-family: Graphik LC Medium, Helvetica Neue,sans-serif;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(229,224,216,255);
+}
+
+.subject-box{
+  display: flex;
+  flex-direction: column;
+}
+
+.mycheckbox {
+  font-size: 16px;
+  font-family: Graphik Web Regular,Helvetica Neue,sans-serif;
+  padding: 2px;
+}
+
+input[type=checkbox] {
+  accent-color: #4e4d49;
+}
+.subtitle-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-ico {
+  color:  #c5c5c5;
+}

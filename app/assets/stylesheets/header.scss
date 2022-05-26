@@ -12,9 +12,9 @@
   margin-right: auto;
   margin-left: auto;
   height: 38px;
-  max-width: 1172px;
-  padding-left: 30px;
-  padding-right: 30px;
+  max-width: 1232px;
+  // margin-left: 30px;
+  // padding-right: 30px;
   padding-top: 19px;
   padding-bottom: 16px;
   display: flex;
@@ -101,7 +101,8 @@
 .each-link-set {
   height: auto;
   align-self: center;
-  padding: 4px 36px;
+  padding: 4px 64px;
+  padding-left: 0;
 }
 
 #brick {

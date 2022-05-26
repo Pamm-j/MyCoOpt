@@ -84,7 +84,6 @@ class ProductShow extends React.Component{
   }
 
   render(){
-    // console.log(this.state)
     const product = this.props.product
     let thisRating = 0;
     this.props.reviews.forEach((review)=>{
@@ -156,7 +155,6 @@ class ProductShow extends React.Component{
                     className="quantity-input not-too-wide" 
                     type="number" 
                     inputMode="numeric" 
-                    max="9999" min="1" 
                     value={this.state.cartItem.quantity} />
                   <button className="increment-button" onClick={this.increment(1)} ><BsPlusCircle/></button>
                 </div>
@@ -168,7 +166,8 @@ class ProductShow extends React.Component{
                       name="shipping" 
                       style={{ accentColor: "#4e4d49" }}
                       value="pickup"
-                      onClick={this.handleClick('delivery_type', "pickup")}
+                      checked={this.state.cartItem.delivery_type === "pickup" ? "checked" : "" }
+                      onChange={this.handleClick('delivery_type', "pickup")}
                       />
                     <label id={product.id+"pickup"}>Pick up at store--FREE</label>
                   </div>
@@ -179,7 +178,8 @@ class ProductShow extends React.Component{
                       name="shipping"
                       style={{ accentColor: "#4e4d49" }}
                       value="delivery"
-                      onClick={this.handleClick('delivery_type', "delivery")}
+                      checked={this.state.cartItem.delivery_type === "delivery" ? "checked" : "" }
+                      onChange={this.handleClick('delivery_type', "delivery")}
                       />
                     <label id={product.id+"delivery"}>Ship to Address</label>
                   </div>
@@ -192,14 +192,14 @@ class ProductShow extends React.Component{
                     to={{ pathname: "/signup", state: {oldPath:`/product/${product.id}`}}}
                     >get Co-opted</Link>.
                   </div>
-                  <button className='grn btn bottom-of-page' onClick={this.handleSubmit}>Add to Cart ${parseFloat(product.price*this.state.cartItem.quantity).toFixed(2)}</button>
+                  {this.props.currentUserId &&<button className='grn btn bottom-of-page' onClick={this.handleSubmit}>Add to Cart ${parseFloat(product.price*this.state.cartItem.quantity).toFixed(2)}</button>}
               </div>
             </div>
             <div className="show-details">{product.description}</div>
             <div className="reviews-container">
               <div className="title-button-container">
                 <div className="fancy-small-title">Reviews</div>
-                <button className="grn btn" onClick={()=>this.setState({reviewShow:true})}>Write a review</button>
+                {this.props.currentUserId &&<button className="grn btn" onClick={()=>this.setState({reviewShow:true})}>Write a review</button>}
               </div>
               <div className="summary-box"></div>
               {this.props.reviews.map((review)=> <ReviewItem

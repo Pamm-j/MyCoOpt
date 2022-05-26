@@ -58,20 +58,8 @@
 .category-show-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin: auto;
   max-width: 1232px;
 
-}
-
-.show-filter {
-  width: 240px;
-  height: 500px;
-  color: rgba(12,11,8,.75);
-  padding: 32px;
-  font-size: 32px;
-  font-family: Graphik Web Regular,Helvetica Neue,sans-serif;
-  border-radius: 4px;
-  border: 1px solid #dcd6cb;
-  background-color: #f7f7f7;
 }
