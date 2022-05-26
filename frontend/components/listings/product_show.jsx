@@ -145,7 +145,6 @@ class ProductShow extends React.Component{
                 <ul className="show-list" >
                     {product.sizes.map((size)=>(<button 
                     className={(this.state.cartItem.size === size) ? "round-box  color-btn sizes active" : "round-box  color-btn sizes"}
-                    // className="round-box  color-btn sizes"
                     onClick={this.handleClick("size", size)}
                     key={"size" + size}>{size}</button> ))}
                 </ul>
@@ -201,7 +200,8 @@ class ProductShow extends React.Component{
             <div className="reviews-container">
               <div className="title-button-container">
                 <div className="fancy-small-title">Reviews</div>
-                {this.props.currentUserId &&<button className="grn btn" onClick={()=>this.setState({reviewShow:true})}>Write a review</button>}
+                {this.props.currentUserId &&
+                <button className="grn btn" onClick={()=>this.setState({reviewShow:true})}>Write a review</button>}
               </div>
               <div className="summary-box"></div>
               {this.props.reviews.map((review)=> <ReviewItem

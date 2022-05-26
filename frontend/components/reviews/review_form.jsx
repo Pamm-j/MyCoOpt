@@ -13,10 +13,12 @@ class ReviewForm extends React.Component{
   }
 
   handleChange = (type)=>(e)=> this.setState({[type]: e.target.value})
+
   handleClick = (value)=>() => {this.setState({rating:value})}
+
   render(){
     return (
-      <div   className="review-form-overlay">
+      <div className="review-form-overlay">
         <div className="review-container">
           <div className="left-review">
             <div className="review-photo"><img 
@@ -67,6 +69,10 @@ class ReviewForm extends React.Component{
                 className="grn btn" 
                 onClick={this.handleSubmit}
                 >Post review</button>
+              <button 
+                className="grn btn" 
+                onClick={()=>this.props.toggleReview()}
+                >Go Back</button>
             </form>
           </div>
         </div>

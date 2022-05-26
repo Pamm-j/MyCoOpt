@@ -6,10 +6,11 @@ const reviewsReducer= (oldState={}, action)=>{
 
   switch(action.type){
     case RECEIVE_REVIEWS:
-      action.reviews.forEach(review => {
-        newState[review.id] = review
-      });
-      return newState;
+      // action.reviews.forEach(review => {
+      //   newState[review.id] = review
+      // });
+      // return newState;
+      return action.reviews
     case RECEIVE_REVIEW:
       newState[action.review.id] = action.review
       return newState
