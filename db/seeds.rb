@@ -1,4 +1,4 @@
-require 'open-uri'
+# require 'open-uri'
 
 Review.destroy_all
 CartItem.destroy_all
