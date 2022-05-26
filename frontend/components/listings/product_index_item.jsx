@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Colors from "../../util/colors";
-import ColorSwatch from "./color_swatch";
 
 
 class ProductIndexItem extends React.Component {
@@ -11,6 +10,7 @@ class ProductIndexItem extends React.Component {
   
 
   render(){
+    console.log(this.props)
     const product = this.props.product
     return (
       <div className="product-index-item-container">
@@ -35,10 +35,10 @@ class ProductIndexItem extends React.Component {
   
         </div>
         <div className="price">${product.price}</div>
-        <div className="rating-stars">
+        {/* <div className="rating-stars">
           <span>★★★★★</span>
           <span> (4,592)</span>
-          </div>
+          </div> */}
       </div>
     )
   }

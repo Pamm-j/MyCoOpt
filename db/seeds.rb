@@ -61,8 +61,9 @@ pc1 = Product.create(
   description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some prepared-for-anything peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
   price:2700.00,
   colors: ["Rosewood", "Mint"],
-  sizes: ['XS', 'S', 'M', 'L'],
-  brand: 'Liv'
+  sizes: [ 'M', 'L'],
+  brand: 'Liv', 
+  color_families: ['Green', 'Red']
 )
 pc1.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da2-1.jpeg'), filename:'da2-1.jpeg')
 pc1.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da2-2.webp'), filename:'da2-2.webp')
@@ -78,7 +79,7 @@ pc1.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bi
 #     color_families: [ 'Blue', 'Black' ]
 #   } )
 #   # require 'open-uri'
-#   pcc0.photos.attach(io: open('https://www.rei.com/media/c8ce0c41-6b51-425c-8e36-2d9ddbeec7e2.jpg'), filename:'c8ce0c41-6b51-425c-8e36-2d9ddbeec7e2.jpg')
+  # pcc0.photos.attach(io: open('https://www.rei.com/media/c8ce0c41-6b51-425c-8e36-2d9ddbeec7e2.jpg'), filename:'c8ce0c41-6b51-425c-8e36-2d9ddbeec7e2.jpg')
 #   pcc0.photos.attach(io: open('https://www.rei.com/media/024534a6-8025-412f-8d61-02a7623eba98.jpg'), filename:'024534a6-8025-412f-8d61-02a7623eba98.jpg')
 
 
@@ -88,8 +89,9 @@ pc2 = Product.create(
   description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some prepared-for-anything peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
   price:3550.00,
   colors: ["DarkGreen", "OceanBlue"],
-  sizes: ['XS', 'S', 'M', 'L'],
-  brand: 'Liv'
+  sizes: ['XS', 'S'],
+  brand: 'Liv', 
+  color_families: ['Green', 'Blue']
 )
 pc2.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da1-1.jpeg'), filename:'da1-1.jpeg')
 pc2.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da1-2.jpeg'), filename:'da1-2.jpeg')
@@ -101,8 +103,9 @@ pc3 = Product.create(
   description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some prepared-for-anything peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
   price:6400.00,
   colors: ["Eggplant", "Mushroom"],
-  sizes: ['XS', 'S', 'M', 'L'],
-  brand: 'Liv'
+  sizes: [ 'M', 'L'],
+  brand: 'Liv',
+  color_families: ['Brown', 'Purple']
 )
 
 pc3.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/dap-2.jpeg'), filename:'dap-2.jpeg')
@@ -114,8 +117,9 @@ pc4 = Product.create(
   description: "With a lightweight ALUXX-Grade aluminum frame designed specifically for women, Tempt can guide you along dirt terrain with speed, efficiency and control. A front suspension fork and powerful disc brakes offer added confidence and control. This hardtail has a low standover height to give you confidence maneuvering around dirt trails and is offered in 27.5 or 29-inch wheels for optimum fit and efficiency. Perfect for a functional around-town ride, to try as your first off-road racing bike, or for venturing out onto the trails for the first time, allow Tempt to lead you to new adventures.",
   price:1380.00,
   colors: ["OceanStorm"],
-  sizes: ['XS', 'S', 'M', 'L'],
-  brand: 'Liv'
+  sizes: ['XS'],
+  brand: 'Liv',
+  color_families: ['Blue']
 )
 
 pc4.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t0-1.jpeg'), filename:'t0-2.jpeg')
@@ -126,9 +130,10 @@ pc5 = Product.create(
   category_id: c1.id,
   description: "With a lightweight ALUXX-Grade aluminum frame designed specifically for women, Tempt can guide you along dirt terrain with speed, efficiency and control. A front suspension fork and powerful disc brakes offer added confidence and control. This hardtail has a low standover height to give you confidence maneuvering around dirt trails and is offered in 27.5 or 29-inch wheels for optimum fit and efficiency. Perfect for a functional around-town ride, to try as your first off-road racing bike, or for venturing out onto the trails for the first time, allow Tempt to lead you to new adventures.",
   price:980,
-  colors: ["Rosewood"],
+  colors: ["Rosewood", "DarkBlue"],
   sizes: ['XS', 'S', 'M', 'L', "XL"],
-  brand: 'Liv'
+  brand: 'Liv', 
+  color_families: ['Blue', 'Red']
 )
 
 pc5.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/t1-1.jpeg'), filename:'t1-1.jpeg')
@@ -140,8 +145,9 @@ pc6 = Product.create(
   description: "With a lightweight ALUXX-Grade aluminum frame designed specifically for women, Tempt can guide you along dirt terrain with speed, efficiency and control. A front suspension fork and powerful disc brakes offer added confidence and control. This hardtail has a low standover height to give you confidence maneuvering around dirt trails and is offered in 27.5 or 29-inch wheels for optimum fit and efficiency. Perfect for a functional around-town ride, to try as your first off-road racing bike, or for venturing out onto the trails for the first time, allow Tempt to lead you to new adventures.",
   price:735,
   colors: ["Eclipse", "DesertSage"],
-  sizes: ['XS', 'S', 'M', 'L'],
-  brand: 'Liv'
+  sizes: ['XS', 'M'],
+  brand: 'Liv', 
+  color_families: [ 'Green', 'Blue']
 )
 pc6.photos.attach(make_photo_url(bikes_url,"t2-1.jpeg"))
 pc6.photos.attach(make_photo_url(bikes_url,"t2-2.jpeg"))
@@ -153,7 +159,8 @@ pc7= Product.create(
   price:4500,
   colors: ["DarkBlue", "FanaticTeal"],
   sizes: ['XS', 'S', 'M'],
-  brand: 'Liv'
+  brand: 'Liv', 
+  color_families: ['Blue']
 )
 pc7.photos.attach(make_photo_url(bikes_url,"ppro2-1.jpg"))
 
@@ -163,8 +170,9 @@ pc8= Product.create(
   description: "ATTACK THE COURSE WITH SPEED AND EFFICIENCY ON THE PIQUE ADVANCED PRO 29. THE STIFF, LIGHT, FULL-SUSPENSION XC BIKE IS READY TO SET PRS AND SNAG PODIUM STEPS.",
   price:6350,
   colors: ["DarkBlue", "Carbon"],
-  sizes: ['XS', 'S', 'M'],
-  brand: 'Liv'
+  sizes: [ 'M'],
+  brand: 'Liv', 
+  color_families: ['Grey', 'Blue']
 )
 pc8.photos.attach(make_photo_url(bikes_url,"ppro1-1.jpg"))
 pc8.photos.attach(make_photo_url(bikes_url,"ppro1-2.jpg"))

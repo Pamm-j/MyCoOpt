@@ -124,26 +124,26 @@
 }
 
 .star-1:hover{
-  -webkit-text-stroke: 1px darkred;
-  -webkit-text-fill-color: red;
+  -webkit-text-stroke: 1px darkred!important;
+  -webkit-text-fill-color: red!important;
 }
 .star-2:hover + .star-1, .star-2:hover {
-  -webkit-text-stroke: 1px orangered;
-  -webkit-text-fill-color: darkorange;
+  -webkit-text-stroke: 1px orangered!important;
+  -webkit-text-fill-color: darkorange!important;
 }
 .star-3:hover + .star-2 + .star-1, .star-3:hover ~ .star1, .star-3:hover + .star-2, .star-3:hover {
-  -webkit-text-stroke: 1px orange;
-  -webkit-text-fill-color: rgb(241, 178, 60);
+  -webkit-text-stroke: 1px orange!important;
+  -webkit-text-fill-color: rgb(241, 178, 60)!important;
 }
 
 .star-4:hover ~ .star-1, .star-4:hover ~.star-2, .star-4:hover ~ .star-3, .star-4:hover {
-  -webkit-text-stroke: 1px rgb(30, 158, 30);
-  -webkit-text-fill-color: rgb(66, 148, 66);
+  -webkit-text-stroke: 1px rgb(30, 158, 30)!important;
+  -webkit-text-fill-color: rgb(66, 148, 66)!important;
 }
 
 .star-5:hover ~ .star-1, .star-5:hover ~.star-2, .star-5:hover ~ .star-3, .star-5:hover ~ .star-4, .star-5:hover {
-  -webkit-text-stroke: 1px #225c4e;
-  -webkit-text-fill-color: green;
+  -webkit-text-stroke: 1px #225c4e!important;
+  -webkit-text-fill-color: green!important;
 }
 
 #star-1 {
