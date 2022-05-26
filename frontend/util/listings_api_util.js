@@ -11,6 +11,13 @@ export const fetchCategoryProducts = (categoryId)=> (
     method: "GET"
   })
 )
+export const fetchSearchProducts = (searchTerm)=> (
+  $.ajax ({
+    url: `/api/products`,
+    method: "GET",
+    data: {searchTerm}
+  })
+)
 
 export const fetchProduct = (productId)=> (
   $.ajax ({

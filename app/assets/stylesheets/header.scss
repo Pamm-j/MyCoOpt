@@ -120,7 +120,11 @@
   border: 1px solid rgba(229,224,216,255);
   display: block;
   margin: 0;
-  width: 40%;
   font-size: 16px;
   font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+  width: 100%;
+}
+
+.search-input-box {
+    width: 40%;
 }

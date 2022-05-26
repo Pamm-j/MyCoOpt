@@ -58,10 +58,13 @@ class ProductShow extends React.Component{
     this.setState({cartItem:newCartItem})
   }
 
+  calculateRating(product_id){
+
+  }
+
   handleSubmit = (e)=>{
     e.preventDefault();
     const newCartItem = Object.assign({}, this.state.cartItem)
-    console.log(newCartItem)
     newCartItem.product_id = this.props.product.id
     this.setState({cartItem:newCartItem}, (()=> {
       if (!Object.values(this.state).includes("")) {
@@ -79,7 +82,6 @@ class ProductShow extends React.Component{
   }
 
   handleUpdate(review){
-    console.log(review)
     this.setState({action:this.props.updateReview, review:review}, this.toggleReview)
   }
 

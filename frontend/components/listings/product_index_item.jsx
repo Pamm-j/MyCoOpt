@@ -10,7 +10,6 @@ class ProductIndexItem extends React.Component {
   
 
   render(){
-    console.log(this.props)
     const product = this.props.product
     return (
       <div className="product-index-item-container">

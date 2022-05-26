@@ -9,8 +9,7 @@ const mSTP = (state, ownProps) => ({
   products: Object.values(state.entities.products)
 })
 const mDTP = (dispatch) => ({
-  fetchCategoryProducts: (categoryId)=> dispatch(fetchCategoryProducts(categoryId)),
-  fetchCategories: () => dispatch(fetchCategories())
+  action: (categoryId)=> dispatch(fetchCategoryProducts(categoryId)),
 })
 
-export default connect(mSTP, mDTP)(CategoryShow)
+export const CategoryShowContainer = connect(mSTP, mDTP)(CategoryShow)

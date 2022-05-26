@@ -13,8 +13,15 @@ class NavBar extends React.Component {
   constructor(props){
     super(props)
     this.state = {search:""}
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange = ()=>(e)=> this.setState({search: e.target.value})
+
+  handleSubmit(e){
+    e.preventDefault()
+    if (this.state.search) this.props.fetchSearchProducts(this.state.search)
+    .then(()=>this.props.history.push(`/search_results/${this.state.search}`))
+  }
 
   render(){
     let menu;
@@ -48,13 +55,15 @@ class NavBar extends React.Component {
             <a href="/#/"><img className="logo" src={window.logo} /></a>
             <Link className='shop-btn' to='/'>Shop</Link>
           </div>
-                {/* <input 
-                  className="search-input"
-                  type="text"
-                  placeholder="Search for great gear"
-                  value={this.state.search} 
-                  onChange={this.handleChange()}
-                /> */}
+          <form className="search-input-box" onSubmit={this.handleSubmit}>
+            <input 
+              className="search-input"
+              type="text"
+              placeholder="Search for great gear"
+              value={this.state.search} 
+              onChange={this.handleChange()}
+            />
+          </form>
           <div className="inner-header-right">
             <a href="/#/stores"> <GoLocation className="icon"/></a>
             <a href="/#/stores" className='nav-btn'><p> Stores</p></a>

@@ -1,8 +1,9 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import React from "react";
 import NavBar from "./navbar";
 import { logout } from "../../actions/session_actions";
-
+// import { fetchSearchProducts } from "../../util/listings_api_util";
 
 const mSTP = state => ({
   loggedIn: Boolean(state.session.id),
@@ -10,7 +11,8 @@ const mSTP = state => ({
 })
 
 const mDTP = dispatch => ({
-  logout: ()=> dispatch(logout())
+  logout: ()=> dispatch(logout()),
+  fetchSearchProducts: (searchTerm)=> dispatch(fetchSearchProducts(searchTerm)),
 })
 
-export default connect(mSTP,mDTP)(NavBar)
+export default withRouter(connect(mSTP,mDTP)(NavBar))

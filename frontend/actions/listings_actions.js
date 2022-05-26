@@ -25,6 +25,9 @@ export const fetchCategories = () => dispatch => ListingsApiUtil.fetchCategories
 export const fetchCategoryProducts = (categoryId) => dispatch => ListingsApiUtil.fetchCategoryProducts(categoryId)
   .then((products)=>(dispatch(recieveCategoryProducts(products))))
 
+export const fetchSearchProducts = (searchTerm) => dispatch => ListingsApiUtil.fetchSearchProducts(searchTerm)
+  .then((products)=>(dispatch(recieveCategoryProducts(products))))
+
 export const fetchProduct = (productId) => dispatch => ListingsApiUtil.fetchProduct(productId)
   .then((product)=>(dispatch(recieveProduct(product))))
 

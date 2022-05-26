@@ -18,9 +18,7 @@ class CategoryShow extends React.Component{
     this.props.products.forEach((product)=> {
       product[type].forEach((el)=> !traits.includes(el) ? traits.push(el): null)
     })
-
     traits = traits.sort(this.compareSizes)
-
     return traits;
   }
 
@@ -33,14 +31,18 @@ class CategoryShow extends React.Component{
   }
   componentDidUpdate(prevProps){
     if( prevProps.category && this.props.category.id !== prevProps.category.id ){
-      this.props.fetchCategoryProducts( this.props.match.params.id )
+      this.props.action( this.props.match.params.id )
     } 
-    if (!prevProps){
-      this.props.fetchCategoryProducts( this.props.match.params.id )
+    if ( this.props.category && !prevProps){
+      this.props.action( this.props.match.params.id )
     }
   }
   componentDidMount(){
-    this.props.fetchCategoryProducts( this.props.match.params.id )
+    if (this.props.searchTerm){
+      this.props.action(this.props.searchTerm)
+    } else {
+      this.props.action( this.props.match.params.id )
+    }
   }
 
   handleFilterClick(trait){
@@ -84,14 +86,14 @@ class CategoryShow extends React.Component{
 
   render(){
 
-    if (!this.props.category){
+    if (!this.props.products){
       return null 
     } else { 
       this.colorArray = this.combineTraits("color_families")
       this.sizeArray = this.combineTraits("sizes")
       return (
         <div>
-          <CatSplash category={this.props.category}/>
+          {this.props.category && <CatSplash category={this.props.category}/>}
           <div className="category-show-wrapper">
           <div  className="show-filter">
             <div className="filter-title">Filter</div>
