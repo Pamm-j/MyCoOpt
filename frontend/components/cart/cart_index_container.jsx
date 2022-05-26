@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React from "react";
 import CartIndex from "./cart_index";
-import { fetchAllCartItems, deleteCartItems, updateCartItem } from '../../actions/cart_actions'
+import { fetchAllCartItems, deleteCartItems, updateCartItem, deleteCartItem } from '../../actions/cart_actions'
 import CheckoutIndex from "./checkout_index";
 
 
@@ -15,6 +15,7 @@ const mSTP = (state) => {
 const mDTP = dispatch => ({
   fetchAllCartItems: (shopperId)=> dispatch(fetchAllCartItems(shopperId)),
   deleteCartItems: (shopperId)=> dispatch(deleteCartItems(shopperId)),
+  deleteCartItem: (cartItemId)=> dispatch(deleteCartItem(cartItemId)),
   updateCartItem: (item)=> dispatch(updateCartItem(item))
 })
 

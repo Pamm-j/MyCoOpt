@@ -23,8 +23,8 @@ const App = () => (
         <AuthRoute className="webpage" path="/login" component={LoginFormContainer}   />
         <AuthRoute className="webpage"  path="/signup" component={SignupFormContainer}  />
         <Route className="webpage"  path="/under_construction" component={UnderConstruction} />
-        <Route path="/cart" component={CartIndexContainer} />
-        <Route path="/checkout" component={CheckoutIndexContainer} />
+        <ProtectedRoute path="/cart" component={CartIndexContainer} />
+        <ProtectedRoute path="/checkout" component={CheckoutIndexContainer} />
         <Route path="/order_success" component={OrderSuccess} />
         <Route path="/category/:id" component={CategoryShowContainer} />
         <Route path="/product/:id" component={ProductShowContainer} />

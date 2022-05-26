@@ -19,7 +19,7 @@ class OrderSuccess extends React.Component{
               <h2>${parseFloat(temp.total).toFixed(2)}</h2>
             </div>
             <div className="in-line cart-right-summary">
-              <h3>Standart Shipping</h3>
+              <h3>Standard Shipping</h3>
               <h3>FREE</h3>
             </div>
             <div className="in-line cart-right-summary">

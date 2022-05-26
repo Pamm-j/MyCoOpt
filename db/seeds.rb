@@ -177,48 +177,34 @@ pc8= Product.create(
 pc8.photos.attach(make_photo_url(bikes_url,"ppro1-1.jpg"))
 pc8.photos.attach(make_photo_url(bikes_url,"ppro1-2.jpg"))
 
-# pc9= Product.create(
-#   brand: 'Giro',
-#   name: 'Giro Fixture MIPS Bike Helmet ',
-#   category_id: c1.id,
-#   description: "The dirt is calling. Giro Fixture MIPS bike helmet brings confident mountain bike style and breezy ventilation together in a compact design made for nearly any ride, from fire roads to singletrack.",
-#   price: 70,
-#   colors: ["MatteBlack", "MatteGrey", "MatteTrimBlue", "MatteWarmBlack", "MatteTrimRed" ],
-#   sizes: ['onesize'],
-#   weight: 0.6, 
-#   color_families: ['Black', 'Grey', 'Blue', 'Red']
-#  )
-# #  IMG URL1:https://www.rei.com/media/d80c5e42-4c0d-4fb1-99ed-50a3c7e86172?size=784x588 
-# #  IMG URL 2: https://www.rei.com/media/7af570a9-fbc4-407f-89fd-fa9813c536ed?size=784x588 
+ci1 = CartItem.create!(
+  quantity: 1,
+  product_id: pc8.id,
+  shopper_id: u0.id,
+  size: 'L',
+  color: 'DarkBlue',
+  delivery_type: 'delivery'
+)
 
-# ci1 = CartItem.create!(
-#   quantity: 1,
-#   product_id: pc8.id,
-#   shopper_id: u0.id,cl
-#   size: 'L',
-#   color: 'DarkBlue',
-#   delivery_type: 'delivery'
-# )
+ci1 = CartItem.create!(
+  quantity: 1,
+  product_id: pc1.id,
+  shopper_id: u0.id,
+  size: 'L',
+  color: 'Rosewood',
+  delivery_type: 'delivery'
+)
 
-# ci1 = CartItem.create!(
-#   quantity: 1,
-#   product_id: pc1.id,
-#   shopper_id: u0.id,
-#   size: 'L',
-#   color: 'Rosewood',
-#   delivery_type: 'delivery'
-# )
-
-# r1 = Review.create(
-#   reviewer_id:u0.id, 
-#   product_id:pc1.id, 
-#   title:"It takes me places", 
-#   body:"would buy again", 
-#   rating:"5"
-# )
-# r1 = Review.create(reviewer_id:u1.id, product_id:pc1.id, title:"best form of travel for the appocolapys", body:"Me and Peaches both had one", rating:"5")
-# r1 = Review.create(reviewer_id:u3.id, product_id:pc1.id, title:"useless in space", body:"Was given it as a joke, haha guys. do not buy, they do not take returns. 52% satisfaction guarantee seems like a stretch", rating:"1")
-# r={reviewer_id:3, product_id:1, title:"useless in space", body:"doesnt make soy grow.", rating:"1"}
+r1 = Review.create(
+  reviewer_id:u0.id, 
+  product_id:pc1.id, 
+  title:"It takes me places", 
+  body:"would buy again", 
+  rating:"5"
+)
+r1 = Review.create(reviewer_id:u1.id, product_id:pc1.id, title:"best form of travel for the appocolapys", body:"Me and Peaches both had one", rating:"5")
+r1 = Review.create(reviewer_id:u3.id, product_id:pc1.id, title:"useless in space", body:"Was given it as a joke, haha guys. do not buy, they do not take returns. 52% satisfaction guarantee seems like a stretch", rating:"1")
+r={reviewer_id:3, product_id:1, title:"useless in space", body:"doesnt make soy grow.", rating:"1"}
 
 # pcc0 =Product.create( {
 #   brand: 'Co-op Cycles',
@@ -344,3 +330,4 @@ pc8.photos.attach(make_photo_url(bikes_url,"ppro1-2.jpg"))
 #  IMG URL1: https://www.rei.com/media/2f9c8c47-299b-4a4c-aa05-b10fbf303691?size=784x588 
 #  IMG URL 2: https://www.rei.com/media/f3a80569-7a24-4665-b0ec-19dba560553a?size=784x588 
  
+

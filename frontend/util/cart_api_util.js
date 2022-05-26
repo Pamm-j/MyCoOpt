@@ -22,12 +22,18 @@ export const updateCartItem = (cartItem) => (
   $.ajax ({
     url: `/api/cart_items/${cartItem}`,
     method: "PATCH",
-    data: {cartItem}
+    data: {cartItem} 
   })
 )
 export const deleteCartItems = (shopperId) => (
   $.ajax ({
     url: `/api/cart_items/${shopperId}`,
+    method: "DELETE"
+  })
+)
+export const deleteCartItem = (cartItemId) => (
+  $.ajax ({
+    url: `/api/cart_items/${cartItemId}?individual=true`,
     method: "DELETE"
   })
 )

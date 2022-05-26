@@ -1,4 +1,4 @@
-import { RECEIVE_CART_ITEM, RECEIVE_CART_ITEMS, REMOVE_CART_ITEMS } from "../../actions/cart_actions" 
+import { RECEIVE_CART_ITEM, RECEIVE_CART_ITEMS, REMOVE_CART_ITEMS, REMOVE_CART_ITEM } from "../../actions/cart_actions" 
 
 const cartItemReducer = (oldState={}, action)=>{
   Object.freeze(oldState)
@@ -9,6 +9,9 @@ const cartItemReducer = (oldState={}, action)=>{
       return action.cartItems;
     case RECEIVE_CART_ITEM:
       newState[action.cartItem.cart_item_id] = action.cartItem
+      return newState
+    case REMOVE_CART_ITEM:
+      delete newState[action.cartItemId]
       return newState
     case REMOVE_CART_ITEMS:
       Object.values(newState).forEach((cartItem)=>{

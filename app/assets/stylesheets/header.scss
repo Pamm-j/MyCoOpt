@@ -36,13 +36,14 @@
 .logo{
   height: 48px;
   min-width: 76px;
+  margin-bottom: 3px;
 }
 
 .shop-btn {
   color: #292929;
   width: 60px;
   margin-left: 15px;
-  margin-top: 11px;
+  margin-top: 8px;
   font-family: Foustina ,Georgia,serif;
   font-size: 24px;
   line-height: 30px;
@@ -108,4 +109,18 @@
 #brick {
   height: 30px;
   width: 30px;
+}
+
+.search-input {
+  height: 24px;
+  background-color: #fff;
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+  border: 1px solid rgba(229,224,216,255);
+  display: block;
+  margin: 0;
+  width: 40%;
+  font-size: 16px;
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
 }

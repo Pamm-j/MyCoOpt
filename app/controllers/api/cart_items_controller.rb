@@ -26,10 +26,7 @@ class Api::CartItemsController < ApplicationController
   def update
     @cart_item = CartItem.find_by(id: params[:cartItem][:id])
     if @cart_item
-      @cart_item.update(:quantity => params[:cartItem][:quantity])
-      @cart_item.update(:color => params[:cartItem][:color])
-      @cart_item.update(:size => params[:cartItem][:size])
-      @cart_item.update(:delivery_type => params[:cartItem][:delivery_type])
+      @cart_item.update(cart_item_params)
       render :show
     else
       render json: ['cart_item not updated'], status: 404
@@ -37,9 +34,15 @@ class Api::CartItemsController < ApplicationController
   end
 
   def destroy
-    cart_items = CartItem.where(shopper_id: params[:id])
-    cart_items.each do |item|
-      item.destroy
+    if params["individual"] == "true" 
+      # debugger
+      cart_item = CartItem.find_by(id: params[:id])
+      cart_item.destroy
+    else
+      cart_items = CartItem.where(shopper_id: params[:id])
+      cart_items.each do |item|
+        item.destroy
+      end
     end
   end
 

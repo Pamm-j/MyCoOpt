@@ -5,6 +5,7 @@ import { FaInfoCircle, FaCcPaypal} from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
 import { SiVisa } from 'react-icons/si';
 import {Redirect, Link} from 'react-router-dom'
+import Constants from "../../util/constants";
 // import {Link} from ''
 
 
@@ -20,24 +21,9 @@ class CheckoutIndex extends React.Component{
     this.props.fetchAllCartItems(this.props.shopperId)
   }
 
-  // componentDidUpdate(){
-  //   if (!this.props.cartItems){
-  //     <Redirect to='/order_confirmation'/>
-  //   }
-  // }
-
-  handleSubmit=(tax, total)=>()=>{
+  handleSubmit=()=>()=>{
     const split_name = this.props.shopper.full_name.split(' ')
     this.props.deleteCartItems(this.props.shopperId)
-    // .then(()=>this.props.history.push({
-    //   pathname:'/order_success',
-    //   state: {
-    //     first_name: split_name[0],
-    //     tax: tax,
-    //     total: total,
-    //     card_end: this.props.shopper.card_end
-    //   }
-    // }))
   }
   render(){
     const split_name = this.props.shopper.full_name.split(' ')
@@ -55,7 +41,7 @@ class CheckoutIndex extends React.Component{
           <div className="checkout-left">
             <h2 className="checkout-left-h2">REI Co-op Membership</h2>
             <h3>{shopper.full_name}</h3>
-            <h3>#{shopper.id*458581}</h3>
+            <h3>#{shopper.id*Constants.UserId}</h3>
             <div className="in-line-space-between">
               <h2>Contact information</h2>
               <a className="lnk" href="/#/under_construction"> Edit Contact</a>
@@ -112,7 +98,7 @@ class CheckoutIndex extends React.Component{
                     <h2>${parseFloat(total).toFixed(2)}</h2>
                   </div>
                   <div className="in-line cart-right-summary">
-                    <h3>Standart Shipping</h3>
+                    <h3>Standard Shipping</h3>
                     <h3>FREE</h3>
                   </div>
                   <div className="in-line cart-right-summary">
@@ -138,7 +124,7 @@ class CheckoutIndex extends React.Component{
                 </div>
               </div>
               <div className="guarantee-checkout">52% satisfaction guaranteed <FaInfoCircle/> </div>
-              <Link className="btn brn" onClick={this.handleSubmit(tax, total)} to={{ pathname: "/order_success", state: {
+              <Link className="btn brn" onClick={this.handleSubmit()} to={{ pathname: "/order_success", state: {
                           first_name: split_name[0],
                           tax: tax,
                           total: total,
