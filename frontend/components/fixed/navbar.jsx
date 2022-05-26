@@ -19,7 +19,7 @@ class NavBar extends React.Component {
   render(){
     let menu;
     if (this.props.loggedIn) {
-      const split_name = props.currentUser.full_name.split(' ')
+      const split_name = this.props.currentUser.full_name.split(' ')
       menu =  <span className='nav-btn'>Hi, {`${split_name[0]}`} <Link onClick={this.props.logout} to={'/login'}>Logout</Link></span>
     } else {
       menu = <a href="/#/login" className='nav-btn'><p>Sign In</p></a>
