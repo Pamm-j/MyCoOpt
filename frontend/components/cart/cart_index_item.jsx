@@ -30,7 +30,6 @@ class CartIndexItem extends React.Component {
 
   render(){
     let item = this.props.item
-    console.log(item)
     return(
       <div className="cart-index-item">
         <div className="cart-index-photo"><img src={item.photoUrls[0]} /></div>

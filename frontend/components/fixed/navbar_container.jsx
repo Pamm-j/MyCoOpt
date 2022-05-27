@@ -4,6 +4,7 @@ import React from "react";
 import NavBar from "./navbar";
 import { logout } from "../../actions/session_actions";
 import { fetchAllCartItems } from "../../actions/cart_actions";
+import {  fetchSearchProducts} from "../../actions/listings_actions"
 
 const mSTP = state => ({
   loggedIn: Boolean(state.session.id),

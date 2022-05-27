@@ -23,7 +23,6 @@ class NavBar extends React.Component {
     }
   }
   componentDidupdate(prevProps){
-    console.log(prevProps)
     if (this.props.loggedIn !== prevProps.loggedIn) {
       this.props.fetchAllCartItems(this.props.currentUser.id)
     }
