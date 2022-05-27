@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
   def index
     term = params[:searchTerm].downcase
-    @products = Product.where("lower(name) LIKE '%#{term}%' OR lower(description) LIKE '%#{term}%'")
+    @products = Product.where("lower(brand) LIKE '%#{term}%' OR lower(name) LIKE '%#{term}%' OR lower(description) LIKE '%#{term}%'")
     if @products
       render :index
     else

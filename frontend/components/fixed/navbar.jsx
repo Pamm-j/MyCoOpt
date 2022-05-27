@@ -36,6 +36,7 @@ class NavBar extends React.Component {
   }
 
   render(){
+    
     let menu;
     if (this.props.loggedIn) {
       const split_name = this.props.currentUser.full_name.split(' ')
@@ -78,14 +79,22 @@ class NavBar extends React.Component {
             />
           </form>
           <div className="inner-header-right">
-            <a href="/#/stores"> <GoLocation className="icon"/></a>
-            <a href="/#/stores" className='nav-btn'><p> Stores</p></a>
-            <AiOutlineUser className="icon"/>  
-            {menu}
+            <div className="set">
+              <a href="/#/stores"> <GoLocation className="icon"/></a>
+              <a href="/#/stores" className='nav-btn'> Stores</a>
+            </div>
+            <div className="set">
+              <AiOutlineUser className="icon"/>  
+              {menu}
+            </div>
+
+            <div className="set">
+              <a href="/#/cart"><MdOutlineShoppingCart className="icon"/></a>
+              <a href="/#/cart" className='nav-btn'><p>Cart</p></a>
             {this.props.loggedIn && <div className="cart-size" >{Object.values(this.props.cartItems).length}</div>}     
-            <a href="/#/cart"><MdOutlineShoppingCart className="icon"/></a>
-            <a href="/#/cart" className='nav-btn'><p>Cart</p></a> 
-             
+            </div>
+    
+            
           </div>
         </div>
         <CategoryIndexContainer />

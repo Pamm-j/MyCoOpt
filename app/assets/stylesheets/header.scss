@@ -62,10 +62,10 @@
   text-decoration: none;
   align-self: center;
 
-  :nth-child(2n+1) {
-    padding-right: 16px;
-    padding-left: 4px;
-  }
+  // :nth-child(2n+1) {
+  //   padding-right: 16px;
+  //   padding-left: 4px;
+  // }
 }
 
 .icon{
@@ -132,8 +132,8 @@
 .cart-size {
   position: absolute;
   font-family: Graphik web regular,"Helvetica Neue",sans-serif;
-  top: 60px;
-  // left: 1208px;
+  top: 2px;
+  right: 26px;
   height: 12px;
   width: 12px;
   font-size: 10px;
@@ -142,4 +142,11 @@
   text-align: center;
   align-self:center;
   border-radius: 2px;
+}
+
+.set {
+  display: flex;
+  width: auto;
+  padding-left: 8px;
+  position: relative;
 }

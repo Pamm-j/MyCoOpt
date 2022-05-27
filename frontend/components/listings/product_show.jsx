@@ -19,6 +19,8 @@ class ProductShow extends React.Component{
       image_view: 0,
       reviewShow:false
       }
+      this.colorNotSelected = false
+      this.sizeNotSelected = false
     this.toggleReview = this.toggleReview.bind(this)
     this.state.action = this.props.createReview
     this.handleUpdate = this.handleUpdate.bind(this)
@@ -60,12 +62,10 @@ class ProductShow extends React.Component{
     this.setState({cartItem:newCartItem})
   }
 
-  calculateRating(product_id){
-
-  }
-
   handleSubmit = (e)=>{
     e.preventDefault();
+    if (this.state.cartItem.color === "") this.setState({colorNotSelected:true})
+    if (this.state.cartItem.size === "") this.setState({sizeNotSelected:true})
     const newCartItem = Object.assign({}, this.state.cartItem)
     newCartItem.product_id = this.props.product.id
     this.setState({cartItem:newCartItem}, (()=> {
@@ -136,7 +136,8 @@ class ProductShow extends React.Component{
                     <span> Item #{product.id*Constants.item_key}</span>
                   </div>
                 <div id="price">${parseFloat(product.price).toFixed(2)}</div>
-                <input type="text" className="invisible-input" value={`Color: ${this.state.cartItem.color}`} readOnly placeholder="Select a Color"/>
+                <input 
+                  type="text" className="invisible-input" value={`Color: ${this.state.cartItem.color}`} readOnly placeholder="Select a Color"/>
                 <ul className="show-list" >
                   {product.colors.map((color)=>(
                   <button
