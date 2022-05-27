@@ -345,7 +345,7 @@ p19 = Product.create( {
   description: "When unexpected wind, rain or a freak July snowstorm rolls in, and the trip continues regardless, you'll be glad you pitched the burly Big Agnes Bunk House 4 double-wall tent.",
   price: 499.95,
   colors: [ 'Orange/taupe' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '4 Person' ],
   weight: '',
   color_families: [ 'Orange' ]
 } )
@@ -358,7 +358,7 @@ p20 = Product.create( {
   description: 'Built for 2-wheeled adventures on- and off-road, the redesigned Big Agnes Copper Spur HV UL1 Bikepack tent boasts a roomier interior and lighter, stronger fabrication than before.',
   price: 499.95,
   colors: [ 'Gray/orange' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '1 Person' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
@@ -371,7 +371,7 @@ p21 = Product.create( {
   description: 'Create a home away from home on 2-wheeled adventures with the redesigned Big Agnes Copper Spur HV UL2 Bikepack tent. It boasts a roomier interior and a lighter, stronger fabrication than before.',    
   price: 549.95,
   colors: [ 'Gray/orange' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '2 Person' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
@@ -385,7 +385,7 @@ p22 = Product.create( {
 spread out are your priorities, the 4-person Big Agnes Spicer Peak 4 tent has you and your crew covered.',  
   price: 449.95,
   colors: [ 'Olive' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '4 Person' ],
   weight: '',
   color_families: [ 'Khaki' ]
 } )
@@ -398,7 +398,7 @@ p23 = Product.create( {
   description: 'Designed for weight-conscious solo backpackers who still want a high degree of livability, the Sea to Summit Alto TR 1 tent has nearly vertical walls and a minimum trail weight of only 2 lbs. 1 oz.', 
   price: 449,
   colors: [ 'Gray' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '1 Person' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
@@ -411,7 +411,7 @@ p24 = Product.create( {
   description: "Don't let shoulder-season weather stop you from spending a night outside. With a full-fabric inner tent, the versatile Sea to Summit Alto TR2 Plus tent is made to handle colder, wetter conditions.",  
   price: 539,
   colors: [ 'Gray' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '2 Person' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
@@ -438,7 +438,7 @@ p26 = Product.create( {
   description: 'Ideal for trekking, traveling and wilderness camping, the Sea To Summit Mosquito Pyramid double-size net with Insect Shield® provides additional protection against mosquitoes and other bugs.',        
   price: 54.95,
   colors: [ 'Black' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '1 Person', '2 Person' ],
   weight: '',
   color_families: [ 'Black' ]
 } )
@@ -453,21 +453,23 @@ p27 = Product.create( {
 tent can also transform into into a semi-open communal shelter with the help of your trekking poles.',      
   price: 559,
   colors: [ 'Gray' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '2 Person' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
 p27.photos.attach(make_photo_url(tents_url,"ptents12-1.jpg"))
 p27.photos.attach(make_photo_url(tents_url,"ptents12-2.jpg"))
+
+
+(node:6571) ExperimentalWarning: The ESM module loader is experimental.
 p28 = Product.create( {
   brand: 'Vasque',
   name: "St. Elias GTX Hiking Boots - Women's",
   category_id: 3,
-  description: "Push the boundaries of hiking performance with long-distance durability and all-day comfort 
-thanks to the rugged, protective materials of the women's Vasque St. Elias GTX hiking boots.",
+  description: "Push the boundaries of hiking performance with long-distance durability and all-day comfort thanks to the rugged, protective materials of the women's Vasque St. Elias GTX hiking boots.",
   price: 220,
   colors: [ 'Cognac' ],
-  sizes: [ 'One Size' ],
+  sizes: [ 8, 13, 12, 9, 10, 6 ],
   weight: '',
   color_families: [ 'Brown' ]
 } )
@@ -482,14 +484,14 @@ p29 = Product.create( {
   colors: [
     'GraphiteJade',
     'Stone',
-    'BlackIceBlue',
+    'BlackIceblue',
     'Cayenne',
     'EspressoBerry',
     'GraphiteRose',
     'ReedHoney',
-    'DeepBlack'
+    'Deepblack'
   ],
-  sizes: [ 'One Size' ],
+  sizes: [ 7, 12, 13, 9 ],
   weight: '',
   color_families: [
     'Gray',  'Khaki',
@@ -508,14 +510,14 @@ p30 = Product.create( {
   price: 245,
   colors: [
     'Espresso',
-    'DeepBlack',
+    'Deepblack',
     'Sepia',
-    'DarkGrey',
-    'DarkGrayNavy',
+    'Darkgrey',
+    'DarkgrayNavy',
     'Basil',
     'AnthraciteSteelblue'
   ],
-  sizes: [ 'One Size' ],
+  sizes: [ 7, 12 ],
   weight: '',
   color_families: [
     'Brown', 'Black',
@@ -533,7 +535,7 @@ p31 = Product.create( {
   description: "Built for trekking and shorter backpacking trips, the Lowa Camino GTX hiking boots for men offer a stable, supportive design and comfort features that'll keep you logging the miles.",
   price: 325,
   colors: [ 'AnthraciteKiwi', 'DarkgreyBlack' ],
-  sizes: [ 'One Size' ],
+  sizes: [ 13, 12, 6, 8, 7, 11 ],
   weight: '',
   color_families: [ 'Gray', 'Gray' ]
 } )
@@ -543,10 +545,13 @@ p32 = Product.create( {
   brand: 'Asolo',
   name: "TPS 520 GV Evo Hiking Boots - Men's",
   category_id: 3,
-  description: 'Updated with improved outsoles featuring deeper channels, the heavy-duty, waterproof breathable Asolo TPS 520 GV Evo hiking boots deliver superior traction and stability over rugged terrain.',        
+  description: 'Updated with improved outsoles featuring deeper channels, the heavy-duty, waterproof breathable Asolo TPS 520 GV Evo hiking boots deliver superior traction and stability over rugged terrain.',
   price: 350,
   colors: [ 'Chestnut' ],
-  sizes: [ 'One Size' ],
+  sizes: [
+    6, 11, 10, 13,
+    7,  9,  8
+  ],
   weight: '',
   color_families: [ 'Brown' ]
 } )
@@ -556,15 +561,127 @@ p33 = Product.create( {
   brand: 'Asolo',
   name: "Fugitive GTX Hiking Boots - Men's",
   category_id: 3,
-  description: 'Responsive and snappy, the waterproof and breathable Asolo Fugitive GTX Hiking Boots are the right choice for trekkers who demand light weight and comfort.',
+  description: 'Responsive and snappy, the waterproof and breathable Asolo Fugitive GTX Hiking Boots are the right choice for trekkers who demand light weight and comfort.', 
   price: 285,
-  colors: [ 'LightBlackGraphite', 'TruffleStone', 'WoolBlack' ],
-  sizes: [ 'One Size' ],
+  colors: [ 'LightblackGraphite', 'TruffleStone', 'WoolBlack' ],
+  sizes: [ 11, 7 ],
   weight: '',
   color_families: [ 'Black', 'Gray', 'Khaki' ]
 } )
 p33.photos.attach(make_photo_url(boots_url,"pboots5-1.jpg"))
 p33.photos.attach(make_photo_url(boots_url,"pboots5-2.jpg"))
+pambo@SaturnV:/mnt/c/Users/Pam/Desktop/appa/aacw/w14/webscraping/folder$ node camp_crawler.js
+(node:6586) ExperimentalWarning: The ESM module loader is experimental.
+p28 = Product.create( {
+  brand: 'Vasque',
+  name: "St. Elias GTX Hiking Boots - Women's",
+  category_id: 3,
+  description: "Push the boundaries of hiking performance with long-distance durability and all-day comfort thanks to the rugged, protective materials of the women's Vasque St. Elias GTX hiking boots.",
+  price: 220,
+  colors: [ 'Cognac' ],
+  sizes: [ 6, 9, 10, 11, 13 ],
+  weight: '',
+  color_families: [ 'Brown' ]
+} )
+p28.photos.attach(make_photo_url(boots_url,"pboots0-1.jpg"))
+p28.photos.attach(make_photo_url(boots_url,"pboots0-2.jpg"))
+p29 = Product.create( {
+  brand: 'Lowa',
+  name: "Renegade GTX Mid Hiking Boots - Women's",
+  category_id: 3,
+  description: "Winner of the 2014 OudoorGearLab Editors' Choice award, these women's hiking boots provide waterproof protection and excellent support at a low weight for weekend backpacking trips or long day hikes.",
+  price: 245,
+  colors: [
+    'GraphiteJade',
+    'Stone',
+    'BlackIceblue',
+    'Cayenne',
+    'EspressoBerry',
+    'GraphiteRose',
+    'ReedHoney',
+    'Deepblack'
+  ],
+  sizes: [ 6, 10, 12 ],
+  weight: '',
+  color_families: [
+    'Gray',  'Khaki',
+    'Black', 'Red',
+    'Brown', 'Gray',
+    'Green', 'Black'
+  ]
+} )
+p29.photos.attach(make_photo_url(boots_url,"pboots1-1.jpg"))
+p29.photos.attach(make_photo_url(boots_url,"pboots1-2.jpg"))
+p30 = Product.create( {
+  brand: 'Lowa',
+  name: "Renegade GTX Mid Hiking Boots - Men's",
+  category_id: 3,
+  description: "With abundant comfort and support at a low weight, the men's waterproof Lowa Renegade GTX Mid hiking boots are well-suited for long day hikes and weekend backpacking.",
+  price: 245,
+  colors: [
+    'Espresso',
+    'Deepblack',
+    'Sepia',
+    'Darkgrey',
+    'DarkgrayNavy',
+    'Basil',
+    'AnthraciteSteelblue'
+  ],
+  sizes: [],
+  weight: '',
+  color_families: [
+    'Brown', 'Black',
+    'Brown', 'Gray',
+    'Gray',  'Green',
+    'Gray'
+  ]
+} )
+p30.photos.attach(make_photo_url(boots_url,"pboots2-1.jpg"))
+p30.photos.attach(make_photo_url(boots_url,"pboots2-2.jpg"))
+p31 = Product.create( {
+  brand: 'Lowa',
+  name: "Camino GTX Hiking Boots - Men's",
+  category_id: 3,
+  description: "Built for trekking and shorter backpacking trips, the Lowa Camino GTX hiking boots for men offer a stable, supportive design and comfort features that'll keep you logging the miles.",
+  price: 325,
+  colors: [ 'AnthraciteKiwi', 'DarkgreyBlack' ],
+  sizes: [ 6 ],
+  weight: '',
+  color_families: [ 'Gray', 'Gray' ]
+} )
+p31.photos.attach(make_photo_url(boots_url,"pboots3-1.jpg"))
+p31.photos.attach(make_photo_url(boots_url,"pboots3-2.jpg"))
+p32 = Product.create( {
+  brand: 'Asolo',
+  name: "TPS 520 GV Evo Hiking Boots - Men's",
+  category_id: 3,
+  description: 'Updated with improved outsoles featuring deeper channels, the heavy-duty, waterproof breathable Asolo TPS 520 GV Evo hiking boots deliver superior traction and stability over rugged terrain.',
+  price: 350,
+  colors: [ 'Chestnut' ],
+  sizes: [ 6, 7, 8, 9, 10, 12 ],
+  weight: '',
+  color_families: [ 'Brown' ]
+} )
+p32.photos.attach(make_photo_url(boots_url,"pboots4-1.jpg"))
+p32.photos.attach(make_photo_url(boots_url,"pboots4-2.jpg"))
+p33 = Product.create( {
+  brand: 'Asolo',
+  name: "Fugitive GTX Hiking Boots - Men's",
+  category_id: 3,
+  description: 'Responsive and snappy, the waterproof and breathable Asolo Fugitive GTX Hiking Boots are the right choice for trekkers who demand light weight and comfort.', 
+  price: 285,
+  colors: [ 'LightblackGraphite', 'TruffleStone', 'WoolBlack' ],
+  sizes: [
+     7,  8,  9, 10,
+    11, 12, 13
+  ],
+  weight: '',
+  color_families: [ 'Black', 'Gray', 'Khaki' ]
+} )
+p33.photos.attach(make_photo_url(boots_url,"pboots5-1.jpg"))
+p33.photos.attach(make_photo_url(boots_url,"pboots5-2.jpg"))
+
+
 p34 = Product.create( {
   brand: 'Gregory',
   name: "Zulu 30 Pack - Men's",
@@ -572,7 +689,7 @@ p34 = Product.create( {
   description: "Spend some quality time on the trails year-round with the men's Gregory Zulu 30 pack. Its FreeFloat suspension offers breathability to keep you cool in summer heat and avoid clamminess in the winter.",
   price: 159.95,
   colors: [ 'FieryRed' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '30 L' ],
   weight: '',
   color_families: [ 'Red' ]
 } )
@@ -585,7 +702,7 @@ p35 = Product.create( {
   description: "We don't know about you...but we're feeling the Swift 22. This women's Gregory hydration pack carries your stuff and offers convenient, intuitive access to your water while you're on the trail.",     
   price: 119.95,
   colors: [ 'AmethystPurple' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '22 L' ],
   weight: '',
   color_families: [ 'Purple' ]
 } )
@@ -605,7 +722,7 @@ p36 = Product.create( {
     'CalypsoTeal',
     'SparkOrange'
   ],
-  sizes: [ 'One Size' ],
+  sizes: [ '22 L' ],
   weight: '',
   color_families: [ 'Yellow', 'Red', 'Blue', 'Black', 'Blue', 'Orange' ]
 } )
@@ -618,7 +735,7 @@ p37 = Product.create( {
   description: "Designed for active trail pursuits but capable of much more, the men's Gregory Miwok 24 pack combines flexible BioSync ventilated suspension with the volume and features you want in a daypack.",      
   price: 129.95,
   colors: [ 'FlameBlack' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '24 L' ],
   weight: '',
   color_families: [ 'Black' ]
 } )
@@ -631,7 +748,7 @@ p38 = Product.create( {
   description: "Ready for an overnighter or a warm-weather long weekend, the women's Gregory Jade 38 pack is designed for adventures with elevation changes and rough terrain, no matter the mileage.",
   price: 189.95,
   colors: [ 'EtherealGrey', 'MayanTeal' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '38 L' ],
   weight: '',
   color_families: [ 'Gray', 'Green' ]
 } )
@@ -644,7 +761,7 @@ p39 = Product.create( {
   description: "Get trail-ready breathability and a fine-tuned fit with the women's Gregory Jade 28 pack. Its open-air ventilation keeps you cool in the heat and avoids clamminess in the cold for year-round comfort.",
   price: 159.95,
   colors: [ 'EtherealGrey', 'MayanTeal' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '28 L' ],
   weight: '',
   color_families: [ 'Gray', 'Green' ]
 } )
@@ -657,7 +774,7 @@ p40 = Product.create( {
   description: "It feels like a perfect night...to plan your next trek. This men's Gregory Inertia 24 hydration pack carries your stuff and offers convenient, intuitive access to your water while you're on the trail.",
   price: 119.95,
   colors: [ 'ObsidianBlack', 'BrickRed' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '24 L' ],
   weight: '',
   color_families: [ 'Black', 'Red' ]
 } )
@@ -670,7 +787,7 @@ p41 = Product.create( {
   description: "This pack hauls gear, food and water with ample room left for layering for changing conditions. Tackle the trails and stay hydrated on the move with the men's Gregory Citro 30 H2O hydration pack.",   
   price: 159.95,
   colors: [ 'TwilightBlue', 'SparkOrange' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '30 L' ],
   weight: '',
   color_families: [ 'Blue', 'Orange' ]
 } )
@@ -683,7 +800,7 @@ p42 = Product.create( {
   description: "Don't want to head home just yet? Sized just right for a bit of spontaneity, the the women's Arc'teryx Aerios 30 pack is a trusty companion for extended day trips and ultralight overnights.",
   price: 190,
   colors: [ 'Pixel', 'Reflection' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '30 L' ],
   weight: '',
   color_families: [ 'Gray', 'Blue' ]
 } )
@@ -696,7 +813,7 @@ p43 = Product.create( {
   description: "Sometimes you're done in a day, and sometimes you extend the adventure. Luckily for you, the men's Arc'teryx Aerios 30 pack goes with you either way. It's sized just right for a bit of spontaneity.", 
   price: 190,
   colors: [ 'Pixel', 'Glade' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '30 L' ],
   weight: '',
   color_families: [ 'Gray', 'Green' ]
 } )
