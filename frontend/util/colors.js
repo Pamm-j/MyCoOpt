@@ -65,6 +65,7 @@ const Colors = {
   LightBlackGraphite: "#251607",
   TruffleStone: "#978076",
   WoolBlack: "#293542",
+  BlackIceblue: "#00008B"
   
 }
 

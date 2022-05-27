@@ -331,7 +331,7 @@ p18 = Product.create( {
   description: 'Designed to easily fit on your handlebar or in your panniers, the Big Agnes Blacktail Hotel 
 2 Bikepack tent sleeps 2—or 1 with extra gear—and is ideal for 2-wheeled adventures on and off road.',      
   price: 349.95,
-  colors: [ 'Green/gray' ],
+  colors: [ 'GreenGray' ],
   sizes: [ 'One Size' ],
   weight: '',
   color_families: [ 'Gray' ]
@@ -344,8 +344,8 @@ p19 = Product.create( {
   category_id: 4,
   description: "When unexpected wind, rain or a freak July snowstorm rolls in, and the trip continues regardless, you'll be glad you pitched the burly Big Agnes Bunk House 4 double-wall tent.",
   price: 499.95,
-  colors: [ 'Orange/taupe' ],
-  sizes: [ '4 Person' ],
+  colors: [ 'OrangeTaupe' ],
+  sizes: [ '4 P' ],
   weight: '',
   color_families: [ 'Orange' ]
 } )
@@ -357,8 +357,8 @@ p20 = Product.create( {
   category_id: 4,
   description: 'Built for 2-wheeled adventures on- and off-road, the redesigned Big Agnes Copper Spur HV UL1 Bikepack tent boasts a roomier interior and lighter, stronger fabrication than before.',
   price: 499.95,
-  colors: [ 'Gray/orange' ],
-  sizes: [ '1 Person' ],
+  colors: [ 'GrayOrange' ],
+  sizes: [ '1 P' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
@@ -370,8 +370,8 @@ p21 = Product.create( {
   category_id: 4,
   description: 'Create a home away from home on 2-wheeled adventures with the redesigned Big Agnes Copper Spur HV UL2 Bikepack tent. It boasts a roomier interior and a lighter, stronger fabrication than before.',    
   price: 549.95,
-  colors: [ 'Gray/orange' ],
-  sizes: [ '2 Person' ],
+  colors: [ 'GrayOrange' ],
+  sizes: [ '2 P' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
@@ -385,7 +385,7 @@ p22 = Product.create( {
 spread out are your priorities, the 4-person Big Agnes Spicer Peak 4 tent has you and your crew covered.',  
   price: 449.95,
   colors: [ 'Olive' ],
-  sizes: [ '4 Person' ],
+  sizes: [ '4 P' ],
   weight: '',
   color_families: [ 'Khaki' ]
 } )
@@ -398,7 +398,7 @@ p23 = Product.create( {
   description: 'Designed for weight-conscious solo backpackers who still want a high degree of livability, the Sea to Summit Alto TR 1 tent has nearly vertical walls and a minimum trail weight of only 2 lbs. 1 oz.', 
   price: 449,
   colors: [ 'Gray' ],
-  sizes: [ '1 Person' ],
+  sizes: [ '1 P' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
@@ -411,7 +411,7 @@ p24 = Product.create( {
   description: "Don't let shoulder-season weather stop you from spending a night outside. With a full-fabric inner tent, the versatile Sea to Summit Alto TR2 Plus tent is made to handle colder, wetter conditions.",  
   price: 539,
   colors: [ 'Gray' ],
-  sizes: [ '2 Person' ],
+  sizes: [ '2 P' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
@@ -438,7 +438,7 @@ p26 = Product.create( {
   description: 'Ideal for trekking, traveling and wilderness camping, the Sea To Summit Mosquito Pyramid double-size net with Insect Shield® provides additional protection against mosquitoes and other bugs.',        
   price: 54.95,
   colors: [ 'Black' ],
-  sizes: [ '1 Person', '2 Person' ],
+  sizes: [ '1 P', '2 P' ],
   weight: '',
   color_families: [ 'Black' ]
 } )
@@ -453,7 +453,7 @@ p27 = Product.create( {
 tent can also transform into into a semi-open communal shelter with the help of your trekking poles.',      
   price: 559,
   colors: [ 'Gray' ],
-  sizes: [ '2 Person' ],
+  sizes: [ '2 P' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
@@ -488,7 +488,7 @@ p29 = Product.create( {
     'EspressoBerry',
     'GraphiteRose',
     'ReedHoney',
-    'Deepblack'
+    'DeepBlack'
   ],
   sizes: [ 7, 12, 13, 9 ],
   weight: '',
@@ -509,12 +509,12 @@ p30 = Product.create( {
   price: 245,
   colors: [
     'Espresso',
-    'Deepblack',
+    'DeepBlack',
     'Sepia',
-    'Darkgrey',
-    'DarkgrayNavy',
+    'DarkGrey',
+    'G',
     'Basil',
-    'AnthraciteSteelblue'
+    'B'
   ],
   sizes: [ 7, 12 ],
   weight: '',
@@ -533,7 +533,7 @@ p31 = Product.create( {
   category_id: 3,
   description: "Built for trekking and shorter backpacking trips, the Lowa Camino GTX hiking boots for men offer a stable, supportive design and comfort features that'll keep you logging the miles.",
   price: 325,
-  colors: [ 'AnthraciteKiwi', 'DarkgreyBlack' ],
+  colors: [ 'AnthraciteKiwi', 'DarkGreyBlack' ],
   sizes: [ 13, 12, 6, 8, 7, 11 ],
   weight: '',
   color_families: [ 'Gray', 'Gray' ]
@@ -597,7 +597,7 @@ p29 = Product.create( {
     'EspressoBerry',
     'GraphiteRose',
     'ReedHoney',
-    'Deepblack'
+    'DeepBlack'
   ],
   sizes: [ 6, 10, 12 ],
   weight: '',
@@ -618,12 +618,12 @@ p30 = Product.create( {
   price: 245,
   colors: [
     'Espresso',
-    'Deepblack',
+    'DeepBlack',
     'Sepia',
-    'Darkgrey',
-    'DarkgrayNavy',
+    'DarkGrey',
+    'DarkGrayNavy',
     'Basil',
-    'AnthraciteSteelblue'
+    'AnthraciteSteelBlue'
   ],
   sizes: [],
   weight: '',
@@ -642,7 +642,7 @@ p31 = Product.create( {
   category_id: 3,
   description: "Built for trekking and shorter backpacking trips, the Lowa Camino GTX hiking boots for men offer a stable, supportive design and comfort features that'll keep you logging the miles.",
   price: 325,
-  colors: [ 'AnthraciteKiwi', 'DarkgreyBlack' ],
+  colors: [ 'AnthraciteKiwi', 'DarkGreyBlack' ],
   sizes: [ 6 ],
   weight: '',
   color_families: [ 'Gray', 'Gray' ]
@@ -668,7 +668,7 @@ p33 = Product.create( {
   category_id: 3,
   description: 'Responsive and snappy, the waterproof and breathable Asolo Fugitive GTX Hiking Boots are the right choice for trekkers who demand light weight and comfort.', 
   price: 285,
-  colors: [ 'LightblackGraphite', 'TruffleStone', 'WoolBlack' ],
+  colors: [ 'LightBlackGraphite', 'TruffleStone', 'WoolBlack' ],
   sizes: [
      7,  8,  9, 10,
     11, 12, 13
