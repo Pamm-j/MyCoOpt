@@ -124,7 +124,7 @@ class CheckoutIndex extends React.Component{
                 </div>
               </div>
               <div className="guarantee-checkout">52% satisfaction guaranteed <FaInfoCircle/> </div>
-              <Link className="btn brn" onClick={this.handleSubmit()} to={{ pathname: "/order_success", state: {
+              <Link className="btn brn centered-btn" onClick={this.handleSubmit()} to={{ pathname: "/order_success", state: {
                           first_name: split_name[0],
                           tax: tax,
                           total: total,
