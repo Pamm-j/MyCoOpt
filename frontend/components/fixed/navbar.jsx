@@ -16,6 +16,17 @@ class NavBar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange = ()=>(e)=> this.setState({search: e.target.value})
+  componentDidMount(){
+    if (this.props.loggedIn) {
+      this.props.fetchAllCartItems(this.props.currentUser.id)
+    }
+  }
+  componentDidupdate(prevProps){
+    console.log(prevProps)
+    if (this.props.loggedIn !== prevProps.loggedIn) {
+      this.props.fetchAllCartItems(this.props.currentUser.id)
+    }
+  }
 
   handleSubmit(e){
     e.preventDefault()
@@ -33,6 +44,7 @@ class NavBar extends React.Component {
     } 
     return (
       <div>
+        
       <div className="header">
         <div className="personal-links">
           <div className="personal-links-inner-wrapper">
@@ -69,8 +81,10 @@ class NavBar extends React.Component {
             <a href="/#/stores" className='nav-btn'><p> Stores</p></a>
             <AiOutlineUser className="icon"/>  
             {menu}
+            {this.props.loggedIn && <div className="cart-size" >{Object.values(this.props.cartItems).length}</div>}     
             <a href="/#/cart"><MdOutlineShoppingCart className="icon"/></a>
-            <a href="/#/cart" className='nav-btn'><p>Cart</p></a>      
+            <a href="/#/cart" className='nav-btn'><p>Cart</p></a> 
+             
           </div>
         </div>
         <CategoryIndexContainer />

@@ -31,6 +31,7 @@ const App = () => (
         <Route path="/category/:id" component={CategoryShowContainer} />
         <Route path="/product/:id" component={ProductShowContainer} />
         <Route path="/feedback" component={()=>(<div className="feedback" ><img src="https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/feed_back.jpg" /></div>)} ></Route>
+        <Route path="/stores" component={()=>(<div className="feedback" ><img src="https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/map.jpg" /></div>)} ></Route>
         <Route path="/learnmore" component={()=>(<div className="webpage learnmore"> You have already learned everything. Congratulations.</div>)} ></Route>
         <Route path="/termsandprivacy" component={TermsPrivacy} ></Route>
         <Redirect className="webpage"  to="/under_construction" />

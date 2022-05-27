@@ -128,3 +128,18 @@
 .search-input-box {
     width: 40%;
 }
+
+.cart-size {
+  position: absolute;
+  font-family: Graphik web regular,"Helvetica Neue",sans-serif;
+  top: 60px;
+  // left: 1208px;
+  height: 12px;
+  width: 12px;
+  font-size: 10px;
+  background-color: #225c4e;
+  color: #f9f8f6;
+  text-align: center;
+  align-self:center;
+  border-radius: 2px;
+}
