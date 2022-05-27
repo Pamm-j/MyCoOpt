@@ -48,7 +48,7 @@ const Colors = {
   GraphiteJade: "#251607",
   Stone: "#625D5D",
   BlackIceBlue: "#000000",
-  Cayenne: " #c04d35",
+  Cayenne: "#c04d35",
   EspressoBerry: "#18323C",
   GraphiteRose: "#251607",
   ReedHoney: "#ead1a8",
@@ -65,7 +65,8 @@ const Colors = {
   LightBlackGraphite: "#251607",
   TruffleStone: "#978076",
   WoolBlack: "#293542",
-  BlackIceblue: "#00008B"
+  BlackIceblue: "#00008B",
+  LightblackGraphite: "#000000"
   
 }
 
