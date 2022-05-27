@@ -569,8 +569,7 @@ p33 = Product.create( {
 } )
 p33.photos.attach(make_photo_url(boots_url,"pboots5-1.jpg"))
 p33.photos.attach(make_photo_url(boots_url,"pboots5-2.jpg"))
-pambo@SaturnV:/mnt/c/Users/Pam/Desktop/appa/aacw/w14/webscraping/folder$ node camp_crawler.js
-(node:6586) ExperimentalWarning: The ESM module loader is experimental.
+
 p28 = Product.create( {
   brand: 'Vasque',
   name: "St. Elias GTX Hiking Boots - Women's",
