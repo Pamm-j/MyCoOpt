@@ -461,7 +461,6 @@ p27.photos.attach(make_photo_url(tents_url,"ptents12-1.jpg"))
 p27.photos.attach(make_photo_url(tents_url,"ptents12-2.jpg"))
 
 
-(node:6571) ExperimentalWarning: The ESM module loader is experimental.
 p28 = Product.create( {
   brand: 'Vasque',
   name: "St. Elias GTX Hiking Boots - Women's",
