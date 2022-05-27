@@ -22,9 +22,10 @@ class ProductShow extends React.Component{
     this.toggleReview = this.toggleReview.bind(this)
     this.state.action = this.props.createReview
     this.handleUpdate = this.handleUpdate.bind(this)
+    this.search = this.search.bind(this)
   }
   componentDidUpdate(prevProps){
-    if( prevProps.product && this.props.product.id !== prevProps.product.id ){
+    if( prevProps.product && this.props.product.id !== prevProps.product.id && this.props.match.params){
       this.props.fetchProduct( this.props.match.params.id )
       this.props.fetchAllReviews( this.props.match.params.id )
     } 
@@ -36,6 +37,7 @@ class ProductShow extends React.Component{
   componentDidMount(){
     this.props.fetchProduct( this.props.match.params.id )
     this.props.fetchAllReviews( this.props.match.params.id )
+    window.scrollTo(0, 0)
   }
   toggleImage(){
     let num = this.state.image_view
@@ -84,6 +86,10 @@ class ProductShow extends React.Component{
   handleUpdate(review){
     this.setState({action:this.props.updateReview, review:review}, this.toggleReview)
   }
+  search(name){
+    this.props.fetchSearchProducts(name)
+    .then(()=>this.props.history.push(`/search_results/${name}`))
+  }
 
   render(){
     const product = this.props.product
@@ -120,12 +126,12 @@ class ProductShow extends React.Component{
                 </div>
               </div>
               <div className="purchase-details">
-                <h3 className="lnk">{product.brand}</h3>
+                <h3 ><button className="not-button" onClick={()=>this.search(product.brand)} >{product.brand}</button></h3>
                 <h1> {product.name}</h1> 
                   <div className="flex-line rating-stars">
                     <div>
-                      <Stars rating={thisRating}/>
-                      <span id="small-text"> ({this.props.reviews.length})</span>
+                      <Stars rating={thisRating} amount={this.props.reviews.length}/>
+                      
                     </div>
                     <span> Item #{product.id*Constants.item_key}</span>
                   </div>

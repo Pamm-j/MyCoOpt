@@ -512,9 +512,7 @@ p30 = Product.create( {
     'DeepBlack',
     'Sepia',
     'DarkGrey',
-    'G',
-    'Basil',
-    'B'
+    'Basil'
   ],
   sizes: [ 7, 12 ],
   weight: '',

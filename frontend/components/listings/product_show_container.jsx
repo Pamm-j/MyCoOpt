@@ -4,7 +4,8 @@ import ProductShow from "./product_show";
 import { fetchProduct } from "../../actions/listings_actions";
 import { createCartItem } from "../../actions/cart_actions";
 import { fetchAllReviews, updateReview, createReview, deleteReview } from "../../actions/review_actions"
-
+import { fetchSearchProducts } from "../../actions/listings_actions";
+import { withRouter } from "react-router-dom";
 
 
 const mSTP = (state, ownProps) => ({
@@ -35,6 +36,7 @@ const mDTP = (dispatch) => ({
   updateReview: (review)=> dispatch(updateReview(review)),
   createReview: (review)=> dispatch(createReview(review)),
   deleteReview: (reviewId)=> dispatch(deleteReview(reviewId)),
+  fetchSearchProducts: (term)=> dispatch(fetchSearchProducts(term)),
 })
 
-export default connect(mSTP, mDTP)(ProductShow)
+export default withRouter(connect(mSTP, mDTP)(ProductShow))

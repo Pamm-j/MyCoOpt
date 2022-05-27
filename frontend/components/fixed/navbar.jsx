@@ -16,6 +16,7 @@ class NavBar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange = ()=>(e)=> this.setState({search: e.target.value})
+  
   componentDidMount(){
     if (this.props.loggedIn) {
       this.props.fetchAllCartItems(this.props.currentUser.id)

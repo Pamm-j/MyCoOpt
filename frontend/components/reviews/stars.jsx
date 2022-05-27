@@ -11,6 +11,7 @@ const Stars = (props) => {
           <span key={i +"star"} className="star-yellow">★</span>:
           <span key={i +"star"} className="star-grey">★</span>
         ))}
+        <span id="small-text"> ({props.amount})</span>
     </div>
   )
 }
