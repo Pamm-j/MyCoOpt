@@ -30,6 +30,7 @@ class CartIndexItem extends React.Component {
 
   render(){
     let item = this.props.item
+    console.log(item)
     return(
       <div className="cart-index-item">
         <div className="cart-index-photo"><img src={item.photoUrls[0]} /></div>
@@ -47,14 +48,21 @@ class CartIndexItem extends React.Component {
           <div className="update-container-top">
             <div className="amount-ticker">
               <button className="increment-button" onClick={this.increment(-1)}  ><BsDashCircle/></button>             
-              <input readOnly="readonly" className="quantity-input" type="number" inputMode="numeric" max="9999" min="1" value={this.props.item.quantity} />
+              <input readOnly="readonly" 
+              className="quantity-input" 
+              type="number" 
+              inputMode="numeric" 
+              max="9999" 
+              min="1" value={this.props.item.quantity} />
               <button className="increment-button" onClick={this.increment(1)} ><BsPlusCircle/></button>
             </div>
             <div className="price">${parseFloat(item.price).toFixed(2)}</div>
             <div className="total">${parseFloat(item.price  * item.quantity).toFixed(2)}</div>
           </div>
           <div className="in-line">
-            <input type="radio" id={item.id+"pickup"} name={item.quantity} 
+            <input type="radio" 
+            id={item.cart_item_id+"pickup"} 
+            name={item.quantity} 
               style={{ accentColor: "#4e4d49" }}
               value="pickup"
               checked={item.delivery_type === "pickup" ? "checked" : "" }
@@ -62,7 +70,9 @@ class CartIndexItem extends React.Component {
             <label id={item.id+"pickup"}>Pick up at store--FREE</label>
           </div>
           <div className="in-line">              
-            <input type="radio" id={item.id+"delivery"} name={item.quantity}
+            <input type="radio"
+               id={item.cart_item_id+"delivery"} 
+               name={item.quantity}
               style={{ accentColor: "#4e4d49" }}
               value="delivery"
               checked={item.delivery_type === "delivery" ? "checked" : "" }
