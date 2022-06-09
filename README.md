@@ -24,7 +24,7 @@ Things you may want to cover:
 * ... -->
 
 
-![alt text](https://github.com/Domingo-creator/RainForest/blob/master/app/assets/images/main_page_screenshot.png) 
+<!-- ![alt text](https://github.com/) finish wiht info to png  -->
 
 # Welcome to My Co-opt
 My Co-opt, an REI Co-op clone, is a full-stack web application that replicates the primary features of **_rei.com_**. My Co-opt focuses on my personal interests of cycling and travel. Users can browse a vast collection of products through the use both backend searches and front end filters. Users can add products to their personal cart and checkout items in thier cart when they are finished.  
