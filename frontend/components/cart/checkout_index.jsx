@@ -22,7 +22,6 @@ class CheckoutIndex extends React.Component{
   }
 
   handleSubmit=()=>()=>{
-    const split_name = this.props.shopper.full_name.split(' ')
     this.props.deleteCartItems(this.props.shopperId)
   }
   render(){
