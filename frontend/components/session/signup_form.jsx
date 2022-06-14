@@ -32,7 +32,7 @@ class SignupForm extends React.Component {
   
   render(){
     return(
-      <div>
+      <div className="webpage">
         <h1 className="h1">Create a new My Coopt online account</h1>
         <div className="signup-form-container">
           <h3>* Required information</h3>

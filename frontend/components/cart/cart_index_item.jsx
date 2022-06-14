@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {BsPlusCircle, BsDashCircle} from 'react-icons/bs'
 import Constants from "../../util/constants";
+import ShippingRadios from "../listings/shipping_radios";
 
 class CartIndexItem extends React.Component {
   constructor(props){
     super(props)
     this.state = props.item
+    this.handleClick = this.handleClick.bind(this)
   }
   componentDidUpdate(prevProps){
     if((prevProps.item && this.props.item.quantity !== prevProps.item.quantity)
@@ -21,7 +23,7 @@ class CartIndexItem extends React.Component {
     this.props.updateCartItem({id:this.props.item.cart_item_id, quantity:newQuantity})
   } 
 
-  handleClick(type) {
+  handleClick = (_, type)=>()=> {
     this.props.updateCartItem({id:this.props.item.cart_item_id, delivery_type:type})
   }
   removeItem(id){
@@ -58,26 +60,11 @@ class CartIndexItem extends React.Component {
             <div className="price">${parseFloat(item.price).toFixed(2)}</div>
             <div className="total">${parseFloat(item.price  * item.quantity).toFixed(2)}</div>
           </div>
-          <div className="in-line">
-            <input type="radio" 
-            id={item.cart_item_id+"pickup"} 
-            name={item.quantity} 
-              style={{ accentColor: "#4e4d49" }}
-              value="pickup"
-              checked={item.delivery_type === "pickup" ? "checked" : "" }
-              onChange={()=>this.handleClick('pickup')}/>
-            <label id={item.id+"pickup"}>Pick up at store--FREE</label>
-          </div>
-          <div className="in-line">              
-            <input type="radio"
-               id={item.cart_item_id+"delivery"} 
-               name={item.quantity}
-              style={{ accentColor: "#4e4d49" }}
-              value="delivery"
-              checked={item.delivery_type === "delivery" ? "checked" : "" }
-              onChange={()=>this.handleClick('delivery')}/>
-            <label id={item.id+"delivery"}>Ship to Address</label>
-          </div>
+          <ShippingRadios
+            delivery_type={item.delivery_type}
+            handleClick={this.handleClick}
+            product={item}
+          />
         </div>
   
       </div>

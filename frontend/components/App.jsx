@@ -13,6 +13,7 @@ import {CartIndexContainer, CheckoutIndexContainer} from "./cart/cart_index_cont
 import OrderSuccess from "./cart/order_success";
 import TermsPrivacy from "./fixed/terms_privacy";
 import { SearchShowContainer } from "./listings/search_show_container";
+import Feedback from "./fixed/feedback";
 
 const App = () => (
   
@@ -30,7 +31,7 @@ const App = () => (
         <Route path="/search_results/:searchTerm" component={SearchShowContainer} />
         <Route path="/category/:id" component={CategoryShowContainer} />
         <Route path="/product/:id" component={ProductShowContainer} />
-        <Route path="/feedback" component={()=>(<div className="feedback" ><img src="https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/feed_back.jpg" /></div>)} ></Route>
+        <Route path="/feedback" component={Feedback} ></Route>
         <Route path="/stores" component={()=>(<div className="feedback" ><img src="https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/map.jpg" /></div>)} ></Route>
         <Route path="/learnmore" component={()=>(<div className="webpage learnmore"> You have already learned everything. Congratulations.</div>)} ></Route>
         <Route path="/termsandprivacy" component={TermsPrivacy} ></Route>

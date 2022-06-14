@@ -55,7 +55,7 @@ const Colors = {
   DeepBlack: "#625D5D",
   Espresso: "#18323C",
   Sepia: "#704214",
-    DarkGrey: "#625D5D",
+  DarkGrey: "#625D5D",
   DarkGrayNavy: "#625D5D",
   Basil: "#59910F",
   AnthraciteSteelBlue: "#4682b4",

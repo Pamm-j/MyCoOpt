@@ -134,7 +134,7 @@
   font-family: Graphik web regular,"Helvetica Neue",sans-serif;
   top: 2px;
   right: 26px;
-  height: 12px;
+  height: 11px;
   width: 12px;
   font-size: 10px;
   background-color: #225c4e;
@@ -142,6 +142,7 @@
   text-align: center;
   align-self:center;
   border-radius: 2px;
+  padding-top: 1px;
 }
 
 .set {
@@ -149,4 +150,5 @@
   width: auto;
   padding-left: 8px;
   position: relative;
+  align-items: center
 }

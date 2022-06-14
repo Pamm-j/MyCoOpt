@@ -6,6 +6,7 @@ import { GoLocation } from 'react-icons/go'
 import { MdOutlineShoppingCart } from 'react-icons/md'
 import { AiOutlineUser } from 'react-icons/ai'
 import { GiSBrick } from 'react-icons/gi'
+import { FaCocktail } from 'react-icons/fa'
 import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io'
 
 
@@ -60,6 +61,10 @@ class NavBar extends React.Component {
             <div className="each-link-set">
               <a href="https://pamm-j.github.io/circuits/" className="grey icon" id='brick' ><GiSBrick /></a>
               <a href="https://pamm-j.github.io/circuits/" className="grey" > Circuits Game</a>
+            </div>
+            <div className="each-link-set">
+              <a href="https://boozy1.herokuapp.com/#/" className="grey icon" id='brick' ><FaCocktail /></a>
+              <a href="https://boozy1.herokuapp.com/#/" className="grey" > Boozy</a>
             </div>
           </div>
         </div>

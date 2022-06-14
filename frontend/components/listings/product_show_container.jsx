@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import React from "react";
 import ProductShow from "./product_show";
 import { fetchProduct } from "../../actions/listings_actions";
-import { createCartItem } from "../../actions/cart_actions";
+import { createCartItem, updateCartItem } from "../../actions/cart_actions";
 import { fetchAllReviews, updateReview, createReview, deleteReview } from "../../actions/review_actions"
 import { fetchSearchProducts } from "../../actions/listings_actions";
 import { withRouter } from "react-router-dom";
@@ -12,6 +12,7 @@ const mSTP = (state, ownProps) => ({
   product: state.entities.products[ownProps.match.params.id],
   reviews: Object.values(state.entities.reviews),
   currentUserId: state.session.id,
+  cartItems: Object.values(state.entities.cartItems),
   cartItem: {
     quantity: 1,
     product_id: "",
@@ -32,6 +33,7 @@ const mSTP = (state, ownProps) => ({
 const mDTP = (dispatch) => ({
   fetchProduct: (productId)=> dispatch(fetchProduct(productId)),
   createCartItem: (product)=> dispatch(createCartItem(product)),
+  updateCartItem: (product)=> dispatch(updateCartItem(product)),
   fetchAllReviews: (productId)=> dispatch(fetchAllReviews(productId)),
   updateReview: (review)=> dispatch(updateReview(review)),
   createReview: (review)=> dispatch(createReview(review)),

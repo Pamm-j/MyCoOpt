@@ -16,7 +16,7 @@ class ReviewItem extends React.Component{
           <div className="reviewer-name">{review.reviewer_name}</div>
           <div className="address">{splitAddress.slice(0,2).join(" ")}</div>
           {this.props.currentUserId === review.reviewer_id &&
-          <div onClick={()=>this.props.deleteReview(review.id)} className="red-lnk small">Remove</div>}
+          <div onClick={()=>this.props.deleteReview(review.id).then(props.fetchAllReviews(props.product.id))} className="red-lnk small">Remove</div>}
           {this.props.currentUserId === review.reviewer_id &&
           <div onClick={()=>this.props.handleUpdate(review)} id="green" className="grn-lnk small">Update</div>}
         </div>

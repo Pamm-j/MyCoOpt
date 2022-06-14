@@ -8,6 +8,7 @@ import Constants from "../../util/constants";
 import ReviewItem from "../reviews/review_item";
 import ReviewForm from "../reviews/review_form";
 import Stars from "../reviews/stars";
+import ShippingRadios from "./shipping_radios";
 
 
 class ProductShow extends React.Component{
@@ -17,14 +18,15 @@ class ProductShow extends React.Component{
       cartItem: this.props.cartItem,
       review: this.props.review,
       image_view: 0,
-      reviewShow:false
+      reviewShow:false,
+      colorSelected: "notyet",
+      sizeSelected: "notyet"
       }
-      this.colorNotSelected = false
-      this.sizeNotSelected = false
     this.toggleReview = this.toggleReview.bind(this)
-    this.state.action = this.props.createReview
+    this.state.action = this.props.createReview                          //WHAAAT?
     this.handleUpdate = this.handleUpdate.bind(this)
     this.search = this.search.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
   componentDidUpdate(prevProps){
     if( prevProps.product && this.props.product.id !== prevProps.product.id && this.props.match.params){
@@ -43,13 +45,12 @@ class ProductShow extends React.Component{
   }
   toggleImage(){
     let num = this.state.image_view
-    num = num + 1
-    num = num % this.props.product.photoUrls.length
+    num = (num + 1) % this.props.product.photoUrls.length
     this.setState({image_view:num})
   }
 
   increment = (num)=> () => {
-    let newQuantity = JSON.parse(this.state.cartItem.quantity) + num
+    let newQuantity = Number(this.state.cartItem.quantity) + num
     if (newQuantity < 1) newQuantity = 0
     const newCartItem = Object.assign({}, this.state.cartItem)
     newCartItem.quantity = newQuantity
@@ -57,6 +58,8 @@ class ProductShow extends React.Component{
   }
 
   handleClick = (type, value)=>() => {
+    let string = type + 'Selected'
+    this.setState({[string]:true})
     const newCartItem = Object.assign({}, this.state.cartItem)
     newCartItem[type] = value
     this.setState({cartItem:newCartItem})
@@ -64,10 +67,23 @@ class ProductShow extends React.Component{
 
   handleSubmit = (e)=>{
     e.preventDefault();
-    if (this.state.cartItem.color === "") this.setState({colorNotSelected:true})
-    if (this.state.cartItem.size === "") this.setState({sizeNotSelected:true})
+    if (this.state.cartItem.color === "") this.setState({colorSelected:false})
+    if (this.state.cartItem.size  === "") this.setState({sizeSelected:false})
     const newCartItem = Object.assign({}, this.state.cartItem)
     newCartItem.product_id = this.props.product.id
+    let duplicateItem  = this.props.cartItems.filter((cartItem)=> {
+      return (cartItem.id === this.props.product.id &&
+      cartItem.color === this.state.cartItem.color &&
+      cartItem.size === this.state.cartItem.size )
+    })
+    if (duplicateItem.length !== 0){
+      let duplicateItemId = duplicateItem[0].cart_item_id
+      let newQuantity = this.state.cartItem.quantity + duplicateItem[0].quantity
+      this.props.updateCartItem({id:duplicateItemId, quantity:newQuantity})
+      .then(()=>this.props.history.push(`/category/${this.props.product.category_id}`))
+      return
+    }
+
     this.setState({cartItem:newCartItem}, (()=> {
       if (!Object.values(this.state).includes("")) {
         this.props.createCartItem(this.state.cartItem)
@@ -75,14 +91,46 @@ class ProductShow extends React.Component{
       }}
     ))
   }
-  toggleReview(){
-    if (this.state.reviewShow === true) {
-      this.setState({reviewShow:false})
+
+  toggleReview = ()=>this.setState({reviewShow: !this.state.reviewShow})
+
+  message(product) {
+    if (!this.props.currentUserId){
+      return (
+        <div className="login-msg in-line">
+          <GiSwordsEmblem/>
+          <div> To purchase this item, <Link 
+                                        className="lnk" 
+                                        to={{ pathname: "/login", state: {oldPath:`/product/${product.id}`}}}
+                                        >sign in</Link> or <Link
+                                        className="lnk" 
+                                        to={{ pathname: "/signup", state: {oldPath:`/product/${product.id}`}}}
+                                        >get Co-opted</Link>.
+          </div>
+        </div>
+      )
     } else {
-      this.setState({reviewShow:true})
+      return (
+        <div>
+          <div className="login-msg in-line">
+            <GiSwordsEmblem className="sword"/>
+            <p> It's dangerous to go alone!
+               <span> ${parseFloat(product.price*this.state.cartItem.quantity*0.1).toFixed(2)} </span>
+              Take this.
+            </p>
+          </div>
+          <button 
+            className='grn btn bottom-of-page' 
+            onClick={this.handleSubmit}
+            >Add to Cart 
+            {this.state.colorSelected !== "notyet"  && this.state.sizeSelected !== "notyet"  &&
+             this.state.colorSelected !== false && this.state.sizeSelected !== false  &&
+             <span> —${parseFloat(product.price*this.state.cartItem.quantity).toFixed(2)}</span>}
+          </button>
+        </div>
+      )
     }
   }
-
   handleUpdate(review){
     this.setState({action:this.props.updateReview, review:review}, this.toggleReview)
   }
@@ -147,6 +195,7 @@ class ProductShow extends React.Component{
                     style={{backgroundColor: `${Colors[color]}`}}></button> 
                   ))}
                 </ul>
+                {this.state.colorSelected === false && <div className="error"> please select an available color</div>}
                 <input type="text" className="invisible-input" readOnly value={`Size: ${this.state.cartItem.size}`} placeholder="Select a Size"/>
 
                 <ul className="show-list" >
@@ -155,6 +204,7 @@ class ProductShow extends React.Component{
                     onClick={this.handleClick("size", size)}
                     key={"size" + size}>{size}</button> ))}
                 </ul>
+                {this.state.sizeSelected === false && <div className="error"> please select an available size</div>}
                 <div className="invisible-input">Quantity</div>
                 <div className="amount-ticker">
                   <button className="increment-button" onClick={this.increment(-1)}  ><BsDashCircle/></button>             
@@ -167,59 +217,34 @@ class ProductShow extends React.Component{
                   <button className="increment-button" onClick={this.increment(1)} ><BsPlusCircle/></button>
                 </div>
                 <div className="shipping-details">
-                  <div className="in-line radios">
-                    <input
-                      type="radio"
-                      id={product.id+"pickup"}
-                      name="shipping" 
-                      style={{ accentColor: "#4e4d49" }}
-                      value="pickup"
-                      checked={this.state.cartItem.delivery_type === "pickup" ? "checked" : "" }
-                      onChange={this.handleClick('delivery_type', "pickup")}
-                      />
-                    <label id={product.id+"pickup"}>Pick up at store--FREE</label>
-                  </div>
-                  <div className="in-line radios">              
-                    <input
-                      type="radio"
-                      id={product.id+"delivery"}
-                      name="shipping"
-                      style={{ accentColor: "#4e4d49" }}
-                      value="delivery"
-                      checked={this.state.cartItem.delivery_type === "delivery" ? "checked" : "" }
-                      onChange={this.handleClick('delivery_type', "delivery")}
-                      />
-                    <label id={product.id+"delivery"}>Ship to Address</label>
-                  </div>
+                  <ShippingRadios
+                    delivery_type={this.state.cartItem.delivery_type}
+                    handleClick={this.handleClick}
+                    product={this.state.cartItem}
+                  />
                 </div>
-                  <div className="login-msg"> <GiSwordsEmblem/> To purchase this item, <Link 
-                    className="lnk" 
-                    to={{ pathname: "/login", state: {oldPath:`/product/${product.id}`}}}
-                  >sign in</Link> or <Link 
-                    className="lnk" 
-                    to={{ pathname: "/signup", state: {oldPath:`/product/${product.id}`}}}
-                    >get Co-opted</Link>.
-                  </div>
-                  {this.props.currentUserId &&<button className='grn btn bottom-of-page' onClick={this.handleSubmit}>Add to Cart ${parseFloat(product.price*this.state.cartItem.quantity).toFixed(2)}</button>}
+                  {this.message(product)}
               </div>
             </div>
             <div className="show-details">{product.description}</div>
             <div className="reviews-container">
               <div className="title-button-container">
                 <div className="fancy-small-title">Reviews</div>
-                {this.props.currentUserId &&
-                <button className="grn btn" onClick={()=>this.setState({reviewShow:true})}>Write a review</button>}
+                {this.props.currentUserId && this.props.reviews.every(review=> (review.reviewer_id !== this.props.currentUserId))  &&
+                <button className="grn btn" onClick={()=>this.setState({reviewShow:true})} >Write a review</button>}
               </div>
               <div className="summary-box"></div>
               {this.props.reviews.map((review)=> <ReviewItem
-                        key={review.id + "reviewed"}
-                        review={review}
-                        currentUserId={this.props.currentUserId}
-                        updateReview={this.props.updateReview}
-                        deleteReview={this.props.deleteReview}
-                        toggleReview={this.toggleReview}
-                        handleUpdate={this.handleUpdate}
-                        />)}
+                key={review.id + "reviewed"}
+                review={review}
+                currentUserId={this.props.currentUserId}
+                updateReview={this.props.updateReview}
+                deleteReview={this.props.deleteReview}
+                toggleReview={this.toggleReview}
+                handleUpdate={this.handleUpdate}
+                fetchAllReviews={this.props.fetchAllReviews}
+                product={product}
+              />)}
             </div>
 
 

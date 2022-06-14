@@ -86,7 +86,7 @@
   vertical-align: middle;
 }
 
-.invisible-input {
+.-input, .invisible-input {
   border: none;
   margin: 10px 0;
 }
@@ -102,6 +102,12 @@
   font-size: 18px;
   line-height: 20px;
   letter-spacing: .15px;
+  span {
+    font-family: GraphikLCGSemibold,"Helvetica Neue",sans-serif;
+  }
+  svg {
+    padding-right: 4px;
+  }
 }
 
 .shipping-details {
@@ -115,6 +121,7 @@
 
 .bottom-of-page {
   margin: 24px 0;
+  width: 100%;
 }
 
 .arrow{
@@ -157,4 +164,9 @@
   text-decoration: underline!important;
   color: #406eb5!important;
   font-size: 16px
+}
+
+.error {
+  color: red;
+  font-size: 12px;
 }
