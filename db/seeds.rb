@@ -61,6 +61,7 @@ c2.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-
 c3.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/sleep-roraima.jpg'), filename:'tent.JPG')
 c4.photo.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/tent.JPG'), filename:'sleep-roraima.jpg')
 
+
 bikes_url = "https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/"
 tents_url = "https://my-co-opt-seed.s3.us-west-1.amazonaws.com/tents/"
 backpacks_url = "https://my-co-opt-seed.s3.us-west-1.amazonaws.com/backpacks/"
@@ -332,7 +333,7 @@ p18 = Product.create( {
 2 Bikepack tent sleeps 2—or 1 with extra gear—and is ideal for 2-wheeled adventures on and off road.',      
   price: 349.95,
   colors: [ 'GreenGray' ],
-  sizes: [ 'One Size' ],
+  sizes: [ '2 P' ],
   weight: '',
   color_families: [ 'Gray' ]
 } )
