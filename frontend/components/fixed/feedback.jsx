@@ -7,14 +7,16 @@ function Feedback(props) {
   const [email, setemail] = useState(props.currentUser ? props.currentUser.email : "")
   const [feedback, setfeedback] = useState("")
   const history = useHistory()
-  console.log(props)
+  const handleBack =  ()=> {
+    history.goBack()
+  }
+
   return (
     <div className="webpage">
     <h1 className="h1">Let us know what you think</h1>
     <div className="signup-form-container">
       <h3>* Required information</h3>
-      <form className="signup-form" 
-      >
+      <div className="signup-form" >
         <label>Full Name *
           <input 
             className="white-input"
@@ -42,9 +44,9 @@ function Feedback(props) {
         <br/>
         <button
           className='grn btn'
-          onClick={history.goBack}
+          onClick={handleBack}
         >Submit Feedback</button>
-      </form>
+      </div>
     </div>
   </div>
   )
