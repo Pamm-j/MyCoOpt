@@ -9,7 +9,7 @@ import {  fetchSearchProducts} from "../../actions/listings_actions"
 const mSTP = state => ({
   loggedIn: Boolean(state.session.id),
   currentUser: state.entities.users[state.session.id],
-  cartItems: state.entities.cartItems
+  cartItems: Object.values(state.entities.cartItems)
 })
 
 const mDTP = dispatch => ({

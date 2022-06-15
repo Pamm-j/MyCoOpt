@@ -11,7 +11,8 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
   login: user => dispatch(login(user)),
-  clearErrors: ()=> dispatch(clearErrors())
+  clearErrors: ()=> dispatch(clearErrors()),
+  // fetchAllCartItems: (shopperId)=> dispatch(fetchAllCartItems(shopperId)),
 })
 
 export default connect(mSTP,mDTP)(LoginForm)

@@ -84,6 +84,11 @@
   padding-bottom: 4px;
   padding-top: 2px;
   padding-right: 8px;
+
+}
+.with-col-flex {
+  display: flex;
+  flex-direction: column;
 }
 
 .review-photo {

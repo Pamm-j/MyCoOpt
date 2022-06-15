@@ -43,15 +43,17 @@ class ReviewForm extends React.Component{
                 <div className="review-title">My Review for {this.props.brand} {this.props.name}</div>
                 <div className="small-msg">Required fields are marked with *</div>
               </div>
-              <div className="separated with-flex">                
-                <div className="review-label">Product rating*</div>
-                <div className="star-box">
-                  <div onClick={this.handleClick(5)} className="star star-5" id={ this.state.rating >=5 ? `star-${this.state.rating}`: ""}>★</div>
-                  <div onClick={this.handleClick(4)} className="star star-4" id={ this.state.rating >=4 ? `star-${this.state.rating}`: ""}>★</div>
-                  <div onClick={this.handleClick(3)} className="star star-3" id={ this.state.rating >=3 ? `star-${this.state.rating}`: ""}>★</div>
-                  <div onClick={this.handleClick(2)} className="star star-2" id={ this.state.rating >=2 ? `star-${this.state.rating}`: ""}>★</div>
-                  <div onClick={this.handleClick(1)} className="star star-1" id={ this.state.rating >=1 ? `star-${this.state.rating}`: ""}>★</div>
-                </div>
+              <div className="separated">
+                <div className="with-flex">
+                  <div className="review-label">Product rating*</div>
+                  <div className="star-box">
+                    <div onClick={this.handleClick(5)} className="star star-5" id={ this.state.rating >=5 ? `star-${this.state.rating}`: ""}>★</div>
+                    <div onClick={this.handleClick(4)} className="star star-4" id={ this.state.rating >=4 ? `star-${this.state.rating}`: ""}>★</div>
+                    <div onClick={this.handleClick(3)} className="star star-3" id={ this.state.rating >=3 ? `star-${this.state.rating}`: ""}>★</div>
+                    <div onClick={this.handleClick(2)} className="star star-2" id={ this.state.rating >=2 ? `star-${this.state.rating}`: ""}>★</div>
+                    <div onClick={this.handleClick(1)} className="star star-1" id={ this.state.rating >=1 ? `star-${this.state.rating}`: ""}>★</div>
+                  </div>
+                </div>                
               {this.state.starsError === true && <div className="error"> Reviews must have ratings </div>}
               </div>
               <div className="separated">                

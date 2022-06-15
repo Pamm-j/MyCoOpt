@@ -24,8 +24,8 @@ class NavBar extends React.Component {
       .then(this.setState({search:""}))
     }
   }
-  componentDidupdate(prevProps){
-    if (this.props.loggedIn !== prevProps.loggedIn) {
+  componentDidUpdate(prevProps){
+    if (this.props.loggedIn !== prevProps.loggedIn && this.props.currentUser) {
       this.props.fetchAllCartItems(this.props.currentUser.id)
     }
   }
@@ -100,7 +100,7 @@ class NavBar extends React.Component {
             <div className="set">
               <a href="/#/cart"><MdOutlineShoppingCart className="icon"/></a>
               <a href="/#/cart" className='nav-btn'><p>Cart</p></a>
-            {this.props.loggedIn && <div className="cart-size" >{Object.values(this.props.cartItems).length}</div>}     
+            {this.props.loggedIn && this.props.cartItems.length !==0 && <div className="cart-size" >{this.props.cartItems.length}</div>}     
             </div>
     
             
