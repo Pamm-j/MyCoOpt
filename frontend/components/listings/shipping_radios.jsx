@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ShippingRadios(props) {
   const product = props.product
-  console.log(product)
+
   return (
     <div>
       <div className="in-line radios">

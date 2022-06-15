@@ -8,13 +8,20 @@ class ReviewForm extends React.Component{
   }
   handleSubmit = (e)=>{
     e.preventDefault();
-    this.props.action(this.state)
-    .then(()=>this.props.toggleReview())
+    if (this.state.title !== "" && this.state.rating !== 0) {
+      this.props.action(this.state)
+        .then(()=>this.props.toggleReview())
+    } else if (this.state.title ==='') {
+      this.setState({titleError:true})
+    } else if (this.state.rating === 0) {
+      this.setState({starsError:true})
+    }
+
   }
 
-  handleChange = (type)=>(e)=> this.setState({[type]: e.target.value})
+  handleChange = (type)=>(e)=> this.setState({[type]: e.target.value}, this.setState({titleError:false}))
 
-  handleClick = (value)=>() => {this.setState({rating:value})}
+  handleClick = (value)=>() => {this.setState({rating:value, starsError:false})}
 
   render(){
     return (
@@ -45,6 +52,7 @@ class ReviewForm extends React.Component{
                   <div onClick={this.handleClick(2)} className="star star-2" id={ this.state.rating >=2 ? `star-${this.state.rating}`: ""}>★</div>
                   <div onClick={this.handleClick(1)} className="star star-1" id={ this.state.rating >=1 ? `star-${this.state.rating}`: ""}>★</div>
                 </div>
+              {this.state.starsError === true && <div className="error"> Reviews must have ratings </div>}
               </div>
               <div className="separated">                
                 <div className="review-label">Review title*</div>
@@ -54,6 +62,7 @@ class ReviewForm extends React.Component{
                   value={this.state.title} 
                   onChange={this.handleChange('title')}
                 />
+              {this.state.titleError === true && <div className="error"> Reviews must have a title </div>}
               </div>
               <div className="separated">                
                 <div className="review-label">Review</div>

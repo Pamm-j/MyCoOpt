@@ -88,7 +88,7 @@ class CategoryShow extends React.Component{
   render(){
 
     if (!this.props.products){
-      return null 
+      return <div className="loading"></div>
     } else { 
       this.colorArray = this.combineTraits("color_families")
       this.sizeArray = this.combineTraits("sizes")

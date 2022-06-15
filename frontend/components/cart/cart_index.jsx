@@ -99,7 +99,7 @@ class CartIndex extends React.Component{
             </div>
           </div>
         </div>
-        : <div className="webpage learnmore">There are no Items in your cart</div>}
+        : <div className="webpage learnmore loading">There are no Items in your cart</div>}
       </div>
 
     )

@@ -147,7 +147,7 @@ class ProductShow extends React.Component{
     })
     thisRating = thisRating / this.props.reviews.length
     if (!product){
-      return null 
+      return <div className="loading"></div> 
       } else return (
         <div> 
           {this.state.reviewShow && (         

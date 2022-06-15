@@ -21,6 +21,7 @@ class NavBar extends React.Component {
   componentDidMount(){
     if (this.props.loggedIn) {
       this.props.fetchAllCartItems(this.props.currentUser.id)
+      .then(this.setState({search:""}))
     }
   }
   componentDidupdate(prevProps){
@@ -31,8 +32,12 @@ class NavBar extends React.Component {
 
   handleSubmit(e){
     e.preventDefault()
-    if (this.state.search) this.props.fetchSearchProducts(this.state.search)
-    .then(()=>this.props.history.push(`/search_results/${this.state.search}`))
+    if (this.state.search) {
+      let term = this.state.search
+      this.props.fetchSearchProducts(term)
+      .then(()=>this.props.history.push(`/search_results/${term}`))
+    }
+    this.setState({search:""})
   }
 
   render(){

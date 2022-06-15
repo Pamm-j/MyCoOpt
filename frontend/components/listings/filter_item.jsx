@@ -2,7 +2,7 @@ import { IoIosArrowBack, IoIosArrowDown } from 'react-icons/io';
 import React, { useState } from 'react'
 
 export default function FilterItem(props) {
-  const [open, setopen] = useState(false);
+  const [open, setopen] = useState(true);
   const toggleHeader=()=>{
     setopen(!open)
   }
