@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyCoOpt</title>
+    <title>MyCo-opt</title>
     <%= favicon_link_tag 'favicon.ico'  %>
 
     <%= csrf_meta_tags %>
@@ -11,10 +11,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta property="og:title" content="MyCo-opt" />
+    <meta property='og:image' content="<%= image_url('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/cat-spash/project_pic.PNG') %>"/>
+    <meta property="og:description" content="MyCo-opt, an REI Co-op clone, is an e-commerce store focused on selling high quality cycling equipment for bike touring, bike packing and mountain biking."/>
+    <meta property="og:url" content="https://my-co-opt.herokuapp.com/"/>
 
-
-  </head>
-
+  </head> 
   <body>
     <script>
       window.logo="<%= image_url('final-logo.png') %>"

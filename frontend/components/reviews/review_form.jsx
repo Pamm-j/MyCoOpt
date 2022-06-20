@@ -11,6 +11,7 @@ class ReviewForm extends React.Component{
     if (this.state.title !== "" && this.state.rating !== 0) {
       this.props.action(this.state)
         .then(()=>this.props.toggleReview())
+        
     } else if (this.state.title ==='') {
       this.setState({titleError:true})
     } else if (this.state.rating === 0) {

@@ -29,7 +29,7 @@ class ProductShow extends React.Component{
     this.handleClick = this.handleClick.bind(this)
   }
   componentDidUpdate(prevProps){
-    if( prevProps.product && this.props.product.id !== prevProps.product.id && this.props.match.params){
+    if(this.props.product && prevProps.product && this.props.product.id !== prevProps.product.id && this.props.match.params){
       this.props.fetchProduct( this.props.match.params.id )
       this.props.fetchAllReviews( this.props.match.params.id )
     } 
