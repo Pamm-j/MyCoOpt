@@ -72,8 +72,8 @@ class NavBar extends React.Component {
               <a href="https://boozy1.herokuapp.com/#/" className="grey" > Boozy</a>
             </div>
             <div className="each-link-set">
-              <a href="pamela-jane.net" className="grey icon" id='brick' ><GiCartwheel /></a>
-              <a href="pamela-jane.net" className="grey" > Portfolio</a>
+              <a href="https://pamela-jane.net" className="grey icon" id='brick' ><GiCartwheel /></a>
+              <a href="https://pamela-jane.net" className="grey" > Portfolio</a>
             </div>
           </div>
         </div>
