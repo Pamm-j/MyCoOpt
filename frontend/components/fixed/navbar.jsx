@@ -56,24 +56,24 @@ class NavBar extends React.Component {
         <div className="personal-links">
           <div className="personal-links-inner-wrapper">
             <div className="each-link-set">
-              <a href="https://www.linkedin.com/in/pamela-jane/" className="grey icon" ><IoLogoLinkedin /> </a>
-              <a href="https://www.linkedin.com/in/pamela-jane/" className="grey" > LinkedIn</a> 
+              <a href="https://www.linkedin.com/in/pamela-jane/" className="grey icon"  target="_blank" ><IoLogoLinkedin /> </a>
+              <a href="https://www.linkedin.com/in/pamela-jane/" className="grey" target="_blank" > LinkedIn</a> 
             </div>
             <div className="each-link-set">
-              <a href="https://github.com/Pamm-j/MyCoOpt" className="grey icon" ><IoLogoGithub /></a>
-              <a href="https://github.com/Pamm-j/MyCoOpt" className="grey" > Github</a>
+              <a href="https://github.com/Pamm-j/MyCoOpt" className="grey icon" target="_blank" ><IoLogoGithub /></a>
+              <a href="https://github.com/Pamm-j/MyCoOpt" className="grey"  target="_blank"> Github</a>
             </div>
             <div className="each-link-set">
-              <a href="https://pamm-j.github.io/circuits/" className="grey icon" id='brick' ><GiSBrick /></a>
-              <a href="https://pamm-j.github.io/circuits/" className="grey" > Circuits Game</a>
+              <a href="https://pamm-j.github.io/circuits/" className="grey icon" id='brick'  target="_blank"><GiSBrick /></a>
+              <a href="https://pamm-j.github.io/circuits/" className="grey"  target="_blank"> Circuits Game</a>
             </div>
             <div className="each-link-set">
-              <a href="https://boozy1.herokuapp.com/#/" className="grey icon" id='brick' ><FaCocktail /></a>
-              <a href="https://boozy1.herokuapp.com/#/" className="grey" > Boozy</a>
+              <a href="https://boozy1.herokuapp.com/#/" className="grey icon" id='brick' target="_blank" ><FaCocktail /></a>
+              <a href="https://boozy1.herokuapp.com/#/" className="grey" target="_blank" > Boozy</a>
             </div>
             <div className="each-link-set">
-              <a href="https://pamela-jane.net" className="grey icon" id='brick' ><GiCartwheel /></a>
-              <a href="https://pamela-jane.net" className="grey" > Portfolio</a>
+              <a href="https://pamela-jane.net" className="grey icon" id='brick'  target="_blank"><GiCartwheel /></a>
+              <a href="https://pamela-jane.net" className="grey"  target="_blank"> Portfolio</a>
             </div>
           </div>
         </div>

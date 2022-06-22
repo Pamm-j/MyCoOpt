@@ -18,7 +18,7 @@ class CategoryShow extends React.Component{
     this.props.products.forEach((product)=> {
       product[type].forEach((el)=> !traits.includes(el) ? traits.push(el): null)
     })
-    traits = traits.sort(this.compareSizes)
+    traits = traits.sort().reverse().sort(this.compareSizes)
     return traits;
   }
 
@@ -98,8 +98,17 @@ class CategoryShow extends React.Component{
           <div className="category-show-wrapper">
           <div  className="show-filter">
             <div className="filter-title">Filter</div>
-              <FilterItem handleFilterClick={this.handleFilterClick} subtitle="Sizes" array={this.sizeArray}/>
-              <FilterItem handleFilterClick={this.handleFilterClick} subtitle="Colors" array={this.colorArray}/>
+              <FilterItem 
+                handleFilterClick={this.handleFilterClick} 
+                subtitle="Sizes" 
+                array={this.sizeArray}
+                // cb={}
+            />
+              <FilterItem 
+                handleFilterClick={this.handleFilterClick} 
+                subtitle="Colors" 
+                array={this.colorArray}
+              />
             </div>
             {/* <Filter handleFilterClick={this.handleFilterClick}/> */}
             <div className="cat-item-index-wrapper">

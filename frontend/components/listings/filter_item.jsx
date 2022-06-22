@@ -6,6 +6,7 @@ export default function FilterItem(props) {
   const toggleHeader=()=>{
     setopen(!open)
   }
+  let sorted = props.array.sort()
   return (
     <div>
       <div className="filter-subtitle" >
@@ -14,8 +15,12 @@ export default function FilterItem(props) {
           {open ? <div className="filter-ico"><IoIosArrowDown/></div> : <div className="filter-ico"><IoIosArrowBack/></div>}
         </div>
         {open && <div className="subject-box">
-          {props.array.map((el, i)=> (<label key={i+props.subtitle} className="mycheckbox">
-            <input type="checkbox" className="check" onClick={()=>props.handleFilterClick({[props.subtitle.toLowerCase()]:el})} />
+          {sorted.map((el, i)=> (<label key={i+props.subtitle} className="mycheckbox">
+            <input 
+              type="checkbox" 
+              className="check" 
+              onClick={()=>props.handleFilterClick({[props.subtitle.toLowerCase()]:el})} 
+            />
             {el}
           </label>))}
         </div>}
