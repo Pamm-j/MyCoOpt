@@ -70,16 +70,16 @@ c4 = Category.create(title:"Tents", description:"From overlanding to day camping
 #   {io: open(url_path+filename), filename:filename}
 # end
 
-# p1 = Product.create(
-#   name:'Devote Advanced 2',
-#   category_id: c1.id,
-#   description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some prepared-for-anything peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
-#   price:2700.00,
-#   colors: ["Rosewood", "Mint"],
-#   sizes: [ 'M', 'L'],
-#   brand: 'Liv', 
-#   color_families: ['Green', 'Red']
-# )
+p1 = Product.create(
+  name:'Devote Advanced 2',
+  category_id: c1.id,
+  description: "Travel by two wheels into new terrain to satiate your true sense of adventure, plus bring all your gear for some prepared-for-anything peace of mind. Available in lightweight Advanced-Grade Composite frame and fork to meet the needs of performance and endurance riders alike. Because control is the name of the game, our OverDrive steerer creates sound and precise steering, while the D-Fuse handlebar smooths out the ride, stocked with Liv All-Condition handlebar tape to keep you connected. Select models come equipped with vibration absorbing D-Fuse seatpost, or dropper seatpost. And finally, a wheelset specifically built for all-weather performance and unpredictable terrain makes the steadfast Devote your top pick for finishing any tough ride or race.",
+  price:2700.00,
+  colors: ["Rosewood", "Mint"],
+  sizes: [ 'M', 'L'],
+  brand: 'Liv', 
+  color_families: ['Green', 'Red']
+)
 # p1.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da2-1.jpeg'), filename:'da2-1.jpeg')
 # p1.photos.attach(io: open('https://my-co-opt-seed.s3.us-west-1.amazonaws.com/bikes/da2-2.webp'), filename:'da2-2.webp')
 
