@@ -23,7 +23,6 @@ Things you may want to cover:
 
 * ... -->
  
- 
 <!-- ![alt text](https://github.com/) finish wiht info to png  -->
 
 # Welcome to My Co-opt
